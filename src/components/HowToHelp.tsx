@@ -1,5 +1,6 @@
 
 import { Heart, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const HowToHelp = () => {
   const helpOptions = [
@@ -7,7 +8,7 @@ const HowToHelp = () => {
       title: "Doe",
       description: "Sua contribuição financeira ajuda a manter e expandir nossos projetos de inclusão.",
       icon: <Heart size={40} className="text-primary" />,
-      link: "#donate"
+      link: "/doe"
     },
     {
       title: "Voluntarie-se",
@@ -50,12 +51,21 @@ const HowToHelp = () => {
               <p className="text-white/80 mb-6">
                 {option.description}
               </p>
-              <a 
-                href={option.link} 
-                className="inline-flex items-center text-primary hover:text-primary/80 font-semibold transition-colors"
-              >
-                Saiba mais <ArrowRight size={16} className="ml-2" />
-              </a>
+              {option.link.startsWith('#') ? (
+                <a 
+                  href={option.link} 
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-semibold transition-colors"
+                >
+                  Saiba mais <ArrowRight size={16} className="ml-2" />
+                </a>
+              ) : (
+                <Link 
+                  to={option.link} 
+                  className="inline-flex items-center text-primary hover:text-primary/80 font-semibold transition-colors"
+                >
+                  Saiba mais <ArrowRight size={16} className="ml-2" />
+                </Link>
+              )}
             </div>
           ))}
         </div>
@@ -69,18 +79,18 @@ const HowToHelp = () => {
                 Toda doação, independente do valor, faz diferença.
               </p>
               <div className="space-y-4">
-                <a 
-                  href="#" 
+                <Link 
+                  to="/doe" 
                   className="btn-primary flex items-center justify-center w-full"
                 >
                   Doe Agora <ArrowRight size={20} className="ml-2" />
-                </a>
-                <a 
-                  href="#" 
+                </Link>
+                <Link 
+                  to="/doe" 
                   className="btn-secondary flex items-center justify-center w-full"
                 >
                   Doação Recorrente
-                </a>
+                </Link>
               </div>
             </div>
             <div className="md:w-1/2 bg-white/5 p-6 rounded-lg">
