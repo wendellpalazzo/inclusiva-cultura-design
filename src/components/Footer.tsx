@@ -15,8 +15,12 @@ const Footer = () => {
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           <div>
             <div className="mb-6">
-              <a href="/" className="text-2xl font-playfair font-bold text-white">
-                Logo
+              <a href="/" className="block">
+                <img 
+                  src="/lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png" 
+                  alt="Instituto Mãos de Ouro" 
+                  className="h-20 w-auto"
+                />
               </a>
             </div>
             <p className="text-white/70 mb-6">
@@ -111,7 +115,7 @@ const Footer = () => {
         
         <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-white/70 text-sm mb-4 md:mb-0">
-            © 2023 Mãos de Ouro. Todos os direitos reservados.
+            © 2023 Instituto Mãos de Ouro. Todos os direitos reservados.
           </p>
           <div className="flex items-center space-x-6">
             <a href="#" className="text-white/70 text-sm hover:text-primary transition-colors">Política de Privacidade</a>

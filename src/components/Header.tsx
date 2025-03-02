@@ -19,8 +19,12 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-playfair font-bold text-earth">
-              Logo
+            <a href="/" className="flex items-center">
+              <img 
+                src="/lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png" 
+                alt="Instituto Mãos de Ouro" 
+                className="h-16 w-auto"
+              />
             </a>
           </div>
 
