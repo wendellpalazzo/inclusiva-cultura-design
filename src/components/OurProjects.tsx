@@ -1,21 +1,25 @@
 
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const OurProjects = () => {
   const projects = [
     {
+      id: 1,
       title: "Libras nas Escolas",
       description: "Programa de ensino de Libras para crianças e adolescentes em escolas públicas, promovendo a inclusão desde cedo.",
       image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       color: "bg-primary"
     },
     {
+      id: 2,
       title: "Capacitação Profissional",
       description: "Cursos de formação profissional para pessoas surdas, visando sua inserção no mercado de trabalho.",
       image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
       color: "bg-secondary"
     },
     {
+      id: 3,
       title: "Arte e Cultura Surda",
       description: "Festivais e exposições que valorizam e promovem as expressões artísticas e culturais da comunidade surda.",
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
@@ -58,22 +62,22 @@ const OurProjects = () => {
                 <p className="text-dark/80 mb-4">
                   {project.description}
                 </p>
-                <a 
-                  href="#" 
+                <Link 
+                  to={`/projetos/${project.id}`}
                   className="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors"
                 >
                   Saiba mais <ArrowRight size={16} className="ml-2" />
-                </a>
+                </Link>
               </div>
             </div>
           ))}
         </div>
 
         <div className="text-center mt-12">
-          <a href="#" className="btn-primary inline-flex items-center">
+          <Link to="/projetos/1" className="btn-primary inline-flex items-center">
             Ver Todos os Projetos
             <ArrowRight size={20} className="ml-2" />
-          </a>
+          </Link>
         </div>
       </div>
     </section>
