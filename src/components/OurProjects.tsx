@@ -53,7 +53,7 @@ const OurProjects = () => {
             </div>
             
             {/* Project Details */}
-            <div className="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
+            <div className="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center pb-12">
               <h3 className="text-3xl font-bold text-earth mb-4 font-playfair">
                 {projects[activeProject - 1].title}
               </h3>
