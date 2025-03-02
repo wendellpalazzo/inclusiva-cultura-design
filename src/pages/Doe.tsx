@@ -93,7 +93,7 @@ const Doe = () => {
                     <h3 className="text-xl font-bold text-primary mb-4">Doação Única</h3>
                     <p className="mb-6">Uma contribuição pontual que faz toda a diferença para nossos projetos atuais.</p>
                     <a 
-                      href="#" 
+                      href="/" 
                       className="btn-primary flex items-center justify-center w-full"
                     >
                       Doe Agora
@@ -103,7 +103,7 @@ const Doe = () => {
                     <h3 className="text-xl font-bold text-primary mb-4">Doação Recorrente</h3>
                     <p className="mb-6">Um apoio contínuo que nos permite planejar e expandir nossas ações a longo prazo.</p>
                     <a 
-                      href="#" 
+                      href="/" 
                       className="btn-secondary flex items-center justify-center w-full"
                     >
                       Seja um Apoiador Mensal
@@ -114,7 +114,7 @@ const Doe = () => {
                 <div className="mt-8 text-center">
                   <p className="text-sm">
                     Sua doação é protegida por sistemas de pagamento seguros e criptografados.
-                    Para doações corporativas ou outras formas de contribuição, entre em <a href="#" className="text-primary hover:underline">contato conosco</a>.
+                    Para doações corporativas ou outras formas de contribuição, entre em <a href="/#contact" className="text-primary hover:underline">contato conosco</a>.
                   </p>
                 </div>
               </div>
