@@ -17,7 +17,7 @@ const Hero = () => {
           </h1>
           
           <p className="text-lg md:text-xl opacity-90 font-opensans animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-            Mãos de Ouro – Construindo um Futuro Inclusivo através da educação e cultura surda
+            Mãos de Ouro – Em favor das comunidades surdas do Arquipélago Marajoara - PA
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fadeIn" style={{ animationDelay: "0.4s" }}>

@@ -1,85 +1,136 @@
-
-import { Calendar } from "lucide-react";
+import { Calendar, Check } from "lucide-react";
 
 const OurHistory = () => {
   const timelineEvents = [
     {
-      year: "2010",
-      title: "Fundação",
-      description: "Início das atividades com um pequeno grupo de voluntários dedicados à promoção da língua de sinais."
+      year: "2011",
+      title: "Fundação do Instituto",
+      description:
+        "O Instituto Mãos de Ouro é fundado por Fabrício Martins Balieiro, com a missão de promover a inclusão e acessibilidade da comunidade surda. Desde o início, o Instituto se comprometeu a oferecer oportunidades de aprendizado, capacitação e desenvolvimento social por meio do ensino de LIBRAS e da luta pelos direitos das pessoas surdas em Breves/PA na ilha do Marajó",
     },
     {
-      year: "2013",
-      title: "Primeiro Projeto",
-      description: "Lançamento do primeiro projeto educacional voltado para crianças surdas em escolas públicas."
+      year: "2014",
+      title: "Expansão das Atividades",
+      description: `
+        Inclusão de crianças e adolescentes surdos e ouvintes em situação de vulnerabilidade. 
+        Ensino de Libras como primeira língua para surdos e segunda língua para ouvintes.
+        Início das ações sociais, incluindo doações de cestas básicas, medicamentos e reformas de casas.
+        `,
     },
     {
-      year: "2016",
-      title: "Expansão",
-      description: "Ampliação das atividades para três estados brasileiros, alcançando mais de 500 beneficiários."
+      year: "2015",
+      title: "Crescimento Regional",
+      description:
+        "Expansão para cinco cidades vizinhas (Portel, Curralinho, São Sebastião da Boa Vista, Anajás e Bagre). Cada cidade com sua própria diretoria local.",
+    },
+    {
+      year: "2017",
+      title: "Ensino de Espanhol",
+      description:
+        "Início do curso de Língua Espanhola para jovens e adultos, com o professor voluntário Emanuel Nazareno. O curso durou quatro anos consecutivos.",
+    },
+    {
+      year: "2018",
+      title: "Educação Formal",
+      description:
+        "Criação de turmas regulares para crianças de 6 a 12 anos, com aulas no contraturno escolar. Disciplinas oferecidas: Português, Matemática, Libras, Artes Plásticas, Geografia e outras.",
     },
     {
       year: "2019",
-      title: "Reconhecimento",
-      description: "Premiação nacional por contribuições significativas à inclusão e acessibilidade."
+      title: "Projeto - Mente Saudável",
+      description:
+        "Criação de atendimento psicológico gratuito para jovens, devido ao aumento de casos de depressão e suicídio. Encaminhamento de casos graves para psiquiatras e outros profissionais.",
+    },
+    {
+      year: "2020",
+      title: "Pandemia e Novos Projetos",
+      description:
+        "Suspensão das atividades presenciais devido à COVID-19. Com isso, novos projetos surgiram: Serviço de Tradução e Interpretação de Libras para informações de saúde. Ouvidoria online para surdos. Sopão de Ouro (doação de comida em bairros periféricos). Pegue e Leve (distribuição gratuita de alimentos). Atendimento Psicológico (com mais de 180 atendimentos remotos e 38 presenciais). Parceria com a UFPA e ASTILP para oferecer o 1º Curso de Extensão de Formação em Tradução e Interpretação de Libras, formando 28 profissionais.",
+    },
+    {
+      year: "2021",
+      title: "Projeto - Quarta com Surdos",
+      description:
+        "Criação do projeto para debater temas importantes com a comunidade surda, como: HIV, ISTs, Puberdade, Dependência Química, Gravidez Precoce, entre outros.",
     },
     {
       year: "2022",
-      title: "Atualidade",
-      description: "Consolidação como referência na promoção da cultura surda, com projetos em diversas áreas."
-    }
+      title: "Registro Oficial como ONG",
+      description:
+        "Instituto Mãos de Ouro recebe seu CNPJ em 17 de fevereiro de 2022. Retorno das atividades com crianças e adolescentes, com mais de 200 alunos matriculados.",
+    },
   ];
 
   return (
     <section id="history" className="py-20 bg-earth/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">Nossa História</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
+            Nossa História
+          </h2>
           <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-dark/80 max-w-3xl mx-auto">
-            Uma jornada de dedicação, superação e transformação social através da inclusão e valorização da cultura surda.
+            Uma jornada de dedicação, superação e transformação social através
+            da inclusão e valorização da cultura surda.
           </p>
         </div>
 
         <div className="relative">
-          {/* Timeline central line */}
-          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/30"></div>
-          
           {/* Timeline events */}
-          <div className="space-y-12 md:space-y-0">
+          <div
+            className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px 
+          md:before:mx-auto md:before:translate-x-0
+           before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/30 before:to-transparent"
+          >
             {timelineEvents.map((event, index) => (
-              <div key={index} className={`md:flex items-center ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
-                {/* Year marker */}
-                <div className="md:w-1/2 flex items-center">
-                  <div className={`py-4 px-6 ${index % 2 === 0 ? 'md:ml-auto md:text-right' : 'md:mr-auto'} relative`}>
-                    <span className="absolute top-1/2 transform -translate-y-1/2 hidden md:block h-3 w-3 rounded-full bg-primary z-10
-                      border-4 border-white shadow-lg
-                      ${index % 2 === 0 ? 'left-full -translate-x-1/2' : 'right-full translate-x-1/2'}">
-                    </span>
-                    <div className="bg-secondary text-dark inline-block py-2 px-4 rounded-lg font-bold text-2xl mb-2">
-                      {event.year}
-                    </div>
-                    <h3 className="text-xl font-bold text-earth">{event.title}</h3>
-                  </div>
+              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-amber-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+                  <svg
+                    className="fill-current"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="12"
+                    height="10"
+                  >
+                    <path
+                      fill-rule="nonzero"
+                      d="M10.422 1.257 4.655 7.025 2.553 4.923A.916.916 0 0 0 1.257 6.22l2.75 2.75a.916.916 0 0 0 1.296 0l6.415-6.416a.916.916 0 0 0-1.296-1.296Z"
+                    />
+                  </svg>
                 </div>
-                
-                {/* Event info */}
-                <div className="md:w-1/2">
-                  <div className={`bg-white p-6 rounded-lg shadow-lg relative 
-                    ${index % 2 === 0 ? 'md:mr-auto md:ml-6' : 'md:ml-auto md:mr-6'}`}>
-                    <p className="text-dark/80">{event.description}</p>
+
+                <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-white p-4 rounded border border-slate-200 shadow">
+                  <div className="flex items-center justify-between space-x-2 mb-1">
+                    <div className="font-bold text-amber-900">
+                      {event.title}
+                    </div>
+                    <time className="font-caveat font-medium text-amber-500">
+                      {event.year}
+                    </time>
                   </div>
+                  <div className="text-slate-500">{event.description}</div>
                 </div>
               </div>
             ))}
+
+            
           </div>
         </div>
-        
-        <div className="mt-16 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary text-white px-6 py-3 rounded-lg">
-            <Calendar size={24} />
-            <span className="font-semibold">Mais de uma década transformando vidas</span>
+
+        <div className="mt-16 text-center p-6 bg-primary/80 rounded-lg relative overflow-hidden flex justify-center items-center">
+          <img
+            className="-rotate-12 -scale-x-100 top-3 drop-shadow-md left-0 absolute opacity-80 size-16 md:size-auto"
+            src="https://cdn-icons-png.flaticon.com/128/3776/3776585.png"
+          />
+          <div className="inline-flex items-center gap-2 text-white px-6 py-3">
+            
+            <span className="font-semibold text-2xl">
+              Mais de uma década transformando vidas
+            </span>
           </div>
+          <img
+            className="rotate-12 drop-shadow-md top-3 right-0 absolute opacity-80 size-16 md:size-auto"
+            src="https://cdn-icons-png.flaticon.com/128/3776/3776585.png"
+          />
         </div>
       </div>
     </section>

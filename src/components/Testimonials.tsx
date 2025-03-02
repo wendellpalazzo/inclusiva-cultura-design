@@ -27,7 +27,7 @@ const Testimonials = () => {
     { number: "5,000+", label: "Pessoas beneficiadas" },
     { number: "200+", label: "Profissionais formados" },
     { number: "50+", label: "Escolas parceiras" },
-    { number: "10+", label: "Anos de atuação" }
+    { number: "11+", label: "Anos de atuação" }
   ];
 
   return (
