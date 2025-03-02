@@ -9,22 +9,25 @@ const OurProjects = () => {
       title: "Libras nas Escolas",
       description: "Programa de ensino de Libras para crianças e adolescentes em escolas públicas, promovendo a inclusão desde cedo.",
       image: "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      color: "bg-primary"
     },
     {
       id: 2,
       title: "Capacitação Profissional",
       description: "Cursos de formação profissional para pessoas surdas, visando sua inserção no mercado de trabalho.",
       image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      color: "bg-secondary"
     },
     {
       id: 3,
       title: "Arte e Cultura Surda",
       description: "Festivais e exposições que valorizam e promovem as expressões artísticas e culturais da comunidade surda.",
       image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      color: "bg-earth"
-    }
+    },
+    {
+      id: 4,
+      title: "Recursos para Educação",
+      description: "Desenvolvimento de materiais didáticos e recursos adaptados para o ensino de pessoas surdas.",
+      image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+    },
   ];
 
   return (
@@ -39,36 +42,43 @@ const OurProjects = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-0">
           {projects.map((project, index) => (
-            <div 
-              key={index} 
-              className="rounded-xl overflow-hidden shadow-lg group hover:shadow-xl transition-all duration-300"
-            >
-              <div className="h-64 overflow-hidden relative">
+            <div key={index} className="relative group overflow-hidden border-4 border-primary">
+              {/* Project image with overlay */}
+              <div className="relative h-[500px] overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-full object-cover"
                 />
-                <div className={`absolute inset-0 opacity-70 ${project.color}`}></div>
-                <div className="absolute inset-0 flex items-center justify-center p-6">
-                  <h3 className="text-2xl font-bold text-white text-center">
-                    {project.title}
-                  </h3>
-                </div>
               </div>
-              <div className="p-6 bg-white">
-                <p className="text-dark/80 mb-4">
+              
+              {/* Text overlay */}
+              <div className="absolute bottom-0 left-0 right-0 bg-white p-6">
+                <h3 className="text-2xl font-bold text-dark mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-dark/80 mb-0">
                   {project.description}
                 </p>
                 <Link 
                   to={`/projetos/${project.id}`}
-                  className="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors"
+                  className="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors mt-3"
                 >
                   Saiba mais <ArrowRight size={16} className="ml-2" />
                 </Link>
               </div>
+              
+              {/* Yellow separator - visible at the bottom of odd-indexed items */}
+              {index % 2 === 0 && (
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary"></div>
+              )}
+              
+              {/* Yellow separator - visible at the right of even-indexed items in the first row */}
+              {index % 2 === 0 && (
+                <div className="absolute top-0 bottom-0 right-0 w-1 bg-primary"></div>
+              )}
             </div>
           ))}
         </div>
