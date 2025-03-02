@@ -51,6 +51,7 @@
   
   body {
     @apply bg-background text-foreground font-opensans antialiased;
+    @apply [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb:hover]:cursor-grabbing
   }
 
   h1, h2, h3, h4, h5, h6 {
