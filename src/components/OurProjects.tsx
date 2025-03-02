@@ -24,7 +24,7 @@ const OurProjects = () => {
     description: "Desenvolvimento de materiais didáticos e recursos adaptados para o ensino de pessoas surdas.",
     image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
   }];
-  return <section id="projects" className="py-20 bg-gradient-to-b from-white to-gray-50">
+  return <section id="projects" className="py-20 bg-gradient-to-b from-white to-gray-50 scroll-my-16">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">Nossos Projetos</h2>

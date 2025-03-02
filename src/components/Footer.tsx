@@ -3,6 +3,7 @@ import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
   const scrollToTop = () => {
+    window.location.hash = ""
     window.scrollTo({
       top: 0,
       behavior: "smooth"
