@@ -1,4 +1,5 @@
-import { Users } from "lucide-react";
+import { Send, Users } from "lucide-react";
+import { Button } from "./ui/button";
 
 const AboutUs = () => {
   return (
@@ -66,7 +67,7 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="mt-20">
+        <div className="my-20">
           <h3 className="text-2xl font-bold text-earth text-center mb-10">
             Nossa Equipe
           </h3>
@@ -114,6 +115,20 @@ const AboutUs = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+
+        <div className="bg-earth text-white rounded-xl p-8 md:p-10">
+          <div className="flex flex-col items-center gap-3">
+            <p className="text-white/80 text-3xl">
+              Precisando de um serviço de tradução ou interpretação?
+            </p>
+            <div>
+              <Button className="p-10 text-2xl">
+                <Send size={48} />
+                Fale Conosco
+              </Button>
+            </div>
           </div>
         </div>
       </div>
