@@ -18,7 +18,7 @@ const Footer = () => {
             <div className="mb-6">
               <a href="/" className="block">
                 <img 
-                  src="/lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png" 
+                  src="lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png" 
                   alt="Instituto Mãos de Ouro" 
                   className="h-20 w-auto"
                 />

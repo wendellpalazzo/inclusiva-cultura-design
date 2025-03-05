@@ -22,7 +22,7 @@ const Header = () => {
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
               <img
-                src="/lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png"
+                src="lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png"
                 alt="Instituto Mãos de Ouro"
                 className="h-16 w-auto"
               />
