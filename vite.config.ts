@@ -5,7 +5,7 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "https://wendellpalazzo.github.io/inclusiva-cultura-design/",
+  base: "/inclusiva-cultura-design/",
   server: {
     host: "::",
     port: 8080,
