@@ -7,7 +7,7 @@ import { componentTagger } from "lovable-tagger";
 export default defineConfig(({ mode }) => ({
   base: "inclusiva-cultura-design",
   build:{
-    outDir:"./"
+    outDir:"/"
   },
   server: {
     host: "::",
