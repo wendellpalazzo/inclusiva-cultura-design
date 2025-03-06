@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
     <section id="about" className="py-20 bg-white scroll-m-16">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
             Quem Somos
           </h2>
@@ -30,7 +30,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border-secondary">
+             <div className="bg-earth/5 p-6 rounded-lg border-l-4 border-secondary">
               <h3 className="text-xl font-bold text-earth mb-3">Nossa Visão</h3>
               <p className="text-dark/80">
                 Ser referência nacional na promoção da acessibilidade e inclusão
@@ -47,24 +47,23 @@ const AboutUs = () => {
                 Inclusão, respeito à diversidade, excelência, inovação,
                 cooperação e compromisso social.
               </p>
-            </div>
+            </div> 
           </div>
 
-          <div className="relative">
+           <div className="relative">
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                 alt="Equipe Mãos de Ouro"
                 className="w-full h-auto"
               />
-              <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
+               <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
                 <Users size={60} className="text-white" />
               </div>
             </div>
 
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-secondary rounded-full -z-10"></div>
-            <div className="absolute -top-6 -left-6 w-24 h-24 bg-primary rounded-full -z-10"></div>
-          </div>
+           
+          </div> 
         </div>
 
         <div className="my-20">
