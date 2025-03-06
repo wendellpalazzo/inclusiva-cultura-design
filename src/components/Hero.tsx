@@ -31,6 +31,14 @@ const Hero = () => {
           </div>
         </div>
       </div>
+
+     {/* mouse Scroll */}
+      <div className="absolute bottom-10 flex flex-col items-center">
+        <span className="text-white/70 text-sm mb-2">Role para baixo</span>
+        <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center p-1">
+          <div className="w-1.5 h-2 bg-white/70 rounded-full animate-[bounce_1.5s_infinite]"></div>
+        </div>
+      </div>
     </section>
   );
 };
