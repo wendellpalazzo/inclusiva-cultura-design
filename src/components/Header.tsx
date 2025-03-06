@@ -49,7 +49,7 @@ const Header = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden p-2 rounded-lg text-earth hover:bg-gray-100"
+            className="md:hidden p-2 rounded-lg text-white hover:bg-earth"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -60,7 +60,7 @@ const Header = () => {
         {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 slide-up">
+            <div className="px-0 pt-2 pb-3 space-y-1 slide-up">
               {navItems.map((item) => (
                 <a
                   key={item.name}
@@ -68,7 +68,7 @@ const Header = () => {
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     item.href === window.location.hash
                       ? "text-primary bg-gray-50"
-                      : "text-earth hover:text-primary hover:bg-gray-50"
+                      : "text-white hover:text-primary hover:bg-gray-50/10"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
