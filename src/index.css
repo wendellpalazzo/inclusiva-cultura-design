@@ -50,6 +50,7 @@
   }
   
   body {
+    overflow-x: hidden;
     @apply bg-background text-foreground font-opensans antialiased;
     @apply [&::-webkit-scrollbar]:w-3 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb:hover]:cursor-grabbing
   }
