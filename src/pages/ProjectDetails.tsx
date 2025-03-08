@@ -112,7 +112,7 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="min-h-dvh flex items-center justify-center bg-gray-100">
         <div className="text-center p-8">
           <h2 className="text-2xl font-bold text-earth mb-4">Projeto não encontrado</h2>
           <p className="mb-6 text-dark/80">O projeto que você está procurando não existe ou foi removido.</p>
@@ -125,7 +125,7 @@ const ProjectDetails = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-dvh flex flex-col">
       {/* Header - Same as Doe page */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
         <div className="container mx-auto px-4">
