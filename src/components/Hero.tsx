@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20">
+    <section className="relative min-h-screen flex items-center justify-center">
       {/* Background with overlay */}
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center">
         <div className="absolute inset-0 bg-dark/70" />
@@ -33,7 +33,7 @@ const Hero = () => {
       </div>
 
      {/* mouse Scroll */}
-      <div className="absolute bottom-10 flex flex-col items-center">
+      <div className="absolute bottom-2.5 md:bottom-10 flex flex-col items-center">
         <span className="text-white/70 text-sm mb-2">Role para baixo</span>
         <div className="w-6 h-10 rounded-full border-2 border-white/30 flex justify-center p-1">
           <div className="w-1.5 h-2 bg-white/70 rounded-full animate-[bounce_1.5s_infinite]"></div>

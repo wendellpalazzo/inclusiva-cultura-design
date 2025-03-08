@@ -47,7 +47,7 @@ const HowToHelp = () => {
   ];
 
   return (
-    <section id="help" className="scroll-my-16">
+    <section id="help" className="scroll-my-10">
       <div className="py-20 bg-dark text-white relative overflow-hidden">
         {/* Background pattern */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>

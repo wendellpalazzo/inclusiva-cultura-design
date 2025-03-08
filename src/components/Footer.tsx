@@ -6,7 +6,7 @@ const Footer = () => {
     window.location.hash = ""
     window.scrollTo({
       top: 0,
-      behavior: "smooth"
+      behavior: "instant"
     });
   };
 

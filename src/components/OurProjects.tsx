@@ -49,7 +49,7 @@ const OurProjects = () => {
   return (
     <section
       id="projects"
-      className="py-20 bg-gradient-to-b from-white to-gray-50 scroll-my-16"
+      className="py-20 bg-gradient-to-b from-white to-gray-50 scroll-my-10"
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
