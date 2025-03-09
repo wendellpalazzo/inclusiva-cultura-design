@@ -1,9 +1,10 @@
 import { Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
+import AutoScroll from "embla-carousel-auto-scroll"
 
 const HowToHelp = () => {
+
   const helpOptions = [
     {
       title: "Doe",
@@ -46,11 +47,16 @@ const HowToHelp = () => {
     },
   ];
 
+  const bgURL = window.screen.width > 768 ?
+  `url('https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=${window.screen.width}&q=80')` : ''
+
   return (
     <section id="help" className="scroll-my-10">
       <div className="py-20 bg-dark text-white relative overflow-hidden">
         {/* Background pattern */}
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+        <div style={{
+          backgroundImage: `${bgURL}`          
+        }} className={`absolute inset-0 bg-cover bg-center opacity-20`}></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
@@ -211,46 +217,51 @@ const HowToHelp = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="mx-auto bg-slate-200">
-        <Carousel
-          opts={{
-            align: "start",
-            slidesToScroll: 4
-          }}
-          plugins={[
-            Autoplay({
-              delay: 3000,
-            }),
-          ]}
-        >
-          <CarouselContent className="p-4">
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO1&font=oswald" />
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO2&font=popins" />
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO3&font=oswald" />
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO4&font=lato" />
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO5&font=oswald" />
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO6&font=oswald" />
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO7&font=oswald" />
-            </CarouselItem>
-            <CarouselItem className="md:basis-1/4 flex justify-center">
-              <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO8&font=oswald" />
-            </CarouselItem>
-          </CarouselContent>
-        </Carousel>
+        <div className="px-4 mx-auto pt-20">
+          <div className="text-center mb-5">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Empresas Que Nos Apoiam</h2>
+            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+          </div>
+          <Carousel
+            opts={{
+              align: "center",              
+              loop: true
+            }}
+            plugins={[
+              AutoScroll({
+                stopOnInteraction: false,
+                startDelay: 300
+              }),
+            ]}
+          >
+            <CarouselContent className="p-4">
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/c0c0c0/FFFFFF.png?text=LOGO1&font=oswald" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO2&font=popins" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO3&font=oswald" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/e0e0e0/FFFFFF.png?text=LOGO4&font=lato" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO5&font=oswald" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO6&font=oswald" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO7&font=oswald" />
+              </CarouselItem>
+              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
+                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO8&font=oswald" />
+              </CarouselItem>
+            </CarouselContent>
+          </Carousel>
+        </div>
       </div>
     </section>
   );

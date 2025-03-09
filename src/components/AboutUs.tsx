@@ -5,7 +5,7 @@ const AboutUs = () => {
   return (
     <section id="about" className="py-20 bg-white scroll-my-10">
       <div className="container mx-auto px-4">
-         <div className="text-center mb-16">
+        <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
             Quem Somos
           </h2>
@@ -30,7 +30,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-             <div className="bg-earth/5 p-6 rounded-lg border-l-4 border-secondary">
+            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border-secondary">
               <h3 className="text-xl font-bold text-earth mb-3">Nossa Visão</h3>
               <p className="text-dark/80">
                 Ser referência nacional na promoção da acessibilidade e inclusão
@@ -47,23 +47,21 @@ const AboutUs = () => {
                 Inclusão, respeito à diversidade, excelência, inovação,
                 cooperação e compromisso social.
               </p>
-            </div> 
+            </div>
           </div>
 
-           <div className="relative">
+          <div className="relative">
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img
                 src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
                 alt="Equipe Mãos de Ouro"
                 className="w-full h-auto"
               />
-               <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
+              <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
                 <Users size={60} className="text-white" />
               </div>
             </div>
-
-           
-          </div> 
+          </div>
         </div>
 
         <div className="my-20">
@@ -117,17 +115,16 @@ const AboutUs = () => {
           </div>
         </div>
 
-        <div className="bg-earth text-white rounded-xl p-8 md:p-10">
-          <div className="flex flex-col items-center gap-3">
-            <p className="text-white/80 text-3xl">
+        <div className="bg-earth text-white rounded-xl flex-col md:flex-row flex justify-evenly p-4 gap-4">
+          <img src="hands.webp" className="rounded-xl mix-blend-soft-light h-48 hidden md:block" />
+          <div className="flex flex-col justify-center items-center gap-4">
+            <p className="text-white text-xl md:text-2xl text-center md:text-left">
               Precisando de um serviço de tradução ou interpretação?
             </p>
-            <div>
-              <Button className="p-10 text-2xl">
-                <Send size={48} />
-                Fale Conosco
-              </Button>
-            </div>
+            <Button className="md:p-8 md:text-2xl">
+              <Send size={48} />
+              Fale Conosco
+            </Button>
           </div>
         </div>
       </div>

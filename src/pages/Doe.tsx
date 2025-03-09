@@ -2,44 +2,19 @@
 import { ArrowLeft, Heart } from "lucide-react";
 import { Link } from "react-router-dom";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 
 const Doe = () => {
   return (
     <div className="min-h-dvh flex flex-col">
       {/* Modified Header for Doe Page */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-lg border-b border-gray-200">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-20">
-            <div className="flex-shrink-0">
-              <Link to="/" className="flex items-center">
-                <img 
-                  src="/lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png" 
-                  alt="Instituto Mãos de Ouro" 
-                  className="h-16 w-auto"
-                />
-              </Link>
-            </div>
-
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
-              <Link to="/" className="nav-link">Home</Link>
-              <Link to="/#about" className="nav-link">Quem Somos</Link>
-              <Link to="/#history" className="nav-link">Nossa História</Link>
-              <Link to="/#projects" className="nav-link">Nossos Projetos</Link>
-              <Link to="/#help" className="nav-link">Como Ajudar</Link>
-              <Link to="/#contact" className="nav-link">Contato</Link>
-            </nav>
-
-            {/* Mobile Navigation Button and Menu would go here */}
-          </div>
-        </div>
-      </header>
+      <Header />
       
       <main className="flex-grow pt-20">
         {/* Hero Section */}
         <section className="bg-dark text-white py-20 relative overflow-hidden">
           {/* Background pattern */}
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center opacity-10"></div>
+          <div className="hidden md:block absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596436643132-6e58c3ae4cd4?ixlib=rb-1.2.1&auto=format&fit=clamp&crop=top&w=1920&h=550&q=80')] bg-no-repeat bg-bottom bg-cover opacity-40"></div>
           
           <div className="container mx-auto px-4 relative z-10">
             <Link to="/#help" className="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-8 transition-colors">
@@ -47,7 +22,7 @@ const Doe = () => {
             </Link>
             
             <div className="text-center max-w-4xl mx-auto">
-              <Heart size={60} className="mx-auto mb-6 text-primary" />
+              <Heart size={60} className="mx-auto mb-6 text-primary md:hidden" />
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Doe e Transforme Vidas</h1>
               <div className="w-20 h-1 bg-primary mx-auto mb-8"></div>
               <p className="text-xl text-white/90 mb-10">
