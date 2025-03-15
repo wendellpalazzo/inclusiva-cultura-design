@@ -1,9 +1,52 @@
 import { Send, Users } from "lucide-react";
 import { Button } from "./ui/button";
 
+const equipe = [
+  {
+    name: "Fabrício Martins Balieiro",
+    role: "Presidente",
+    image: "assets/images/fabricio-martins-balieiro.jpeg",
+  },
+  {
+    name: "Bernarda Santana Dias",
+    role: "Vice-Presidente",
+    image: "assets/images/bernarda-santana-dias.jpeg",
+  },
+  {
+    name: "Luiz Antônio Amaral Balieiro",
+    role: "1 Tesoureiro",
+    image: "assets/images/luiz-antonio-amaral-balieiro.jpeg",
+  },
+  {
+    name: "Ranna Bitencoute",
+    role: "2 Tesoureira",
+    image: "assets/images/ranna-bitencoute.jpeg",
+  },
+  {
+    name: "Claudete Pacheco",
+    role: "Conselho Fiscal",
+    image: "assets/images/claudete-pacheco.jpeg",
+  },
+  {
+    name: "Neucilene Fonseca",
+    role: "Conselho Fiscal",
+    image: "assets/images/neucilene-fonseca.jpeg",
+  },
+  {
+    name: "Railene Martins",
+    role: "2 Secretária",
+    image: "assets/images/railene-martins.jpeg",
+  },
+  {
+    name: "Jenny Rodrigues",
+    role: "Conselheira Fiscal/Suplente",
+    image: "assets/images/jenny-rodrigues.jpeg",
+  },
+];
+
 const AboutUs = () => {
   return (
-    <section id="about" className="py-20 bg-white scroll-my-10">
+    <section id="about" className="pt-20 bg-white scroll-my-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
@@ -69,32 +112,7 @@ const AboutUs = () => {
             Nossa Equipe
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                name: "Ana Silva",
-                role: "Diretora Executiva",
-                image:
-                  "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-              },
-              {
-                name: "Carlos Mendes",
-                role: "Coordenador Pedagógico",
-                image:
-                  "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-              },
-              {
-                name: "Mariana Santos",
-                role: "Especialista em Libras",
-                image:
-                  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-              },
-              {
-                name: "Pedro Oliveira",
-                role: "Gestor de Projetos",
-                image:
-                  "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-              },
-            ].map((member, index) => (
+            {equipe.map((member, index) => (
               <div
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105"
@@ -102,7 +120,7 @@ const AboutUs = () => {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-64 object-cover object-center"
+                  className="w-full p-4"
                 />
                 <div className="p-6">
                   <h4 className="text-xl font-bold text-earth">
@@ -114,19 +132,21 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-
-        <div className="bg-earth text-white rounded-xl flex-col md:flex-row flex justify-evenly p-4 gap-4">
-          <img src="hands.webp" className="rounded-xl mix-blend-soft-light h-48 hidden md:block" />
-          <div className="flex flex-col justify-center items-center gap-4">
-            <p className="text-white text-xl md:text-2xl text-center md:text-left">
-              Precisando de um serviço de tradução ou interpretação?
-            </p>
-            <Button className="md:p-8 md:text-2xl">
-              <Send size={48} />
-              Fale Conosco
-            </Button>
-          </div>
+      </div>
+      <div className="bg-earth text-white p-10 flex md:flex-row justify-evenly items-center flex-col space-y-10 md:space-y-0">
+        <div className="space-y-3">
+          <h2 className="text-white text-3xl font-opensans">
+            Precisando de um serviço de tradução ou interpretação?
+          </h2>
+          <p>
+            Contamos com uma equipe altamente preparada e profissional para lhe
+            atender.
+          </p>
         </div>
+        <Button className="p-8 text-xl md:text-2xl rounded-xl w-full md:w-auto">
+          <Send />
+          Fale Conosco
+        </Button>
       </div>
     </section>
   );
