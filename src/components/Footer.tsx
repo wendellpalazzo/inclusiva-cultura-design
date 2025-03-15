@@ -60,7 +60,7 @@ const Footer = () => {
                 <a href="#learning" className="text-white/70 hover:text-primary transition-colors">Etapas de Aprendizagem</a>
               </li>
               <li>
-                <a href="#help" className="text-white/70 hover:text-primary transition-colors">Como Ajudar</a>
+                <a href="#como-ajudar" className="text-white/70 hover:text-primary transition-colors">Como Ajudar</a>
               </li>
               <li>
                 <a href="#contact" className="text-white/70 hover:text-primary transition-colors">Contato</a>

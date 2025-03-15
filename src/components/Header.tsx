@@ -1,19 +1,25 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation()
-  
+  const location = useLocation();
+
   const navItems = [
     { name: "Home", href: "#" },
     { name: "Quem Somos", href: "#about" },
     { name: "Nossa História", href: "#history" },
     { name: "Nossos Projetos", href: "#projects" },
-    { name: "Como Ajudar", href: "#help" },
+    { name: "Como Ajudar", href: "#como-ajudar" },
     { name: "Contato", href: "#contact" },
   ];
+
+  useEffect(() => {
+    if (navItems.some((i) => i.href === location.hash))
+      document.querySelector(location.hash)?.scrollIntoView({behavior:"instant"});
+    else window.scrollTo({top:0, behavior:"instant"})
+  }, [location.hash]);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary-foreground/80 backdrop-blur-lg border-b border-secondary-foreground">
@@ -32,9 +38,12 @@ const Header = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
-              <a
+              <Link
                 key={item.name}
-                href={item.href}
+                to={{
+                  hash:`${item.href}`
+                }}
+                viewTransition
                 className={`nav-link ${
                   item.href === location.hash ||
                   (location.hash === "" && item.href === "#")
@@ -43,7 +52,7 @@ const Header = () => {
                 }`}
               >
                 {item.name}
-              </a>
+              </Link>
             ))}
           </nav>
 

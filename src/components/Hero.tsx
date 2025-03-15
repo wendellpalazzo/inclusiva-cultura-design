@@ -21,7 +21,7 @@ const Hero = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fadeIn" style={{ animationDelay: "0.4s" }}>
-            <a href="#donate" className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center">
+            <a href="#como-ajudar" className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center">
               Doe Agora
               <ArrowRight size={20} />
             </a>
