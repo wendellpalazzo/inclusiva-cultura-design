@@ -118,7 +118,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-earth mb-1">Telefone</h4>
-                    <p className="text-dark/80">(11) 1234-5678</p>
+                    <p className="text-dark/80">(91) 9 9291-5134</p>
                   </div>
                 </div>
                 
@@ -128,7 +128,7 @@ const Contact = () => {
                   </div>
                   <div className="break-all">
                     <h4 className="font-bold text-earth mb-1">Email</h4>
-                    <p className="text-dark/80">contato@maosdeouros.org.br</p>
+                    <p className="text-dark/80">maosdeouroinstituto@gmail.com</p>
                   </div>
                 </div>
                 
@@ -139,8 +139,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-bold text-earth mb-1">Endereço</h4>
                     <p className="text-dark/80">
-                      Av. Paulista, 1000 - Bela Vista<br />
-                      São Paulo - SP, 01310-100
+                      Rua Duque de Caxias, 184 - Centro<br />
+                      Breves - PA, 68800-000
                     </p>
                   </div>
                 </div>
@@ -149,7 +149,7 @@ const Contact = () => {
             
              <div className="rounded-xl overflow-hidden h-80 shadow-lg">
                <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.0976951863126!2d-46.655470384406085!3d-23.56151478468431!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c7f481fd9f%3A0x9982bfde4df54830!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1645564755096!5m2!1spt-BR!2sbr" 
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15476.244489946484!2d-50.48185609027021!3d-1.6865712130664778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x929839ad6446f7ab%3A0xa90502c5cedd0365!2sM%C3%A3os%20de%20Ouro%20%2F%20SEDE!5e1!3m2!1spt-BR!2sbr!4v1742016159452!5m2!1spt-BR!2sbr" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
