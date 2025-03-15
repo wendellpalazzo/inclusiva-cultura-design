@@ -116,7 +116,7 @@ const Volunteer = () => {
         {/* Hero Section */}
         <section className="bg-dark text-white py-20 relative overflow-hidden">
           {/* Background pattern */}
-          <div className="hidden md:block absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596436643132-6e58c3ae4cd4?ixlib=rb-1.2.1&auto=format&fit=clamp&crop=top&w=1920&h=550&q=80')] bg-no-repeat bg-bottom bg-cover opacity-40"></div>
+          <div className="mix-blend-overlay hidden md:block absolute inset-0 bg-[url('assets/images/escola-e-comunidade-parceria-getty-images.jpg')] bg-no-repeat bg-top bg-cover opacity-40"></div>
 
           <div className="container mx-auto px-4 relative z-10">
             <Link
@@ -150,7 +150,7 @@ const Volunteer = () => {
                 </span>
               </h1>
               <div className="w-20 h-1 mx-auto mb-8"></div>
-              <p className="text-xl text-white/90 mb-10">
+              <p className="text-xl text-white/90 mb-10 text-balance">
                 Compartilhe seu tempo, conhecimento e habilidades para
                 transformar vidas na comunidade surda. Junte-se a nós nessa
                 missão!
@@ -165,7 +165,7 @@ const Volunteer = () => {
               <h2 className="text-3xl md:text-4xl font-bold font-playfair text-earth mb-4">
                 Por que ser voluntário?
               </h2>
-              <p className="text-lg text-dark/80 max-w-3xl mx-auto">
+              <p className="text-lg text-dark/80 max-w-3xl mx-auto text-balance">
                 Ser voluntário no Instituto Mãos de Ouro é uma oportunidade de
                 contribuir para uma sociedade mais inclusiva enquanto você
                 também se desenvolve.

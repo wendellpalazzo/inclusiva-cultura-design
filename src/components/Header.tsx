@@ -26,13 +26,13 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <Link to="/" className="flex items-center">
               <img
                 src="lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png"
                 alt="Instituto Mãos de Ouro"
                 className="h-16 w-auto"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -41,6 +41,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 to={{
+                  pathname: "/",
                   hash:`${item.href}`
                 }}
                 viewTransition
@@ -71,9 +72,12 @@ const Header = () => {
           <div className="md:hidden">
             <div className="px-0 pt-2 pb-3 space-y-1 slide-up">
               {navItems.map((item) => (
-                <a
+                <Link
                   key={item.name}
-                  href={item.href}
+                  to={{
+                    pathname: "/",
+                    hash:`${item.href}`
+                  }}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     item.href === window.location.hash
                       ? "text-primary bg-gray-50"
@@ -82,7 +86,7 @@ const Header = () => {
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
