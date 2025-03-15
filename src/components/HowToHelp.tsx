@@ -1,10 +1,9 @@
 import { Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import AutoScroll from "embla-carousel-auto-scroll"
+import AutoScroll from "embla-carousel-auto-scroll";
 
 const HowToHelp = () => {
-
   const helpOptions = [
     {
       title: "Doe",
@@ -27,7 +26,7 @@ const HowToHelp = () => {
           <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
         </svg>
       ),
-      link: "#volunteer",
+      link: "/voluntarie-se",
     },
     {
       title: "Parcerias",
@@ -43,20 +42,25 @@ const HowToHelp = () => {
           <path d="M7 3a1 1 0 000 2h6a1 1 0 100-2H7zM4 7a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM2 11a2 2 0 012-2h12a2 2 0 012 2v4a2 2 0 01-2 2H4a2 2 0 01-2-2v-4z"></path>
         </svg>
       ),
-      link: "#partnership",
+      link: "/parcerias",
     },
   ];
 
-  const bgURL = window.screen.width > 768 ?
-  `url('https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=${window.screen.width}&q=80')` : ''
+  const bgURL =
+    window.screen.width > 768
+      ? `url('https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=${window.screen.width}&q=80')`
+      : "";
 
   return (
-    <section id="help" className="scroll-my-10">
+    <section id="como-ajudar" className="scroll-my-10">
       <div className="py-20 bg-dark text-white relative overflow-hidden">
         {/* Background pattern */}
-        <div style={{
-          backgroundImage: `${bgURL}`          
-        }} className={`absolute inset-0 bg-cover bg-center opacity-20`}></div>
+        <div
+          style={{
+            backgroundImage: `${bgURL}`,
+          }}
+          className={`absolute inset-0 bg-cover bg-center opacity-20`}
+        ></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
@@ -114,12 +118,6 @@ const HowToHelp = () => {
                     className="btn-primary flex items-center justify-center w-full"
                   >
                     Doe Agora <ArrowRight size={20} className="ml-2" />
-                  </Link>
-                  <Link
-                    to="/doe"
-                    className="btn-secondary flex items-center justify-center w-full"
-                  >
-                    Doação Recorrente
                   </Link>
                 </div>
               </div>
@@ -219,18 +217,20 @@ const HowToHelp = () => {
         </div>
         <div className="px-4 mx-auto pt-20">
           <div className="text-center mb-5">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Empresas Que Nos Apoiam</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Empresas Que Nos Apoiam
+            </h2>
             <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
           </div>
           <Carousel
             opts={{
-              align: "center",              
-              loop: true
+              align: "center",
+              loop: true,
             }}
             plugins={[
               AutoScroll({
                 stopOnInteraction: false,
-                startDelay: 300
+                startDelay: 300,
               }),
             ]}
           >
