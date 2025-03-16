@@ -13,11 +13,11 @@ const Hero = () => {
       <div className="relative container mx-auto px-4 text-center text-white">
         <div className="max-w-3xl mx-auto space-y-8">
           <h1 className="text-4xl md:text-6xl font-playfair font-bold leading-tight animate-fadeIn">
-            Transformando Vidas com as Mãos que Inspiram
+            Instituto Mãos de Ouro
           </h1>
           
-          <p className="text-lg md:text-xl opacity-90 font-opensans animate-fadeIn" style={{ animationDelay: "0.2s" }}>
-            Mãos de Ouro – Em favor das comunidades surdas do Arquipélago Marajoara - PA
+          <p className="text-lg md:text-3xl opacity-90 font-opensans animate-fadeIn" style={{ animationDelay: "0.2s" }}>
+            - As Mãos Que Transformam Vidas -
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4 animate-fadeIn" style={{ animationDelay: "0.4s" }}>
