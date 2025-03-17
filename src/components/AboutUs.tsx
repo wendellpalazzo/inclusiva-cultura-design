@@ -67,9 +67,13 @@ const AboutUs = () => {
                 Nossa Missão
               </h3>
               <p className="text-dark/80">
-                Promover a inclusão social das pessoas surdas através da difusão
-                da Língua Brasileira de Sinais (Libras) e da cultura surda,
-                criando oportunidades de desenvolvimento pessoal e profissional.
+                Promover e articular na mesorregiao marajoara ações de defesa de
+                direitos, prevenção, orientações, prestação de serviços, apoio à
+                pessoas surdas, com deficiência auditiva, surdas-cegas ou com
+                outras deficiências direcionadas à melhoria da qualidade de vida
+                e à construção de uma sociedade justa e solidária. Bem como,
+                também atingir pessoas sem deficiência em situação de
+                vulnerabilidade social.
               </p>
             </div>
 
