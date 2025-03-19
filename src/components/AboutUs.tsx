@@ -1,5 +1,6 @@
 import { Send, Users } from "lucide-react";
 import { Button } from "./ui/button";
+import { ZapButton } from "./ZapButton";
 
 const equipe = [
   {
@@ -46,7 +47,7 @@ const equipe = [
 
 const AboutUs = () => {
   return (
-    <section id="about" className="pt-20 bg-white scroll-my-10">
+    <section id="quem-somos" className="pt-20 bg-white scroll-my-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
@@ -137,8 +138,8 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
-      <div className="bg-earth text-white p-10 flex md:flex-row justify-evenly items-center flex-col space-y-10 md:space-y-0">
-        <div className="space-y-3">
+      <div className="bg-earth text-white p-10 flex lg:flex-row justify-evenly items-center flex-col space-y-10 lg:space-y-0">
+        <div className="space-y-3 lg:max-w-md">
           <h2 className="text-white text-3xl font-opensans">
             Precisando de um serviço de tradução ou interpretação?
           </h2>
@@ -147,10 +148,14 @@ const AboutUs = () => {
             atender.
           </p>
         </div>
-        <Button className="p-8 text-xl md:text-2xl rounded-xl w-full md:w-auto">
-          <Send />
-          Fale Conosco
-        </Button>
+
+        <ZapButton
+          iconClass="!size-8"
+          showText="Fale Conosco"
+          text="Olá! Gostaria de mais informações sobre o serviço de tradução e/ou interpretação oferecido pelo Instituto Mãos de Ouro, poderia me ajudar?"
+          phone={import.meta.env.VITE_CONTACT_ZAP}
+          className="hover:bg-primary/65 rounded-xl text-white w-full md:max-w-lg text-center p-4 bg-primary/60 text-sm mt-2 inline-block"
+        />
       </div>
     </section>
   );
