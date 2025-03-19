@@ -220,10 +220,10 @@ const Doe = () => {
               <div className="my-8 text-center">
                 <p className="text-lg text-balance">
                   Para doações corporativas ou outras formas de contribuição,
-                  entre em contato conosco ligando para (91) 9 9291-5134 <br/>ou<br/>
+                  entre em contato conosco ligando para {import.meta.env.VITE_CONTACT_PHONE} <br/>ou<br/>
                 </p>
                 <ZapButton
-                  text="Olá! Gostaria de saber como contribuir com o instituto Mãos de Ouro"
+                  text="Olá! Gostaria de mais informações em como contribuir com o Instituto Mãos de Ouro, poderia me ajudar?"
                   phone={import.meta.env.VITE_CONTACT_ZAP}
                   className="hover:bg-green-700 rounded-xl text-white p-2 bg-green-600 text-sm mt-2 inline-block"
                 />

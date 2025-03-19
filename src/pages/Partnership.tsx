@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 import SectionTitle from "@/components/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import { ZapButton } from "@/components/ZapButton";
 
 const Partnership = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -345,6 +346,19 @@ const Partnership = () => {
                       Enviar Solicitação
                     </Button>
                   </form>
+                  <div className="my-8 text-center">
+                    <p className="text-lg text-balance">
+                      Ficou com alguma dúvida? <br /> Entre em contato conosco
+                      ligando para {import.meta.env.VITE_CONTACT_PHONE} <br />
+                      ou
+                      <br />
+                    </p>
+                    <ZapButton
+                      text="Olá! Gostaria de mais informações em como me tornar parceiro do Instituto Mãos de Ouro, poderia me ajudar?"
+                      phone={import.meta.env.VITE_CONTACT_ZAP}
+                      className="hover:bg-green-700 rounded-xl text-white p-2 bg-green-600 text-sm mt-2 inline-block"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -454,7 +468,9 @@ const Partnership = () => {
                     </span>
                   </div>
                   <div>
-                    <h4 className="font-semibold font-opensans text-earth">{item.name}</h4>
+                    <h4 className="font-semibold font-opensans text-earth">
+                      {item.name}
+                    </h4>
                     <p className="text-dark/80 text-sm">{item.role}</p>
                   </div>
                 </div>

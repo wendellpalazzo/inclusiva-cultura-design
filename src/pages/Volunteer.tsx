@@ -467,13 +467,13 @@ const Volunteer = () => {
                     </Form>
                     <div className="my-8 text-center">
                       <p className="text-lg text-balance">
-                        Ficou com alguma dúvida? <br/> Entre em contato conosco
-                        ligando para (91) 9 9291-5134 <br />
+                        Ficou com alguma dúvida? <br /> Entre em contato conosco
+                        ligando para {import.meta.env.VITE_CONTACT_PHONE} <br />
                         ou
                         <br />
                       </p>
                       <ZapButton
-                        text="Olá! Ainda tenho algumas dúvidas em como me voluntariar, poderia me ajudar?"
+                        text="Olá! Gostaria de mais informações em como me voluntariar, poderia me ajudar?"
                         phone={import.meta.env.VITE_CONTACT_ZAP}
                         className="hover:bg-green-700 rounded-xl text-white p-2 bg-green-600 text-sm mt-2 inline-block"
                       />
