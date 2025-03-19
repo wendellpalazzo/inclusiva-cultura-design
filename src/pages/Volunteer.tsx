@@ -220,7 +220,7 @@ const Volunteer = () => {
 
         {/* Formulário de Inscrição */}
         <section id="inscricao" className="py-16 bg-primary/5">
-          <div className="container">
+          <div className="container p-4">
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold font-playfair text-earth mb-4">
                 Inscreva-se como Voluntário
@@ -262,7 +262,7 @@ const Volunteer = () => {
                       Todos os campos com * são obrigatórios
                     </CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="p-4">
                     <Form {...form}>
                       <form
                         onSubmit={form.handleSubmit(onSubmit)}
@@ -466,8 +466,8 @@ const Volunteer = () => {
                       </form>
                     </Form>
                     <div className="my-8 text-center">
-                      <p className="text-lg text-balance">
-                        Ficou com alguma dúvida? <br /> Entre em contato conosco
+                      <p className="lg:text-lg text-balance">
+                        Ficou com alguma dúvida? <br /> Fale conosco
                         ligando para {import.meta.env.VITE_CONTACT_PHONE} <br />
                         ou
                         <br />

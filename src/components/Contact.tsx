@@ -118,7 +118,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-earth mb-1">Telefone</h4>
-                    <p className="text-dark/80">(91) 9 9291-5134</p>
+                    <p className="text-dark/80">{import.meta.env.VITE_CONTACT_PHONE}</p>
                   </div>
                 </div>
                 
@@ -128,7 +128,7 @@ const Contact = () => {
                   </div>
                   <div className="break-all">
                     <h4 className="font-bold text-earth mb-1">Email</h4>
-                    <p className="text-dark/80">maosdeouroinstituto@gmail.com</p>
+                    <p className="text-dark/80">{import.meta.env.VITE_CONTACT_EMAIL}</p>
                   </div>
                 </div>
                 

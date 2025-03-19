@@ -70,7 +70,7 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="bg-earth text-white rounded-xl p-8 md:p-10">
+        <div className="bg-earth text-white rounded-xl p-4 lg:p-8 md:p-10">
           <div className="flex flex-col md:flex-row items-center gap-10">
             <div className="md:w-1/3">
               <h3 className="text-2xl font-bold mb-4">Nosso Impacto</h3>

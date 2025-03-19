@@ -18,7 +18,7 @@ const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
+      <Sonner richColors={true} expand={true}/>
       <BrowserRouter basename="/inclusiva-cultura-design/">
         <ScrollToTop />
         <Routes>

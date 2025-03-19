@@ -10,6 +10,7 @@ import {
   Landmark,
   Trophy,
   Rocket,
+  ArrowLeft,
 } from "lucide-react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ import SectionTitle from "@/components/SectionTitle";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 import { ZapButton } from "@/components/ZapButton";
+import { Link } from "react-router-dom";
 
 const Partnership = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -35,6 +37,12 @@ const Partnership = () => {
         <div className="container">
           <div className="flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="md:w-1/2">
+            <Link
+              to="/#como-ajudar"
+              className="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-8 transition-colors"
+            >
+              <ArrowLeft size={16} className="mr-2" /> Voltar para Como Ajudar
+            </Link>
               <h1 className="text-4xl md:text-5xl font-playfair font-bold text-earth mb-6">
                 Parcerias que Transformam Vidas
               </h1>
@@ -43,7 +51,7 @@ const Partnership = () => {
                 pessoas surdas. Sua empresa pode fazer parte dessa transformação
                 social e contribuir para um mundo mais acessível e inclusivo.
               </p>
-              <div>
+              <div className="w-fit mx-auto md:mx-0">
                 <Button
                   className="bg-primary hover:bg-primary-400 font-medium text-white"
                   size="lg"
@@ -203,7 +211,7 @@ const Partnership = () => {
 
       {/* Como se tornar parceiro */}
       <section id="como-ajudar" className="py-20 bg-white">
-        <div className="container">
+        <div className="container p-4">
           <SectionTitle
             title="Como se tornar parceiro"
             subtitle="O processo para se tornar um parceiro é simples e adaptável às possibilidades da sua empresa."
@@ -211,14 +219,14 @@ const Partnership = () => {
           />
 
           <div className="mt-16 flex flex-col md:flex-row gap-8 items-start">
-            <div className="w-1/2 mx-auto">
+            <div className="lg:w-1/2 mx-auto">
               <div className="bg-white rounded-xl shadow-md border border-primary/20 overflow-hidden">
                 <div className="bg-primary/10 p-4">
                   <h3 className="text-xl font-opensans font-semibold text-earth">
                     Formulário de Contato
                   </h3>
                 </div>
-                <div className="p-6">
+                <div className="p-5">
                   <form onSubmit={handleFormSubmit} className="space-y-4">
                     <div className="space-y-2">
                       <label
@@ -347,7 +355,7 @@ const Partnership = () => {
                     </Button>
                   </form>
                   <div className="my-8 text-center">
-                    <p className="text-lg text-balance">
+                    <p className="lg:text-lg text-balance">
                       Ficou com alguma dúvida? <br /> Entre em contato conosco
                       ligando para {import.meta.env.VITE_CONTACT_PHONE} <br />
                       ou

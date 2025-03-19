@@ -16,7 +16,7 @@ const Hero = () => {
             Instituto Mãos de Ouro
           </h1>
           
-          <p className="text-lg md:text-3xl opacity-90 font-opensans animate-fadeIn" style={{ animationDelay: "0.2s" }}>
+          <p className="text-lg md:text-3xl opacity-90 text-white/80 font-opensans animate-fadeIn" style={{ animationDelay: "0.2s" }}>
             - As Mãos Que Transformam Vidas -
           </p>
           

@@ -20,8 +20,26 @@ import { Label } from "@/components/ui/label";
 import { WhatsApp } from "@/lib/whatsapp";
 import { useEffect, useState } from "react";
 import { ZapButton } from "@/components/ZapButton";
+import { toast } from "sonner";
 
 const Doe = () => {
+  const copyPastePix = (e) => {
+    e.preventDefault()
+    
+    navigator.clipboard
+      .writeText(import.meta.env.VITE_PIX_CODE)
+      .then(() => {
+        toast.success(
+          "Código PIX copiado com sucesso"
+        );
+      })
+      .catch((error) => {
+        toast.error(
+          "Houve um erro ao copiar o Código PIX"
+        );
+      });
+  };
+
   return (
     <div className="min-h-dvh flex flex-col">
       {/* Modified Header for Doe Page */}
@@ -159,7 +177,7 @@ const Doe = () => {
         </section>
 
         <section id="inscricao" className="py-16 bg-primary/5">
-          <div className="container">
+          <div className="container p-4">
             <div className="mb-12 text-center">
               <h2 className="text-3xl md:text-4xl font-bold font-playfair text-earth mb-4">
                 Faça Sua Doação Agora
@@ -208,6 +226,9 @@ const Doe = () => {
                 <div className="flex flex-col bg-white rounded-xl shadow-md">
                   <h3 className="text-xl font-bold text-primary p-6">PIX</h3>
                   <img className="mx-auto" src="qrcode-pix.png" />
+                  <Button className="w-11/12 lg:w-80 mx-auto" onClick={copyPastePix}>
+                    Pix Copia/Cola
+                  </Button>
                   <p className="p-4 text-sm">
                     Ao realizar o processo de transferência por PIX, sempre
                     verifique se o mesmo está em nome de{" "}
@@ -218,9 +239,12 @@ const Doe = () => {
                 </div>
               </div>
               <div className="my-8 text-center">
-                <p className="text-lg text-balance">
+                <p className="lg:text-lg text-balance">
                   Para doações corporativas ou outras formas de contribuição,
-                  entre em contato conosco ligando para {import.meta.env.VITE_CONTACT_PHONE} <br/>ou<br/>
+                  entre em contato conosco ligando para{" "}
+                  {import.meta.env.VITE_CONTACT_PHONE} <br />
+                  ou
+                  <br />
                 </p>
                 <ZapButton
                   text="Olá! Gostaria de mais informações em como contribuir com o Instituto Mãos de Ouro, poderia me ajudar?"

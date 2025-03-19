@@ -31,7 +31,7 @@ export const ZapButton = ({iconClass, text, phone, className, showText = "WhatsA
       className={className}
     >
       <WhatsApp className={cn([
-        "fill-white inline-block -mt-1 text-2xl",
+        "fill-white inline-block -mt-1 text-2xl mr-2",
         iconClass        
         ])} /> {showText}
     </a>
