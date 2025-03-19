@@ -1,0 +1,5 @@
+19-mar-25
+- atualizei a imagem da seção "Quem Somos"
+- atualizei o texto "missão" na seção "Quem Somos"
+- coloquei botão "zap" para entrar em contato na página "/doe"
+- coloquei botão "zap" para entrar em contato na página "/voluntarie-se" caso haja alguma dúvida

@@ -41,6 +41,7 @@ import { z } from "zod";
 import { useState } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { ZapButton } from "@/components/ZapButton";
 
 const areas = [
   {
@@ -453,15 +454,30 @@ const Volunteer = () => {
                         />
 
                         <Button
-                        disabled={form.formState.isSubmitting}
+                          disabled={form.formState.isSubmitting}
                           type="submit"
                           className="w-full bg-primary hover:bg-primary-600"
                         >
-                          {form.formState.isSubmitting && <Loader2 className="animate-spin"/>}
+                          {form.formState.isSubmitting && (
+                            <Loader2 className="animate-spin" />
+                          )}
                           Enviar inscrição
                         </Button>
                       </form>
                     </Form>
+                    <div className="my-8 text-center">
+                      <p className="text-lg text-balance">
+                        Ficou com alguma dúvida? <br/> Entre em contato conosco
+                        ligando para (91) 9 9291-5134 <br />
+                        ou
+                        <br />
+                      </p>
+                      <ZapButton
+                        text="Olá! Ainda tenho algumas dúvidas em como me voluntariar, poderia me ajudar?"
+                        phone={import.meta.env.VITE_CONTACT_ZAP}
+                        className="hover:bg-green-700 rounded-xl text-white p-2 bg-green-600 text-sm mt-2 inline-block"
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               )}
