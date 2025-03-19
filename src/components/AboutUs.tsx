@@ -62,7 +62,7 @@ const AboutUs = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border-primary">
+            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border border-primary">
               <h3 className="text-xl font-bold text-earth mb-3">
                 Nossa Missão
               </h3>
@@ -77,7 +77,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border-secondary">
+            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border border-secondary">
               <h3 className="text-xl font-bold text-earth mb-3">Nossa Visão</h3>
               <p className="text-dark/80">
                 Ser referência nacional na promoção da acessibilidade e inclusão
@@ -86,7 +86,7 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border-earth">
+            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border border-earth">
               <h3 className="text-xl font-bold text-earth mb-3">
                 Nossos Valores
               </h3>
@@ -100,12 +100,12 @@ const AboutUs = () => {
           <div className="relative">
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img
-                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                src="assets/images/instituto-maos-de-ouro-quem-somos-visao-missao-valor.png"
                 alt="Equipe Mãos de Ouro"
-                className="w-full h-auto"
+                className="object-contain w-full"
               />
               <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
-                <Users size={60} className="text-white" />
+                &nbsp;
               </div>
             </div>
           </div>
