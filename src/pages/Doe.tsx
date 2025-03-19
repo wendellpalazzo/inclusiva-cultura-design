@@ -18,6 +18,8 @@ import { Button } from "@/components/ui/button";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Label } from "@/components/ui/label";
 import { WhatsApp } from "@/lib/whatsapp";
+import { useEffect, useState } from "react";
+import { ZapButton } from "@/components/ZapButton";
 
 const Doe = () => {
   return (
@@ -215,15 +217,16 @@ const Doe = () => {
                   </p>
                 </div>
               </div>
-              <div className="my-8 text-center space-y-2">
+              <div className="my-8 text-center">
                 <p className="text-lg text-balance">
                   Para doações corporativas ou outras formas de contribuição,
-                  entre em contato conosco
+                  entre em contato conosco ligando para (91) 9 9291-5134 <br/>ou<br/>
                 </p>
-                <p className="text-lg">
-                  ligando para (91) 9 9291-5134{" "}
-                  <WhatsApp className="fill-green-600 inline-block" />
-                </p>                
+                <ZapButton
+                  text="Olá! Gostaria de saber como contribuir com o instituto Mãos de Ouro"
+                  phone={import.meta.env.VITE_CONTACT_ZAP}
+                  className="hover:bg-green-700 rounded-xl text-white p-2 bg-green-600 text-sm mt-2 inline-block"
+                />
               </div>
             </div>
           </div>
