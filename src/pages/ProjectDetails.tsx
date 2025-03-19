@@ -117,7 +117,7 @@ const ProjectDetails = () => {
         <div className="text-center p-8">
           <h2 className="text-2xl font-bold text-earth mb-4">Projeto não encontrado</h2>
           <p className="mb-6 text-dark/80">O projeto que você está procurando não existe ou foi removido.</p>
-          <Link to="/#projects" className="btn-primary">
+          <Link to="/#nossos-projetos" className="btn-primary">
             Voltar para Projetos
           </Link>
         </div>
@@ -136,7 +136,7 @@ const ProjectDetails = () => {
           <div className="absolute inset-0 bg-black/30"></div>
           
           <div className="container mx-auto px-4 relative z-10">
-            <Link to="/#projects" className="inline-flex items-center text-white hover:text-white/80 font-semibold mb-8 transition-colors">
+            <Link to="/#nossos-projetos" className="inline-flex items-center text-white hover:text-white/80 font-semibold mb-8 transition-colors">
               <ArrowLeft size={16} className="mr-2" /> Voltar para Projetos
             </Link>
             
@@ -239,7 +239,7 @@ const ProjectDetails = () => {
                   <Link to="/doe" className="btn-primary">
                     Doe Agora
                   </Link>
-                  <a href="/#contact" className="btn-secondary">
+                  <a href="/#contato" className="btn-secondary">
                     Entre em Contato
                   </a>
                 </div>

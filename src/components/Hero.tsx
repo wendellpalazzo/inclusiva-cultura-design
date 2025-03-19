@@ -25,7 +25,7 @@ const Hero = () => {
               Doe Agora
               <ArrowRight size={20} />
             </a>
-            <a href="#about" className="btn-secondary w-full sm:w-auto">
+            <a href="#quem-somos" className="btn-secondary w-full sm:w-auto">
               Saiba Mais
             </a>
           </div>

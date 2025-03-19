@@ -8,11 +8,11 @@ const Header = () => {
 
   const navItems = [
     { name: "Home", href: "#" },
-    { name: "Quem Somos", href: "#about" },
-    { name: "Nossa História", href: "#history" },
-    { name: "Nossos Projetos", href: "#projects" },
+    { name: "Quem Somos", href: "#quem-somos" },
+    { name: "Nossa História", href: "#nossa-historia" },
+    { name: "Nossos Projetos", href: "#nossos-projetos" },
     { name: "Como Ajudar", href: "#como-ajudar" },
-    { name: "Contato", href: "#contact" },
+    { name: "Contato", href: "#contato" },
   ];
 
   useEffect(() => {
