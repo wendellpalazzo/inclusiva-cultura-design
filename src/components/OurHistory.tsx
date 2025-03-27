@@ -83,7 +83,7 @@ const OurHistory = () => {
            before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-primary/80 before:to-transparent"
           >
             {timelineEvents.map((event, index) => (
-              <div className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+              <div key={event.title} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-amber-600 text-slate-500 group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
                   <Calendar className="size-5" />
                 </div>

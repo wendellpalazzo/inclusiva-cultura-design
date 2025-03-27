@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,28 +10,31 @@ import Partnership from "./pages/Partnership";
 import ProjectDetails from "./pages/ProjectDetails";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import { ReactLenis } from "lenis/react";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner richColors={true} expand={true}/>
-      <BrowserRouter basename="/inclusiva-cultura-design/">
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/doe" element={<Doe />} />
-          <Route path="/voluntarie-se" element={<Volunteer />} />
-          <Route path="/parcerias" element={<Partnership />} />
-          <Route path="/projetos/:id" element={<ProjectDetails />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <ReactLenis root>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner richColors={true} expand={true} />
+        <BrowserRouter basename="/inclusiva-cultura-design/">
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/doe" element={<Doe />} />
+            <Route path="/voluntarie-se" element={<Volunteer />} />
+            <Route path="/parcerias" element={<Partnership />} />
+            <Route path="/projetos/:id" element={<ProjectDetails />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </ReactLenis>
 );
 
 export default App;

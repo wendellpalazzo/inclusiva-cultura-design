@@ -40,10 +40,6 @@
 }
 
 @layer base {
-  /* Add smooth scrolling behavior to html element */
-  html {
-    scroll-behavior: smooth;
-  }
   
   * {
     @apply border-border;

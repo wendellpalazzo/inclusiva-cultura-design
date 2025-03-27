@@ -1,12 +1,11 @@
+import { useLenis } from "lenis/react";
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const lenis = useLenis()
   const scrollToTop = () => {
-    window.location.hash = "";
-    window.scrollTo({
-      top: 0,
-      behavior: "instant",
-    });
+    location.hash = "";
+    lenis.scrollTo(0)
   };
 
   return (

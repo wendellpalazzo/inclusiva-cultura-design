@@ -79,7 +79,7 @@ const OurProjects = () => {
         >
           <CarouselContent className="p-4 w-full">
             {projects.map((project) => (
-              <CarouselItem className="md:basis-1/3">
+              <CarouselItem key={project.id} className="md:basis-1/3">
                 <div
                   key={project.id}
                   className="group relative bg-white rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-2 hover:shadow-xl"

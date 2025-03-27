@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-dvh flex items-center justify-center">
+    <section className="relative min-h-dvh flex items-center justify-center" id="hero">
       {/* Background with overlay */}
       <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center">
         <div className="absolute inset-0 bg-dark/70" />

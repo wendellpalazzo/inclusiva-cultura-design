@@ -1,10 +1,25 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLenis } from "lenis/react";
+
+function elementoNaMetade(elemento) {
+  const rect = elemento.getBoundingClientRect();
+  const viewportAltura = window.innerHeight;
+
+  return (
+    rect.top <= viewportAltura / 2.5 && rect.bottom >= viewportAltura / 2.5
+  );
+}
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [active, setActive] = useState("#");
+
+  // Abre e fecha o menu
+  const handleToggleMenu = () => setIsOpen(!isOpen);
   const location = useLocation();
+  const lenis = useLenis();
 
   const navItems = [
     { name: "Home", href: "#" },
@@ -15,11 +30,16 @@ const Header = () => {
     { name: "Contato", href: "#contato" },
   ];
 
-  useEffect(() => {
-    if (navItems.some((i) => i.href === location.hash))
-      document.querySelector(location.hash)?.scrollIntoView({behavior:"instant"});
-    else window.scrollTo({top:0, behavior:"instant"})
-  }, [location.hash]);
+  useLenis((lenis) => {
+    navItems.forEach((elemento) => {
+      try {
+        if (elementoNaMetade(document.querySelector(elemento.href)))
+          setActive(elemento.href);
+      } catch (error) {
+        setActive("#");
+      }
+    });
+  }, []);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary-foreground/80 backdrop-blur-lg border-b border-secondary-foreground">
@@ -39,17 +59,24 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
+                onClick={(e) => {
+                  e.preventDefault();
+                  lenis.scrollTo(item.href !== "#" ? item.href : 0, {
+                    offset: -50,
+                    onStart: () => {
+                      window.location.hash = item.href;
+                      setActive(item.href);
+                    },
+                  });
+                }}
                 key={item.name}
                 to={{
                   pathname: "/",
-                  hash:`${item.href}`
+                  hash: `${item.href}`,
                 }}
                 viewTransition
                 className={`nav-link ${
-                  item.href === location.hash ||
-                  (location.hash === "" && item.href === "#")
-                    ? "!text-primary active-nav"
-                    : ""
+                  item.href === active ? "!text-primary active-nav" : ""
                 }`}
               >
                 {item.name}
@@ -76,7 +103,7 @@ const Header = () => {
                   key={item.name}
                   to={{
                     pathname: "/",
-                    hash:`${item.href}`
+                    hash: `${item.href}`,
                   }}
                   className={`block px-3 py-2 rounded-md text-base font-medium ${
                     item.href === window.location.hash
