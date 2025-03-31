@@ -41,6 +41,16 @@ const Header = () => {
     });
   }, []);
 
+  const onClickHandler = (item) => {
+    lenis.scrollTo(item.href !== "#" ? item.href : 0, {
+      offset: -50,
+      onStart: () => {
+        window.location.hash = item.href;
+        setActive(item.href);
+      },
+    });
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary-foreground/80 backdrop-blur-lg border-b border-secondary-foreground">
       <div className="container mx-auto px-4">
@@ -61,13 +71,7 @@ const Header = () => {
               <Link
                 onClick={(e) => {
                   e.preventDefault();
-                  lenis.scrollTo(item.href !== "#" ? item.href : 0, {
-                    offset: -50,
-                    onStart: () => {
-                      window.location.hash = item.href;
-                      setActive(item.href);
-                    },
-                  });
+                  onClickHandler(item)
                 }}
                 key={item.name}
                 to={{
@@ -110,7 +114,11 @@ const Header = () => {
                       ? "text-primary bg-gray-50"
                       : "text-white hover:text-primary hover:bg-gray-50/10"
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onClickHandler(item)
+                    setIsOpen(false)
+                  }}
                 >
                   {item.name}
                 </Link>
