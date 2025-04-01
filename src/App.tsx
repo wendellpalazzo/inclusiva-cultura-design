@@ -11,6 +11,7 @@ import ProjectDetails from "./pages/ProjectDetails";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import { ReactLenis } from "lenis/react";
+import BlogDetails from "./pages/BlogDetails";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +28,8 @@ const App = () => (
             <Route path="/doe" element={<Doe />} />
             <Route path="/voluntarie-se" element={<Volunteer />} />
             <Route path="/parcerias" element={<Partnership />} />
-            <Route path="/projetos/:id" element={<ProjectDetails />} />
+            <Route path="/projetos/:slug" element={<ProjectDetails />} />
+            <Route path="/blog/:slug" element={<BlogDetails />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

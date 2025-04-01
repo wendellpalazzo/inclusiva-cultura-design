@@ -129,7 +129,8 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="#"
+                target="_blank"
+                  href="https://clubedelibras.ufc.br/pt/recursos/materiais/"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Materiais Educativos
@@ -137,7 +138,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                target="_blank"
+                  href="https://www.ines.gov.br/dicionario-de-libras/"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Dicionário de Libras
@@ -145,7 +147,8 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                target="_blank"
+                  href="https://www.cnmp.mp.br/portal/images/lei_brasileira_inclusao__pessoa__deficiencia.pdf"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Legislação Inclusiva
@@ -161,20 +164,21 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#"
+                target="_blank"
+                  href="https://youtube.com/channel/UCLSls60vMfBReAUIsC-H6Tw?si=JW7BXIXYuqohpnyF"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Galeria de Vídeos
                 </a>
               </li>
-              <li>
+              {/* <li>
                 <a
                   href="#accessibility"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Acessibilidade
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 

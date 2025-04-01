@@ -10,42 +10,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
+import { listContent } from "../lib/contentLoader";
+import { Project } from "@/pages/ProjectDetails";
+
 const OurProjects = () => {
-  const [activeProject, setActiveProject] = useState(1);
-  const projects = [
-    {
-      id: 1,
-      title: "Libras nas Escolas",
-      description:
-        "Programa de ensino de Libras para crianças e adolescentes em escolas públicas, promovendo a inclusão desde cedo.",
-      image:
-        "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      id: 2,
-      title: "Capacitação Profissional",
-      description:
-        "Cursos de formação profissional para pessoas surdas, visando sua inserção no mercado de trabalho.",
-      image:
-        "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      id: 3,
-      title: "Arte e Cultura Surda",
-      description:
-        "Festivais e exposições que valorizam e promovem as expressões artísticas e culturais da comunidade surda.",
-      image:
-        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    },
-    {
-      id: 4,
-      title: "Recursos para Educação",
-      description:
-        "Desenvolvimento de materiais didáticos e recursos adaptados para o ensino de pessoas surdas.",
-      image:
-        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-    },
-  ];
+  
+  const projects = listContent<Project>("projetos")
+  
   return (
     <section
       id="nossos-projetos"
@@ -79,9 +50,9 @@ const OurProjects = () => {
         >
           <CarouselContent className="p-4 w-full">
             {projects.map((project) => (
-              <CarouselItem key={project.id} className="md:basis-1/3">
+              <CarouselItem key={project.slug} className="md:basis-1/3">
                 <div
-                  key={project.id}
+                  key={project.slug}
                   className="group relative bg-white rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-2 hover:shadow-xl"
                 >
                   <div className="relative h-[220px] overflow-hidden">
@@ -94,10 +65,6 @@ const OurProjects = () => {
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
 
-                    {/* Project number badge */}
-                    <div className="absolute top-4 left-4 w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-bold z-20">
-                      {project.id}
-                    </div>
                   </div>
 
                   <div className="p-6 border-t-4 border-primary">
@@ -108,7 +75,7 @@ const OurProjects = () => {
                       {project.description}
                     </p>
                     <Link
-                      to={`/projetos/${project.id}`}
+                      to={`/projetos/${project.slug}`}
                       className="inline-flex items-center text-sm text-primary font-semibold hover:text-primary/80 transition-colors group"
                     >
                       Ver projeto

@@ -1,0 +1,24 @@
+{
+  "id": 1,
+  "slug": "libras-nas-escolas",
+  "title": "Libras nas Escolas",
+  "description": "Programa de ensino de Libras para crianças e adolescentes em escolas públicas, promovendo a inclusão desde cedo.",
+  "image": "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "color": "bg-primary",
+  "fullDescription": "O projeto Libras nas Escolas é uma iniciativa pioneira que visa introduzir a Língua Brasileira de Sinais no currículo escolar regular de escolas públicas. Acreditamos que a inclusão começa com a comunicação, e ensinar Libras desde cedo cria uma geração mais consciente e preparada para a diversidade.",
+  "date": "Desde março de 2018",
+  "location": "Breves - PA",
+  "website": "",
+  "gallery": [
+    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+  ],
+  "objectives": [
+    "Implementar aulas de Libras no currículo regular de escolas públicas",
+    "Capacitar professores para o ensino básico de Libras",
+    "Desenvolver material didático acessível e lúdico",
+    "Promover a interação entre alunos surdos e ouvintes"
+  ],
+  "impact": "Já alcançamos mais de 45 escolas e 15.000 alunos, formando uma nova geração que valoriza a comunicação inclusiva e respeita a diversidade linguística."
+}

@@ -1,0 +1,24 @@
+{
+  "id": 2,
+  "title": "Capacitação Profissional",
+  "slug": "capacitacao-profissional",
+  "description": "Cursos de formação profissional para pessoas surdas, visando sua inserção no mercado de trabalho.",
+  "image": "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "color": "bg-secondary",
+  "fullDescription": "Nossa iniciativa de Capacitação Profissional oferece formação técnica e desenvolvimento de habilidades para pessoas surdas, preparando-as para oportunidades no mercado de trabalho. Os cursos são ministrados em Libras e incluem estágios em empresas parceiras, garantindo experiência prática e aumentando a empregabilidade.",
+  "date": "Desde junho de 2019",
+  "location": "Breves - PA",
+  "website": "",
+  "gallery": [
+    "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+  ],
+  "objectives": [
+    "Oferecer cursos profissionalizantes em áreas de alta demanda",
+    "Desenvolver habilidades técnicas e comportamentais",
+    "Criar parcerias com empresas para garantir oportunidades de trabalho",
+    "Acompanhar a integração no ambiente corporativo"
+  ],
+  "impact": "Mais de 350 profissionais formados, com taxa de empregabilidade de 78% após a conclusão do programa. Transformamos não apenas vidas individuais, mas também a cultura organizacional das empresas parceiras."
+}

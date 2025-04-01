@@ -6,8 +6,7 @@ import Header from "@/components/Header";
 import { getContent } from "@/lib/contentLoader";
 
 // Define the project type
-export interface Project {
-  id: number;
+export interface BlogContent {
   slug: string;
   title: string;
   description: string;
@@ -20,36 +19,37 @@ export interface Project {
   gallery: string[];
   objectives: string[];
   impact: string;
+  category: "eventos";
 }
 
-const ProjectDetails = () => {
+const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
-  const [project, setProject] = useState<Project | null>(null);
+  const [post, setPost] = useState<BlogContent | null>(null);
 
   useEffect(() => {
     // Find the project by id
     if (slug) {
-      getContent<Project>("projetos", slug)
+      getContent<BlogContent>("blog", slug)
         .then((data) => {
-          setProject(data);
+          setPost(data);
           window.scrollTo(0, 0);
         })
         .catch((err) => console.error(err));
     }
   }, [slug]);
 
-  if (!project) {
+  if (!post) {
     return (
       <div className="min-h-dvh flex items-center justify-center bg-gray-100">
         <div className="text-center p-8">
           <h2 className="text-2xl font-bold text-earth mb-4">
-            Projeto não encontrado
+            Post não encontrado
           </h2>
           <p className="mb-6 text-dark/80">
-            O projeto que você está procurando não existe ou foi removido.
+            O post que você está procurando não existe ou foi removido.
           </p>
-          <Link to="/#nossos-projetos" className="btn-primary">
-            Voltar para Projetos
+          <Link to="/" className="btn-primary">
+            Voltar para Home
           </Link>
         </div>
       </div>
@@ -70,33 +70,33 @@ const ProjectDetails = () => {
 
           <div className="container mx-auto px-4 relative z-10">
             <Link
-              to="/#nossos-projetos"
+              to="/#blog"
               className="inline-flex items-center text-white hover:text-white/80 font-semibold mb-8 transition-colors"
             >
-              <ArrowLeft size={16} className="mr-2" /> Voltar para Projetos
+              <ArrowLeft size={16} className="mr-2" /> Voltar para Blog
             </Link>
 
             <div className="max-w-4xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                {project.title}
+                {post.title}
               </h1>
               <div className="w-20 h-1 bg-white mb-8"></div>
-              <p className="text-xl mb-8">{project.description}</p>
+              <p className="text-xl mb-8">{post.description}</p>
 
               <div className="flex flex-wrap gap-4 mb-8">
                 <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
                   <Calendar size={18} className="mr-2" />
-                  <span>{project.date}</span>
+                  <span>{post.date}</span>
                 </div>
 
                 <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
                   <MapPin size={18} className="mr-2" />
-                  <span>{project.location}</span>
+                  <span>{post.location}</span>
                 </div>
 
-                {project.website && (
+                {post.website && (
                   <a
-                    href={project.website}
+                    href={post.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition-colors"
@@ -110,55 +110,32 @@ const ProjectDetails = () => {
           </div>
         </section>
 
-        {/* Project Details */}
+        {/* BlogContent Details */}
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               {/* Full Description */}
               <div className="mb-12">
-                <h2 className="text-3xl font-bold text-earth mb-6">
-                  Sobre o Projeto
-                </h2>
                 <p className="text-lg text-dark/80 leading-relaxed">
-                  {project.fullDescription}
+                  {post.fullDescription}
                 </p>
-              </div>
-
-              {/* Objectives */}
-              <div className="mb-12">
-                <h2 className="text-3xl font-bold text-earth mb-6">
-                  Objetivos
-                </h2>
-                <ul className="space-y-4 text-dark/80">
-                  {project.objectives.map((objective, index) => (
-                    <li key={index} className="flex items-start">
-                      <span
-                        className={`flex-shrink-0 ${project.color} text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-1`}
-                      >
-                        {index + 1}
-                      </span>
-                      <span className="text-lg">{objective}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              </div>              
 
               {/* Gallery */}
               <div className="mb-12">
-                <h2 className="text-3xl font-bold text-earth mb-6">Galeria</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {project.gallery.map((image, index) => (
+                  {post.gallery.map((image, index) => (
                     <div
                       key={index}
                       className="rounded-lg overflow-hidden h-64 relative group"
                     >
                       <img
                         src={image}
-                        alt={`${project.title} - Imagem ${index + 1}`}
+                        alt={`${post.title} - Imagem ${index + 1}`}
                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                       />
                       <div
-                        className={`absolute inset-0 ${project.color} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
+                        className={`absolute inset-0 ${post.color} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
                       ></div>
                     </div>
                   ))}
@@ -167,16 +144,16 @@ const ProjectDetails = () => {
 
               {/* Impact */}
               <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">
-                <h2 className="text-3xl font-bold text-earth mb-6">Impacto</h2>
+                {/* <h2 className="text-3xl font-bold text-earth mb-6">Impacto</h2> */}
                 <p className="text-lg text-dark/80 leading-relaxed">
-                  {project.impact}
+                  {post.impact}
                 </p>
               </div>
 
               {/* Call to Action */}
               <div className="text-center mt-12 p-8 rounded-xl bg-primary/10">
                 <h2 className="text-3xl font-bold text-earth mb-4">
-                  Apoie Este Projeto
+                  Apoie nosso Instituto
                 </h2>
                 <p className="text-lg text-dark/80 mb-8 max-w-2xl mx-auto">
                   Sua contribuição é fundamental para continuarmos transformando
@@ -201,4 +178,4 @@ const ProjectDetails = () => {
   );
 };
 
-export default ProjectDetails;
+export default BlogDetails;

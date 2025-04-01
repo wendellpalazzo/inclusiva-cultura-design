@@ -26,9 +26,21 @@ const Header = () => {
     { name: "Quem Somos", href: "#quem-somos" },
     { name: "Nossa História", href: "#nossa-historia" },
     { name: "Nossos Projetos", href: "#nossos-projetos" },
+    { name: "Blog", href: "#blog" },
     { name: "Como Ajudar", href: "#como-ajudar" },
     { name: "Contato", href: "#contato" },
   ];
+
+  useEffect(() => {
+    setTimeout(() => {
+      lenis.scrollTo(location.hash || 0, {
+        offset: -50,
+        onStart: () => {
+          setActive(location.hash);
+        },
+      });
+    }, 800);
+  }, [location.hash]);
 
   useLenis((lenis) => {
     navItems.forEach((elemento) => {
@@ -41,15 +53,19 @@ const Header = () => {
     });
   }, []);
 
-  const onClickHandler = (item) => {
-    lenis.scrollTo(item.href !== "#" ? item.href : 0, {
-      offset: -50,
-      onStart: () => {
-        window.location.hash = item.href;
-        setActive(item.href);
-      },
-    });
-  }
+  const onClickHandler = (e, item) => {
+    if (!["/doe", "/voluntarie-se", "/parcerias"].includes(location.pathname)) {
+      e.preventDefault();
+      lenis.scrollTo(item.href !== "#" ? item.href : 0, {
+        offset: -50,
+        onStart: () => {
+          window.location.hash = item.href;
+          setActive(item.href);
+        },
+      });
+    }    
+    else window.location = item.href
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-secondary-foreground/80 backdrop-blur-lg border-b border-secondary-foreground">
@@ -69,10 +85,9 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <Link
-                onClick={(e) => {
-                  e.preventDefault();
-                  onClickHandler(item)
-                }}
+                // onClick={(e) => {
+                //   onClickHandler(e, item);
+                // }}
                 key={item.name}
                 to={{
                   pathname: "/",
@@ -115,9 +130,8 @@ const Header = () => {
                       : "text-white hover:text-primary hover:bg-gray-50/10"
                   }`}
                   onClick={(e) => {
-                    e.preventDefault();
-                    onClickHandler(item)
-                    setIsOpen(false)
+                    // onClickHandler(e, item);
+                    setIsOpen(false);
                   }}
                 >
                   {item.name}

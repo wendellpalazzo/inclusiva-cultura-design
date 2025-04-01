@@ -1,0 +1,23 @@
+{
+  "slug": "historia-impacto-maos-de-ouro",
+  "title": "História e Impacto do Instituto Mãos de Ouro",
+  "description": "Conheça a trajetória do Instituto Mãos de Ouro e seu impacto na promoção da inclusão e valorização da cultura surda.",
+  "image": "https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "color": "bg-blue",
+  "fullDescription": "Desde sua fundação, o Instituto Mãos de Ouro tem sido um pilar na promoção dos direitos e na inclusão da comunidade surda. Com ações voltadas para a difusão da LIBRAS e valorização das expressões culturais, a instituição tem contribuído para a formação de uma identidade forte e para o reconhecimento dos artistas surdos. Ao longo dos anos, seus projetos transformaram a percepção da sociedade sobre a cultura surda, inspirando outras iniciativas de inclusão e gerando debates sobre acessibilidade e direitos humanos.",
+  "date": "Abril de 2018",
+  "location": "Breves, Marajó - Pará",
+  "gallery": [
+    "https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+  ],
+  "objectives": [
+    "Registrar a trajetória histórica da instituição",
+    "Destacar conquistas e desafios superados",
+    "Inspirar outras iniciativas de inclusão",
+    "Promover debates sobre cultura e acessibilidade"
+  ],
+  "category": "eventos",
+  "impact": "O Instituto tem influenciado positivamente a vida de milhares de pessoas, tornando a cultura surda mais visível e incentivando a criação de políticas públicas inclusivas em diversas regiões."
+}

@@ -1,0 +1,22 @@
+{
+  "slug": "importancia-libras-comunidade-surda",
+  "title": "A Importância da LIBRAS na Comunidade Surda",
+  "description": "Entenda como a Língua Brasileira de Sinais (LIBRAS) é essencial para a comunicação e inclusão dos surdos.",
+  "image": "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "color": "bg-purple",
+  "fullDescription": "A LIBRAS vai além de um simples meio de comunicação; ela é um elemento fundamental na identidade cultural da comunidade surda. O Instituto Mãos de Ouro promove a difusão dessa língua por meio de cursos, eventos e campanhas de conscientização, possibilitando que tanto surdos quanto ouvintes se beneficiem de uma comunicação mais inclusiva. Essa prática fortalece a autonomia dos indivíduos e gera um ambiente mais acessível e respeitoso em diversos contextos sociais.",
+  "date": "Março de 2020",
+  "location": "Nacional (com ações no Marajó)",
+  "gallery": [
+    "https://images.unsplash.com/photo-1600853540938-f0f9f128ae5a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1549921296-3f44b0e5f15a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
+    "https://images.unsplash.com/photo-1585031506719-d503a0b3a1e2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+  ],
+  "objectives": [
+    "Difundir o conhecimento sobre LIBRAS",
+    "Capacitar a comunidade surda e os ouvintes",
+    "Promover a comunicação inclusiva",
+    "Valorizar a identidade cultural dos surdos"
+  ],
+  "impact": "A disseminação da LIBRAS tem transformado a comunicação em escolas, espaços culturais e ambientes de trabalho, beneficiando milhares de pessoas e reforçando a importância de uma sociedade inclusiva."
+}
