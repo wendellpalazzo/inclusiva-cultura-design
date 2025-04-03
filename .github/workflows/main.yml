@@ -42,6 +42,8 @@ jobs:
         env:
           VITE_CONTACT_ZAP: ${{ vars.VITE_CONTACT_ZAP }}
           VITE_CONTACT_PHONE: ${{ vars.VITE_CONTACT_PHONE }}
+          VITE_PIX_CODE: ${{ vars.VITE_PIX_CODE }}
+          VITE_CONTACT_EMAIL: ${{ vars.VITE_CONTACT_EMAIL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
