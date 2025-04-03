@@ -22,7 +22,7 @@ const App = () => (
         <Toaster />
         <Sonner richColors={true} expand={true} />
         <BrowserRouter 
-        // basename="/inclusiva-cultura-design/"
+        basename="/site/"
         >
           <ScrollToTop />
           <Routes>
