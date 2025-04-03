@@ -21,7 +21,9 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner richColors={true} expand={true} />
-        <BrowserRouter basename="/inclusiva-cultura-design/">
+        <BrowserRouter 
+        // basename="/inclusiva-cultura-design/"
+        >
           <ScrollToTop />
           <Routes>
             <Route path="/" element={<Index />} />
