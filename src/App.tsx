@@ -1,44 +1,9 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import Doe from "./pages/Doe";
-import Volunteer from "./pages/Volunteer";
-import Partnership from "./pages/Partnership";
-import ProjectDetails from "./pages/ProjectDetails";
-import NotFound from "./pages/NotFound";
-import ScrollToTop from "./components/ScrollToTop";
-import { ReactLenis } from "lenis/react";
-import BlogDetails from "./pages/BlogDetails";
-
-const queryClient = new QueryClient();
-
 const App = () => (
-  <ReactLenis root>
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner richColors={true} expand={true} />
-        <BrowserRouter 
-        basename="/inclusiva-cultura-design/"
-        >
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/doe" element={<Doe />} />
-            <Route path="/voluntarie-se" element={<Volunteer />} />
-            <Route path="/parcerias" element={<Partnership />} />
-            <Route path="/projetos/:slug" element={<ProjectDetails />} />
-            <Route path="/blog/:slug" element={<BlogDetails />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </ReactLenis>
+  <div className="bg-primary/10 w-screen h-screen p-20 flex flex-col items-center justify-center gap-4 bg-gradient-to-tr from-primary/50 to-secondary/80">
+    <img src="/lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png" className="size-80" />
+    <h1 className=" font-opensans text-3xl text-earth">Estamos contruindo um novo site para o Instituto Mãos de Ouro</h1>
+    <h2 className=" font-opensans text-2xl text-earth/60">Em breve, novidades!</h2>
+  </div>
 );
 
 export default App;
