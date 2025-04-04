@@ -21,6 +21,7 @@ import { WhatsApp } from "@/lib/whatsapp";
 import { useEffect, useState } from "react";
 import { ZapButton } from "@/components/ZapButton";
 import { toast } from "sonner";
+import Seo from "@/lib/seo";
 
 const Doe = () => {
   const copyPastePix = (e) => {
@@ -41,6 +42,17 @@ const Doe = () => {
   };
 
   return (
+    <>
+    <Seo
+        title="Doe"
+        description="Doe e Transforme vidas - Sua contribuição é o primeiro passo para construirmos juntos um mundo onde a comunicação não tem barreiras. Cada doação nos aproxima de uma sociedade mais inclusiva e acessível para todos."
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Doe | Instituto Mãos de Ouro",
+          url: "https://institutomaosdeouro.org.br/doe",
+        }}        
+      />
     <div className="min-h-dvh flex flex-col">
       {/* Modified Header for Doe Page */}
       <Header />
@@ -225,7 +237,7 @@ const Doe = () => {
 
                 <div className="flex flex-col bg-white rounded-xl shadow-md">
                   <h3 className="text-xl font-bold text-primary p-6">PIX</h3>
-                  <img className="mx-auto" src="qrcode-pix.png" />
+                  <img loading="lazy" className="mx-auto" src="qrcode-pix.png" />
                   <Button className="w-11/12 lg:w-80 mx-auto" onClick={copyPastePix}>
                     Pix Copia/Cola
                   </Button>
@@ -259,6 +271,7 @@ const Doe = () => {
 
       <Footer />
     </div>
+    </>
   );
 };
 

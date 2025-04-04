@@ -3,15 +3,15 @@
   "title": "Arte e Cultura Surda",
   "slug": "arte-e-cultura-surda",
   "description": "Festivais e exposições que valorizam e promovem as expressões artísticas e culturais da comunidade surda.",
-  "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "image": "/assets/contents/projetos/arte-e-cultura-surda/photo-1519389950473-47ba0277781c.jpg",
   "color": "bg-earth",
   "fullDescription": "O projeto Arte e Cultura Surda celebra a rica expressão artística da comunidade surda através de festivais, exposições e oficinas. Valorizamos as manifestações culturais próprias da comunidade surda e criamos espaços onde artistas surdos podem compartilhar seu trabalho com o público geral, promovendo reconhecimento e apreciação.",
   "date": "Desde outubro de 2020",
   "location": "Breves - PA",
   "gallery": [
-    "https://images.unsplash.com/photo-1513364776144-60967b0f800f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1499364615650-ec38552f4f34?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80",
-    "https://images.unsplash.com/photo-1508997449629-303059a039c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80"
+    "/assets/contents/projetos/arte-e-cultura-surda/photo-1513364776144-60967b0f800f.jpg",
+    "/assets/contents/projetos/arte-e-cultura-surda/photo-1499364615650-ec38552f4f34.jpg",
+    "/assets/contents/projetos/arte-e-cultura-surda/photo-1508997449629-303059a039c0.jpg"
   ],
   "objectives": [
     "Organizar festivais anuais de arte e cultura surda",

@@ -12,10 +12,12 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 import { ReactLenis } from "lenis/react";
 import BlogDetails from "./pages/BlogDetails";
+import { HelmetProvider } from "react-helmet-async";
 
 const queryClient = new QueryClient();
 
 const App = () => (
+  <HelmetProvider>
   <ReactLenis root>
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
@@ -39,6 +41,7 @@ const App = () => (
       </TooltipProvider>
     </QueryClientProvider>
   </ReactLenis>
+  </HelmetProvider>
 );
 
 export default App;

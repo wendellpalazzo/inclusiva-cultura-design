@@ -4,33 +4,8 @@ import { BlogContent } from "@/pages/BlogDetails";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-
 const Blog = () => {
   const blogPosts = listContent<BlogContent>("blog");
-
-  // const blogPosts = [
-  //   {
-  //     title: "A Importância da Libras na Educação Inclusiva",
-  //     excerpt: "Como a Língua Brasileira de Sinais tem transformado o ambiente educacional para alunos surdos e ouvintes.",
-  //     date: "10 Jun 2023",
-  //     category: "Educação",
-  //     image: "https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  //   },
-  //   {
-  //     title: "Tecnologias Assistivas para a Comunidade Surda",
-  //     excerpt: "Conheça as inovações tecnológicas que estão facilitando a comunicação e o acesso à informação para pessoas surdas.",
-  //     date: "25 Mai 2023",
-  //     category: "Tecnologia",
-  //     image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  //   },
-  //   {
-  //     title: "Festival de Cultura Surda: Um Sucesso de Público",
-  //     excerpt: "Mais de mil pessoas participaram do evento que celebrou as expressões artísticas e culturais da comunidade surda.",
-  //     date: "03 Mai 2023",
-  //     category: "Eventos",
-  //     image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
-  //   }
-  // ];
 
   return (
     <section id="blog" className="py-20 bg-earth/5">
@@ -54,6 +29,7 @@ const Blog = () => {
             >
               <div className="h-48 overflow-hidden">
                 <img
+                  loading="lazy"
                   src={post.image}
                   alt={post.title}
                   className="w-full h-full object-cover"

@@ -4,6 +4,9 @@ import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import { getContent } from "@/lib/contentLoader";
+import Seo from "@/lib/seo";
+import { ShareSocial } from "react-share-social";
+import { SocialShare } from "@/components/SocialShare";
 
 // Define the project type
 export interface BlogContent {
@@ -57,124 +60,170 @@ const BlogDetails = () => {
   }
 
   return (
-    <div className="min-h-dvh flex flex-col">
-      {/* Header - Same as Doe page */}
-      <Header />
+    <>
+      <Seo
+        title={`${post.title}`}
+        description={`${post.description}`}
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "Article",
+          mainEntityOfPage: {
+            "@type": "WebPage",
+            "@id": `https://institutomaosdeouro.org.br/projetos/${post.slug}`,
+          },
+          headline: post.title,
+          description: post.description,
+          image: post.image,
+          name: "Instituto Mãos de Ouro",
+          url: `https://institutomaosdeouro.org.br/projetos/${post.slug}`,
+          author: {
+            "@type": "Organization",
+            name: "Instituto Mãos de Ouro",
+            url: "https://institutomaosdeouro.org.br",
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Instituto Mãos de Ouro",
+            logo: {
+              "@type": "ImageObject",
+              url: "/assets/images/logo-instituto-maos-de-ouro.png",
+            },
+          },
+        }}
+        image="/assets/images/logo-instituto-maos-de-ouro.png"
+      />
+      <div className="min-h-dvh flex flex-col">
+        {/* Header - Same as Doe page */}
+        <Header />
 
-      <main className="flex-grow pt-20">
-        {/* Hero Section */}
-        <section
-          className={`py-20 relative overflow-hidden text-white bg-primary`}
-        >
-          <div className="absolute inset-0 bg-black/30"></div>
+        <main className="flex-grow pt-20">
+          {/* Hero Section */}
+          <section
+            className={`py-20 relative overflow-hidden text-white bg-primary`}
+          >
+            <div className="absolute inset-0 bg-black/30"></div>
 
-          <div className="container mx-auto px-4 relative z-10">
-            <Link
-              to="/#blog"
-              className="inline-flex items-center text-white hover:text-white/80 font-semibold mb-8 transition-colors"
-            >
-              <ArrowLeft size={16} className="mr-2" /> Voltar para Blog
-            </Link>
+            <div className="container mx-auto px-4 relative z-10">
+              <Link
+                to="/#blog"
+                className="inline-flex items-center text-white hover:text-white/80 font-semibold mb-8 transition-colors"
+              >
+                <ArrowLeft size={16} className="mr-2" /> Voltar para Blog
+              </Link>
 
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">
-                {post.title}
-              </h1>
-              <div className="w-20 h-1 bg-white mb-8"></div>
-              <p className="text-xl mb-8">{post.description}</p>
+              <div className="max-w-4xl mx-auto">
+                <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                  {post.title}
+                </h1>
+                <div className="w-20 h-1 bg-white mb-8"></div>
+                <p className="text-xl mb-8">{post.description}</p>
 
-              <div className="flex flex-wrap gap-4 mb-8">
-                <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-                  <Calendar size={18} className="mr-2" />
-                  <span>{post.date}</span>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                    <Calendar size={18} className="mr-2" />
+                    <span>{post.date}</span>
+                  </div>
+
+                  <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
+                    <MapPin size={18} className="mr-2" />
+                    <span>{post.location}</span>
+                  </div>
+
+                  {post.website && (
+                    <a
+                      href={post.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition-colors"
+                    >
+                      <LinkIcon size={18} className="mr-2" />
+                      <span>Website</span>
+                    </a>
+                  )}
                 </div>
-
-                <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
-                  <MapPin size={18} className="mr-2" />
-                  <span>{post.location}</span>
-                </div>
-
-                {post.website && (
-                  <a
-                    href={post.website}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center bg-white/20 px-4 py-2 rounded-lg hover:bg-white/30 transition-colors"
-                  >
-                    <LinkIcon size={18} className="mr-2" />
-                    <span>Website</span>
-                  </a>
-                )}
+                <SocialShare
+                  title="Compartilhe este conteúdo"
+                  url={`https://institutomaosdeouro.org.br/blog/${post.slug}`}
+                  titleColor="white"
+                />
               </div>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* BlogContent Details */}
-        <section className="py-16 bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              {/* Full Description */}
-              <div className="mb-12">
-                <p className="text-lg text-dark/80 leading-relaxed">
-                  {post.fullDescription}
-                </p>
-              </div>              
-
-              {/* Gallery */}
-              <div className="mb-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  {post.gallery.map((image, index) => (
-                    <div
-                      key={index}
-                      className="rounded-lg overflow-hidden h-64 relative group"
-                    >
-                      <img
-                        src={image}
-                        alt={`${post.title} - Imagem ${index + 1}`}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                      <div
-                        className={`absolute inset-0 ${post.color} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
-                      ></div>
-                    </div>
-                  ))}
+          {/* BlogContent Details */}
+          <section className="py-16 bg-white">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                {/* Full Description */}
+                <div className="mb-12">
+                  <p className="text-lg text-dark/80 leading-relaxed">
+                    {post.fullDescription}
+                  </p>
                 </div>
-              </div>
 
-              {/* Impact */}
-              <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">
-                {/* <h2 className="text-3xl font-bold text-earth mb-6">Impacto</h2> */}
-                <p className="text-lg text-dark/80 leading-relaxed">
-                  {post.impact}
-                </p>
-              </div>
+                {/* Gallery */}
+                <div className="mb-12">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {post.gallery.map((image, index) => (
+                      <div
+                        key={index}
+                        className="rounded-lg overflow-hidden h-64 relative group"
+                      >
+                        <img
+                          loading="lazy"
+                          src={image}
+                          alt={`${post.title} - Imagem ${index + 1}`}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                        <div
+                          className={`absolute inset-0 ${post.color} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
+                        ></div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
 
-              {/* Call to Action */}
-              <div className="text-center mt-12 p-8 rounded-xl bg-primary/10">
-                <h2 className="text-3xl font-bold text-earth mb-4">
-                  Apoie nosso Instituto
-                </h2>
-                <p className="text-lg text-dark/80 mb-8 max-w-2xl mx-auto">
-                  Sua contribuição é fundamental para continuarmos transformando
-                  vidas através da educação e da cultura surda.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/doe" className="btn-primary">
-                    Doe Agora
-                  </Link>
-                  {/* <a href="/#contato" className="btn-secondary">
+                {/* Impact */}
+                <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">
+                  {/* <h2 className="text-3xl font-bold text-earth mb-6">Impacto</h2> */}
+                  <p className="text-lg text-dark/80 leading-relaxed">
+                    {post.impact}
+                  </p>
+                </div>
+
+                {/* Call to Action */}
+                <div className="text-center mt-12 p-8 rounded-xl bg-primary/10">
+                  <h2 className="text-3xl font-bold text-earth mb-4">
+                    Apoie nosso Instituto
+                  </h2>
+                  <p className="text-lg text-dark/80 mb-8 max-w-2xl mx-auto">
+                    Sua contribuição é fundamental para continuarmos
+                    transformando vidas através da educação e da cultura surda.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Link to="/doe" className="btn-primary">
+                      Doe Agora
+                    </Link>
+                    {/* <a href="/#contato" className="btn-secondary">
                     Entre em Contato
                   </a> */}
+                  </div>
+                </div>
+                <div className="mt-12 flex justify-center">
+                  <SocialShare
+                    title="Compartilhe este conteúdo"
+                    url={`https://institutomaosdeouro.org.br/blog/${post.slug}`}
+                    titleColor="#282118"
+                  />
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 };
 

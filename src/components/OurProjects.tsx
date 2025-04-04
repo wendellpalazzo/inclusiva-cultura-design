@@ -14,9 +14,8 @@ import { listContent } from "../lib/contentLoader";
 import { Project } from "@/pages/ProjectDetails";
 
 const OurProjects = () => {
-  
-  const projects = listContent<Project>("projetos")
-  
+  const projects = listContent<Project>("projetos");
+
   return (
     <section
       id="nossos-projetos"
@@ -40,7 +39,6 @@ const OurProjects = () => {
         <Carousel
           opts={{
             align: "start",
-            
           }}
           plugins={[
             Autoplay({
@@ -60,11 +58,11 @@ const OurProjects = () => {
                     <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
 
                     <img
+                      loading="lazy"
                       src={project.image}
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
-
                   </div>
 
                   <div className="p-6 border-t-4 border-primary">

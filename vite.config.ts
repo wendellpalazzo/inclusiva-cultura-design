@@ -3,6 +3,13 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
+import Sitemap from "vite-plugin-sitemap";
+import { createHtmlPlugin } from "vite-plugin-html";
+import viteCompression from "vite-plugin-compression";
+import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+
+const routes = ["/", "/doe", "/voluntarie-se", "/parcerias", "/#blog"];
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
   // base: "/inclusiva-cultura-design/",
@@ -10,12 +17,40 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  plugins: [react(), mode === "development" && componentTagger()].filter(
-    Boolean
-  ),
+  plugins: [
+    react(),
+    ViteImageOptimizer({
+      includePublic: true,
+    }),
+    viteCompression(),
+    mode === "development" && componentTagger(),
+    Sitemap({
+      hostname: "https://institutomaosdeouro.org.br/",
+      dynamicRoutes: routes,
+      generateRobotsTxt: true,
+    }),
+    createHtmlPlugin({
+      minify: true,
+      inject: {
+        data: {
+          title: "Instituto Mãos de Ouro",
+          description: "Instituto Mãos de Ouro - As mãos que transformam vidas",
+        },
+      },
+    }),
+  ].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom", "react-router-dom"],
+        },
+      },
     },
   },
 }));

@@ -108,6 +108,7 @@ const OurHistory = () => {
 
         <div className="mt-16 text-center p-6 bg-primary/80 rounded-lg relative overflow-hidden flex justify-center items-center">
           <img
+          loading="lazy"
             className="-rotate-12 -scale-x-100 top-3 drop-shadow-md left-0 absolute opacity-80 size-16 md:size-auto"
             src="https://cdn-icons-png.flaticon.com/128/3776/3776585.png"
           />
@@ -118,6 +119,7 @@ const OurHistory = () => {
             </span>
           </div>
           <img
+          loading="lazy"
             className="rotate-12 drop-shadow-md top-3 right-0 absolute opacity-80 size-16 md:size-auto"
             src="https://cdn-icons-png.flaticon.com/128/3776/3776585.png"
           />

@@ -6,42 +6,42 @@ const equipe = [
   {
     name: "Fabrício Martins Balieiro",
     role: "Presidente",
-    image: "assets/images/fabricio-martins-balieiro.jpeg",
+    image: "/assets/images/fabricio-martins-balieiro.jpeg",
   },
   {
     name: "Bernarda Santana Dias",
     role: "Vice-Presidente",
-    image: "assets/images/bernarda-santana-dias.jpeg",
+    image: "/assets/images/bernarda-santana-dias.jpeg",
   },
   {
     name: "Luiz Antônio Amaral Balieiro",
     role: "1 Tesoureiro",
-    image: "assets/images/luiz-antonio-amaral-balieiro.jpeg",
+    image: "/assets/images/luiz-antonio-amaral-balieiro.jpeg",
   },
   {
     name: "Ranna Bitencoute",
     role: "2 Tesoureira",
-    image: "assets/images/ranna-bitencoute.jpeg",
+    image: "/assets/images/ranna-bitencoute.jpeg",
   },
   {
     name: "Claudete Pacheco",
     role: "Conselho Fiscal",
-    image: "assets/images/claudete-pacheco.jpeg",
+    image: "/assets/images/claudete-pacheco.jpeg",
   },
   {
     name: "Neucilene Fonseca",
     role: "Conselho Fiscal",
-    image: "assets/images/neucilene-fonseca.jpeg",
+    image: "/assets/images/neucilene-fonseca.jpeg",
   },
   {
     name: "Railene Martins",
     role: "2 Secretária",
-    image: "assets/images/railene-martins.jpeg",
+    image: "/assets/images/railene-martins.jpeg",
   },
   {
     name: "Jenny Rodrigues",
     role: "Conselheira Fiscal/Suplente",
-    image: "assets/images/jenny-rodrigues.jpeg",
+    image: "/assets/images/jenny-rodrigues.jpeg",
   },
 ];
 
@@ -101,7 +101,8 @@ const AboutUs = () => {
           <div className="relative">
             <div className="relative rounded-lg overflow-hidden shadow-xl">
               <img
-                src="assets/images/instituto-maos-de-ouro-quem-somos-visao-missao-valor.png"
+                loading="lazy"
+                src="/assets/images/instituto-maos-de-ouro-quem-somos-visao-missao-valor.png"
                 alt="Equipe Mãos de Ouro"
                 className="object-contain w-full"
               />
@@ -123,6 +124,7 @@ const AboutUs = () => {
                 className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105"
               >
                 <img
+                  loading="lazy"
                   src={member.image}
                   alt={member.name}
                   className="w-full p-4"

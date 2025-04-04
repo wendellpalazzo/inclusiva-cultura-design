@@ -236,28 +236,28 @@ const HowToHelp = () => {
           >
             <CarouselContent className="p-4">
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/c0c0c0/FFFFFF.png?text=LOGO1&font=oswald" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO2&font=popins" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO3&font=oswald" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/e0e0e0/FFFFFF.png?text=LOGO4&font=lato" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO5&font=oswald" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO6&font=oswald" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO7&font=oswald" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
               <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <img src="https://placehold.co/200/transparent/FFFFFF.png?text=LOGO8&font=oswald" />
+                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
               </CarouselItem>
             </CarouselContent>
           </Carousel>

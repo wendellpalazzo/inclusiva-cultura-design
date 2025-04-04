@@ -16,7 +16,8 @@ const Footer = () => {
             <div className="mb-6">
               <a href="/" className="block">
                 <img
-                  src="lovable-uploads/8d5c290e-2ff1-471d-a53e-ddc865200ee5.png"
+                loading="lazy"
+                  src="/assets/images/logo-instituto-maos-de-ouro.png"
                   alt="Logo Instituto Mãos de Ouro"
                   className="h-20 w-auto"
                 />
@@ -182,7 +183,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* <div>
             <h3 className="text-lg font-bold mb-6 text-white">Newsletter</h3>
             <p className="text-white/70 mb-4">
               Inscreva-se para receber novidades, artigos e informações sobre
@@ -199,7 +200,7 @@ const Footer = () => {
                 Inscrever-se
               </button>
             </form>
-          </div>
+          </div> */}
         </div>
 
         <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center">
