@@ -19,7 +19,7 @@ export const VideoInstitucional = () => {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
-          className="w-full h-[300px] md:h-[400px] rounded-lg shadow-xl shadow-slate-900 border-none"
+          className="w-full h-[300px] md:h-[400px] rounded-lg shadow-xl shadow-zinc-900 border-none"
         ></iframe>
       </div>
     </div>
