@@ -1,15 +1,15 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { lazy } from "react";
+import { lazy, useEffect } from "react";
 
-const AboutUs = lazy(()=> import("@/components/AboutUs"));
-const OurHistory = lazy(()=> import("@/components/OurHistory"));
-const OurProjects = lazy(()=> import("@/components/OurProjects"));
-const HowToHelp = lazy(()=> import("@/components/HowToHelp"));
-const Testimonials = lazy(()=> import("@/components/Testimonials"));
-const Blog = lazy(()=> import("@/components/Blog"));
-const Contact = lazy(()=> import("@/components/Contact"));
-const Footer = lazy(()=> import("@/components/Footer"));
+const AboutUs = lazy(() => import("@/components/AboutUs"));
+const OurHistory = lazy(() => import("@/components/OurHistory"));
+const OurProjects = lazy(() => import("@/components/OurProjects"));
+const HowToHelp = lazy(() => import("@/components/HowToHelp"));
+const Testimonials = lazy(() => import("@/components/Testimonials"));
+const Blog = lazy(() => import("@/components/Blog"));
+const Contact = lazy(() => import("@/components/Contact"));
+const Footer = lazy(() => import("@/components/Footer"));
 import Seo from "@/lib/seo";
 
 const Index = () => {

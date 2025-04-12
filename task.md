@@ -1,0 +1,2 @@
+- adicionar campo para upload da proposta de ação relacionado a educação ou ensino
+- adicionar campo para upload de antecedentes criminais (validade 30 dias)

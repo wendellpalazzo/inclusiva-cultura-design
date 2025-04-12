@@ -76,6 +76,8 @@ const volunteerFormSchema = z.object({
     required_error: "Selecione sua disponibilidade",
   }),
   experiencia: z.string().optional(),
+  "experiencia-libras": z.string().optional(),
+  "experiencia-libras-opcoes": z.string().optional(),
   mensagem: z
     .string()
     .min(10, { message: "Conte-nos um pouco mais sobre você" }),
@@ -94,6 +96,8 @@ const Volunteer = () => {
       email: "",
       telefone: "",
       experiencia: "",
+      "experiencia-libras": "",
+      "experiencia-libras-opcoes": "",
       mensagem: "",
     },
   });
@@ -230,6 +234,8 @@ const Volunteer = () => {
             </div>
           </section>
 
+
+
           {/* Formulário de Inscrição */}
           <section id="inscricao" className="py-16 bg-primary/5">
             <div className="container p-4">
@@ -238,8 +244,8 @@ const Volunteer = () => {
                   Inscreva-se como Voluntário
                 </h2>
                 <p className="text-lg text-dark/80 max-w-3xl mx-auto">
-                  Preencha o formulário abaixo para iniciar seu processo de
-                  voluntariado.
+                  Preencha o formulário abaixo para iniciar o processo de
+                  análise ao ingresso no voluntariado.
                 </p>
                 <div className="h-1 w-24 bg-primary rounded-full mt-6 mx-auto"></div>
               </div>
@@ -405,14 +411,13 @@ const Volunteer = () => {
                             )}
                           />
 
-                          <FormField
+<FormField
                             control={form.control}
                             name="experiencia"
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel>
-                                  Experiência com Libras ou com a comunidade
-                                  surda
+                                  Experiência com a área de interesse *
                                 </FormLabel>
                                 <Select
                                   onValueChange={field.onChange}
@@ -425,7 +430,7 @@ const Volunteer = () => {
                                   </FormControl>
                                   <SelectContent>
                                     <SelectItem value="nenhuma">
-                                      Nenhuma experiência
+                                      Nenhuma experiência - Mas estou a disposição para aprender e somar!
                                     </SelectItem>
                                     <SelectItem value="basico">
                                       Conhecimento básico
@@ -436,9 +441,6 @@ const Volunteer = () => {
                                     <SelectItem value="avancado">
                                       Conhecimento avançado
                                     </SelectItem>
-                                    <SelectItem value="fluente">
-                                      Fluente em Libras
-                                    </SelectItem>
                                   </SelectContent>
                                 </Select>
                                 <FormDescription>
@@ -448,6 +450,56 @@ const Volunteer = () => {
                               </FormItem>
                             )}
                           />
+
+<FormField
+                            control={form.control}
+                            name="experiencia-libras"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>
+                                Experiência com Libras, comunidade surda, tradução, interpretação e guia-interpretação? *
+                                </FormLabel>
+                                <Select
+                                  onValueChange={field.onChange}
+                                  defaultValue={field.value}
+                                >
+                                  <FormControl>
+                                    <SelectTrigger>
+                                      <SelectValue placeholder="Selecione..." />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent>
+                                    <SelectItem value="sim">
+                                      Sim
+                                    </SelectItem>
+                                    <SelectItem value="não">
+                                      Não
+                                    </SelectItem>
+                                  </SelectContent>
+                                </Select>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+            { form.watch("experiencia-libras") === "sim" && <FormField
+                            control={form.control}
+                            name="experiencia-libras-opcoes"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>
+                                  Por ter selecionado a opção SIM, relate em qual ou quais áreas possui experiência *
+                                </FormLabel>
+                                <FormControl>
+                                  <Textarea
+                                    className="min-h-32"
+                                    {...field}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          /> }
 
                           <FormField
                             control={form.control}

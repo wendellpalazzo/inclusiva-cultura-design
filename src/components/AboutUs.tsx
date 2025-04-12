@@ -50,11 +50,20 @@ const AboutUs = () => {
     <section id="quem-somos" className="pt-20 bg-white scroll-my-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
+          <h2
+            data-aos="fade-down"
+            className="text-3xl md:text-4xl font-bold text-earth mb-4"
+          >
             Quem Somos
           </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-dark/80 max-w-3xl mx-auto">
+          <div
+            data-aos="fade-down"
+            className="w-20 h-1 bg-primary mx-auto mb-6"
+          ></div>
+          <p
+            data-aos="fade-down"
+            className="text-lg text-dark/80 max-w-3xl mx-auto"
+          >
             Somos uma entidade não governamental apartidária e não religiosa que
             historicamente luta em favor das comunidades surdas do Arquipélago
             Marajoara - PA
@@ -63,7 +72,10 @@ const AboutUs = () => {
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border border-primary">
+            <div
+              data-aos="fade-right"
+              className="bg-earth/5 p-6 rounded-lg border-l-4 border border-primary"
+            >
               <h3 className="text-xl font-bold text-earth mb-3">
                 Nossa Missão
               </h3>
@@ -78,7 +90,10 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border border-secondary">
+            <div
+              data-aos="fade-right"
+              className="bg-earth/5 p-6 rounded-lg border-l-4 border border-secondary"
+            >
               <h3 className="text-xl font-bold text-earth mb-3">Nossa Visão</h3>
               <p className="text-dark/80">
                 Ser referência nacional na promoção da acessibilidade e inclusão
@@ -87,7 +102,10 @@ const AboutUs = () => {
               </p>
             </div>
 
-            <div className="bg-earth/5 p-6 rounded-lg border-l-4 border border-earth">
+            <div
+              data-aos="fade-right"
+              className="bg-earth/5 p-6 rounded-lg border-l-4 border border-earth"
+            >
               <h3 className="text-xl font-bold text-earth mb-3">
                 Nossos Valores
               </h3>
@@ -99,7 +117,10 @@ const AboutUs = () => {
           </div>
 
           <div className="relative">
-            <div className="relative rounded-lg overflow-hidden shadow-xl">
+            <div
+              className="relative rounded-lg overflow-hidden shadow-xl"
+              data-aos="zoom-in"
+            >
               <img
                 loading="lazy"
                 src="/assets/images/instituto-maos-de-ouro-quem-somos-visao-missao-valor.png"
@@ -114,12 +135,16 @@ const AboutUs = () => {
         </div>
 
         <div className="my-20">
-          <h3 className="text-2xl font-bold text-earth text-center mb-10">
+          <h3
+            data-aos="fade-down"
+            className="text-2xl font-bold text-earth text-center mb-10"
+          >
             Nossa Equipe
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {equipe.map((member, index) => (
               <div
+                data-aos="zoom-down"
                 key={index}
                 className="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform hover:scale-105"
               >

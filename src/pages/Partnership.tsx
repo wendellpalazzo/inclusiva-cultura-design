@@ -344,6 +344,9 @@ const Partnership = () => {
                           <option value="voluntariado">
                             Voluntariado Corporativo
                           </option>
+                          <option value="traducao">
+                            Tradução, Interpretação e Guia-Interpretação de Libras/Lingua Portuguesa
+                          </option>
                           <option value="outro">Outro</option>
                         </select>
                       </div>

@@ -1,5 +1,5 @@
 import { useLenis } from "lenis/react";
-import { ArrowUp } from "lucide-react";
+import { Airplay, ArrowUp, ArrowUpRightSquare } from "lucide-react";
 
 const Footer = () => {
   const lenis = useLenis()
@@ -75,6 +75,15 @@ const Footer = () => {
                 >
                   <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
                 </svg>
+              </a>
+              <a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://telegram.com?{import meta.VITE_CONTACT_ZAP}"
+                className="text-white hover:text-primary transition-colors"
+                aria-label="Telegram do Instituto Mãos de Ouro"
+              >
+                <ArrowUpRightSquare />
               </a>
             </div>
           </div>
@@ -193,7 +202,7 @@ const Footer = () => {
               <input
                 type="email"
                 placeholder="Seu e-mail"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white 
+                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white
                 focus:outline-none focus:ring-2 focus:ring-primary"
               />
               <button type="submit" className="w-full btn-primary">
