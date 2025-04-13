@@ -8,6 +8,8 @@ import { createHtmlPlugin } from "vite-plugin-html";
 import viteCompression from "vite-plugin-compression";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
+import vercel from "vite-plugin-vercel";
+
 const routes = ["/", "/doe", "/voluntarie-se", "/parcerias", "/#blog"];
 
 // https://vitejs.dev/config/
@@ -15,9 +17,10 @@ export default defineConfig(({ mode }) => ({
   // base: "/inclusiva-cultura-design/",
   server: {
     host: "::",
-    port: 8080,
+    port: process.env.PORT as unknown as number,
   },
   plugins: [
+    vercel(),
     react(),
     ViteImageOptimizer({
       includePublic: true,
