@@ -218,6 +218,7 @@ const Footer = () => {
             direitos reservados.
           </p>
           <div className="flex items-center space-x-6">
+            <span className="text-white/70 text-sm">Feito com muito ♥️<br/>Wendell Palazzo - Desenvolvimento Web</span>
             <button
               onClick={scrollToTop}
               className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors"
