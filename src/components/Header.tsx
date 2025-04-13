@@ -32,14 +32,14 @@ const Header = () => {
     { name: "Contato", href: "#contato" },
   ];
 
-  useLenis((lenis) => {
-    navItems.forEach((elemento) => {
-      if (elemento.href === "#") return setActive("#");
+  // useLenis((lenis) => {
+  //   navItems.forEach((elemento) => {
+  //     if (elemento.href === "#") return setActive("#");
 
-      if (elementoNaMetade(document.querySelector(elemento.href)))
-        setActive(elemento.href);
-    });
-  }, []);
+  //     if (elementoNaMetade(document.querySelector(elemento.href)))
+  //       setActive(elemento.href);
+  //   });
+  // }, []);
 
   const onClickHandler = (e, item) => {
     if (["/doe", "/voluntarie-se", "/parcerias"].includes(location.pathname))
@@ -50,16 +50,17 @@ const Header = () => {
       offset: -50,
       onStart: () => {
         window.location.hash = item.href;
-        setActive(item.href);
+        // setActive(item.href);
       },
     });
   };
 
-  useLenis((lenis) => {
+  useEffect(() => {
     setTimeout(() => {
-      if (location.pathname === "/" && location.hash !== "") {
+      if (!lenis.isScrolling && location.hash !== "") {
         lenis.scrollTo(location.hash !== "#" ? location.hash : 0, {
           offset: -50,
+          immediate: true,
           onComplete: () => {
             setActive(location.hash);
           },
@@ -71,7 +72,7 @@ const Header = () => {
   return (
     <header
       data-aos="fade-down"
-      // data-aos-delay="2800"
+      data-aos-delay="1000"
       data-aos-duration="2800"
       className="fixed top-0 left-0 right-0 z-50 bg-secondary-foreground/80 backdrop-blur-lg border-b border-secondary-foreground"
     >
@@ -91,6 +92,9 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item, idx) => (
               <Link
+                data-aos="fade-down"
+                data-aos-delay={1000 + idx * 200}
+                data-aos-duration="1800"
                 onClick={(e) => {
                   onClickHandler(e, item);
                 }}
@@ -100,9 +104,7 @@ const Header = () => {
                   hash: `${item.href}`,
                 }}
                 viewTransition
-                className={`nav-link ${
-                  item.href === active ? "!text-primary active-nav" : ""
-                }`}
+                className={`nav-link`}
               >
                 {item.name}
               </Link>

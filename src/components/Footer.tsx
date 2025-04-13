@@ -1,22 +1,22 @@
 import { useLenis } from "lenis/react";
-import { Airplay, ArrowUp, ArrowUpRightSquare } from "lucide-react";
+import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
-  const lenis = useLenis()
+  const lenis = useLenis();
   const scrollToTop = () => {
     location.hash = "";
-    lenis.scrollTo(0)
+    lenis.scrollTo(0);
   };
 
   return (
     <footer className="bg-dark text-white">
       <div className="container mx-auto px-4">
         <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div>
+          <div className="md:col-span-2">
             <div className="mb-6">
               <a href="/" className="block">
                 <img
-                loading="lazy"
+                  loading="lazy"
                   src="/assets/images/logo-instituto-maos-de-ouro.png"
                   alt="Logo Instituto Mãos de Ouro"
                   className="h-20 w-auto"
@@ -34,6 +34,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-white hover:text-primary transition-colors"
                 aria-label="Facebook do Instituto Mãos de Ouro"
+                title="Facebook do Instituto Mãos de Ouro"
               >
                 <svg
                   className="w-6 h-6"
@@ -50,6 +51,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-white hover:text-primary transition-colors"
                 aria-label="Instagram do Instituto Mãos de Ouro"
+                title="Instagram do Instituto Mãos de Ouro"
               >
                 <svg
                   className="w-6 h-6"
@@ -66,6 +68,7 @@ const Footer = () => {
                 href="https://youtube.com/channel/UCLSls60vMfBReAUIsC-H6Tw?si=JW7BXIXYuqohpnyF"
                 className="text-white hover:text-primary transition-colors"
                 aria-label="YouTube do Instituto Mãos de Ouro"
+                title="YouTube do Instituto Mãos de Ouro"
               >
                 <svg
                   className="w-6 h-6"
@@ -79,11 +82,19 @@ const Footer = () => {
               <a
                 target="_blank"
                 rel="noopener noreferrer"
-                href="https://telegram.com?{import meta.VITE_CONTACT_ZAP}"
+                href={`https://t.me/+55${import.meta.env.VITE_CONTACT_ZAP}`}
                 className="text-white hover:text-primary transition-colors"
                 aria-label="Telegram do Instituto Mãos de Ouro"
+                title="Telegram do Instituto Mãos de Ouro"
               >
-                <ArrowUpRightSquare />
+                <svg
+                  className="w-6 h-6"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M21.997 12c0 5.523-4.477 10-10 10s-10-4.477-10-10 4.477-10 10-10 10 4.477 10 10Zm-9.642-2.618q-1.458.607-5.831 2.512-.711.283-.744.553c-.039.304.343.424.862.587l.218.07c.51.166 1.198.36 1.555.368q.486.01 1.084-.4 4.086-2.76 4.218-2.789c.063-.014.149-.032.207.02.059.052.053.15.047.177-.038.161-1.534 1.552-2.308 2.271-.241.225-.413.384-.448.42a9 9 0 0 1-.235.233c-.474.457-.83.8.02 1.36.408.27.735.492 1.061.714.356.242.711.484 1.17.785q.177.116.338.234c.415.296.787.56 1.247.518.267-.024.543-.275.683-1.025.332-1.77.983-5.608 1.133-7.19a1.8 1.8 0 0 0-.017-.393.42.42 0 0 0-.142-.27c-.12-.098-.305-.118-.387-.117-.376.007-.954.207-3.73 1.362Z"></path>
+                </svg>
               </a>
             </div>
           </div>
@@ -139,7 +150,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                target="_blank"
+                  target="_blank"
                   href="https://clubedelibras.ufc.br/pt/recursos/materiais/"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
@@ -148,7 +159,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                target="_blank"
+                  target="_blank"
                   href="https://www.ines.gov.br/dicionario-de-libras/"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
@@ -157,7 +168,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                target="_blank"
+                  target="_blank"
                   href="https://www.cnmp.mp.br/portal/images/lei_brasileira_inclusao__pessoa__deficiencia.pdf"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
@@ -174,7 +185,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                target="_blank"
+                  target="_blank"
                   href="https://youtube.com/channel/UCLSls60vMfBReAUIsC-H6Tw?si=JW7BXIXYuqohpnyF"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
@@ -218,7 +229,11 @@ const Footer = () => {
             direitos reservados.
           </p>
           <div className="flex items-center space-x-6">
-            <span className="text-white/70 text-sm">Feito com muito ♥️<br/>Wendell Palazzo - Desenvolvimento Web</span>
+            <span className="text-white/70 text-sm">
+              Feito com muito ♥️
+              <br />
+              Wendell Palazzo - Desenvolvimento Web
+            </span>
             <button
               onClick={scrollToTop}
               className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center hover:bg-primary/30 transition-colors"
