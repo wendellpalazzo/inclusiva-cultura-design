@@ -19,11 +19,6 @@ const Hero = () => {
               poster="/assets/images/hero.webp"
               preload="auto"
               className="w-full h-full object-cover object-center"
-              style={
-                {
-                  // clipPath: "polygon(0 0, 80% 16%, 88% 100%, 0% 100%)"
-                }
-              }
               loop
               autoPlay
               controls={false}
