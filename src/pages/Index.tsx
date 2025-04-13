@@ -11,6 +11,7 @@ const Blog = lazy(() => import("@/components/Blog"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
 import Seo from "@/lib/seo";
+import { FrequentQuestions } from "@/components/FrequentQuestions";
 
 const Index = () => {
   return (
@@ -35,6 +36,7 @@ const Index = () => {
         <HowToHelp />
         <Testimonials />
         <Blog />
+        <FrequentQuestions />
         <Contact />
         <Footer />
       </div>
