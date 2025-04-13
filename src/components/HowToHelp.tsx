@@ -1,7 +1,6 @@
 import { Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
-import AutoScroll from "embla-carousel-auto-scroll";
+import { Partners } from "./Partners";
 
 const HowToHelp = () => {
   const helpOptions = [
@@ -215,53 +214,7 @@ const HowToHelp = () => {
             </div>
           </div>
         </div>
-        <div className="px-4 mx-auto pt-20">
-          <div className="text-center mb-5">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Empresas Que Nos Apoiam
-            </h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          </div>
-          <Carousel
-            opts={{
-              align: "center",
-              loop: true,
-            }}
-            plugins={[
-              AutoScroll({
-                stopOnInteraction: false,
-                startDelay: 300,
-              }),
-            ]}
-          >
-            <CarouselContent className="p-4">
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-              <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-                <div className="text-slate-900 bg-slate-50 size-[200px] font-bold flex justify-center items-center">LOGO</div>
-              </CarouselItem>
-            </CarouselContent>
-          </Carousel>
-        </div>
+        <Partners />
       </div>
     </section>
   );

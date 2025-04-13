@@ -166,7 +166,7 @@ const AboutUs = () => {
         </div>
       </div>
       <div className="bg-earth text-white p-5 lg:p-20 flex lg:flex-row justify-evenly items-center flex-col space-y-10 lg:space-y-0">
-        <div className="space-y-3 lg:w-1/2">
+        <div className="space-y-3 lg:w-1/3">
           <h2 className="text-white text-3xl font-opensans">
             Precisando de um serviço de tradução ou interpretação?
           </h2>
