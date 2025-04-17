@@ -72,19 +72,19 @@ const OurHistory = () => {
           <div className="text-center mb-16">
             <h2
               data-aos="fade-down"
-              data-aos-delay="1000"
+              data-aos-delay="200"
               className="text-3xl md:text-4xl font-bold text-earth mb-4"
             >
               Nossa História
             </h2>
             <div
               data-aos="fade-down"
-              data-aos-delay="1000"
+              data-aos-delay="250"
               className="w-20 h-1 bg-primary mx-auto mb-6"
             ></div>
             <p
               data-aos="fade-down"
-              data-aos-delay="1000"
+              data-aos-delay="300"
               className="text-lg text-dark/80 max-w-3xl mx-auto"
             >
               Uma jornada de dedicação, superação e transformação social através
@@ -101,7 +101,8 @@ const OurHistory = () => {
             >
               {timelineEvents.map((event, index) => (
                 <div
-                  data-aos-offset="100"
+                  // data-aos-offset="300"
+                  data-aos-anchor-placement="top-center"
                   data-aos-delay="300"
                   data-aos={index % 2 ? "fade-right" : "fade-left"}
                   key={event.title}

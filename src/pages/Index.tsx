@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import { lazy, useEffect } from "react";
+import { lazy } from "react";
 
 const AboutUs = lazy(() => import("@/components/AboutUs"));
 const OurHistory = lazy(() => import("@/components/OurHistory"));
@@ -10,8 +10,8 @@ const Testimonials = lazy(() => import("@/components/Testimonials"));
 const Blog = lazy(() => import("@/components/Blog"));
 const Contact = lazy(() => import("@/components/Contact"));
 const Footer = lazy(() => import("@/components/Footer"));
+const FrequentQuestions = lazy(() => import("@/components/FrequentQuestions"));
 import Seo from "@/lib/seo";
-import { FrequentQuestions } from "@/components/FrequentQuestions";
 
 const Index = () => {
   return (

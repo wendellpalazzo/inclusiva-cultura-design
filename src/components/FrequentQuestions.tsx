@@ -1,4 +1,4 @@
-export const FrequentQuestions = () => {
+const FrequentQuestions = () => {
   return (
     <section
       id="nossos-projetos"
@@ -93,3 +93,6 @@ export const FrequentQuestions = () => {
     </section>
   );
 };
+
+
+export default FrequentQuestions;
