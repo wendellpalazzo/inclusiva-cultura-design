@@ -16,6 +16,7 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { generateRecaptchaToken } from "@/lib/recaptcha";
+import SectionTitle from "./SectionTitle";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -70,14 +71,12 @@ const Contact = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
-            Contato
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-dark/80 max-w-3xl mx-auto">
-            Entre em contato conosco para mais informações sobre nossos
-            projetos, parcerias ou como podemos ajudar.
-          </p>
+          <SectionTitle
+            title="Contato"
+            subtitle="Entre em contato conosco para mais informações sobre nossos
+            projetos, parcerias ou como podemos ajudar."
+            centered
+          />
         </div>
 
         <div className="grid md:grid-cols-2 gap-10 items-start">
@@ -180,13 +179,16 @@ const Contact = () => {
                   Enviar Mensagem
                 </Button>
                 <div className="text-muted text-xs">
-                  Este site é protegido pelo reCAPTCHA e o Google<br/>
+                  Este site é protegido pelo reCAPTCHA e o Google
+                  <br />
                   <a href="https://policies.google.com/privacy">
-                  {" "}Política de Privacidade
+                    {" "}
+                    Política de Privacidade
                   </a>{" "}
                   e
                   <a href="https://policies.google.com/terms">
-                  {" "}Termos de Serviço
+                    {" "}
+                    Termos de Serviço
                   </a>{" "}
                   aplicados.
                 </div>

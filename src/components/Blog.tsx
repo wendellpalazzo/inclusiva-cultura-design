@@ -3,6 +3,7 @@ import { BlogContent } from "@/pages/BlogDetails";
 
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import SectionTitle from "./SectionTitle";
 
 const Blog = () => {
   const blogPosts = listContent<BlogContent>("blog");
@@ -11,21 +12,19 @@ const Blog = () => {
     <section id="blog" className="py-20 bg-earth/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-earth mb-4">
-            Blog e Notícias
-          </h2>
-          <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p className="text-lg text-dark/80 max-w-3xl mx-auto">
-            Fique por dentro das novidades, artigos e informações relevantes
-            sobre inclusão e cultura surda.
-          </p>
+          <SectionTitle
+            title="Blog e Notícias"
+            subtitle="Fique por dentro das novidades, artigos e informações relevantes sobre inclusão e cultura surda."
+            centered
+          />
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
           {blogPosts.map((post, index) => (
             <div
+              data-aos="zoom-in"
               key={index}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
             >
               <div className="h-48 overflow-hidden">
                 <img

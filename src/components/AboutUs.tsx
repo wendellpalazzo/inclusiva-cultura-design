@@ -1,6 +1,7 @@
 import { Send, Users } from "lucide-react";
 import { Button } from "./ui/button";
 import { ZapButton } from "./ZapButton";
+import SectionTitle from "./SectionTitle";
 
 const equipe = [
   {
@@ -50,24 +51,13 @@ const AboutUs = () => {
     <section id="quem-somos" className="pt-20 bg-white scroll-my-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2
-            data-aos="fade-down"
-            className="text-3xl md:text-4xl font-bold text-earth mb-4"
-          >
-            Quem Somos
-          </h2>
-          <div
-            data-aos="fade-down"
-            className="w-20 h-1 bg-primary mx-auto mb-6"
-          ></div>
-          <p
-            data-aos="fade-down"
-            className="text-lg text-dark/80 max-w-3xl mx-auto"
-          >
-            Somos uma entidade não governamental apartidária e não religiosa que
+          <SectionTitle
+            title="Quem Somos"
+            subtitle="Somos uma entidade não governamental apartidária e não religiosa que
             historicamente luta em favor das comunidades surdas do Arquipélago
-            Marajoara - PA
-          </p>
+            Marajoara - PA"
+            centered
+          />
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
@@ -135,10 +125,7 @@ const AboutUs = () => {
         </div>
 
         <div className="my-20">
-          <h3
-            data-aos="fade-down"
-            className="text-2xl font-bold text-earth text-center mb-10"
-          >
+          <h3 className="text-2xl font-bold text-earth text-center mb-10">
             Nossa Equipe
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

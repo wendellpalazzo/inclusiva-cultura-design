@@ -12,6 +12,7 @@ import {
 } from "./ui/carousel";
 import { listContent } from "../lib/contentLoader";
 import { Project } from "@/pages/ProjectDetails";
+import SectionTitle from "./SectionTitle";
 
 const OurProjects = () => {
   const projects = listContent<Project>("projetos");
@@ -23,17 +24,12 @@ const OurProjects = () => {
     >
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 data-aos="fade-down"
-            data-aos-delay="1000" className="text-3xl md:text-4xl font-bold text-earth mb-4">
-            Nossos Projetos
-          </h2>
-          <div data-aos="fade-down"
-            data-aos-delay="1000" className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-          <p data-aos="fade-down"
-            data-aos-delay="1000" className="text-lg text-dark/80 max-w-3xl mx-auto">
-            Conheça nossas iniciativas que transformam vidas através da
-            educação, cultura e inclusão da comunidade surda.
-          </p>
+          <SectionTitle
+            title="Nossos Projetos"
+            subtitle="Conheça nossas iniciativas que transformam vidas através da
+            educação, cultura e inclusão da comunidade surda."
+            centered
+          />
         </div>
 
         {/* Featured Project */}
@@ -51,8 +47,12 @@ const OurProjects = () => {
         >
           <CarouselContent className="p-4 w-full">
             {projects.map((project, idx) => (
-              <CarouselItem data-aos="zoom-in" data-aos-delay={idx * 1000 + 100}
-              key={project.slug} className="md:basis-1/3">
+              <CarouselItem
+                data-aos="zoom-in"
+                data-aos-delay={idx * 1000 + 100}
+                key={project.slug}
+                className="md:basis-1/3"
+              >
                 <div
                   key={project.slug}
                   className="group relative bg-white rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-2 hover:shadow-xl"

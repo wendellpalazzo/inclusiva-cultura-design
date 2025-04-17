@@ -18,7 +18,7 @@ const SectionTitle = ({
   return (
     <div
       className={cn(
-        "mb-10",
+        "mb-10 text-pretty",
         centered ? "text-center mx-auto" : "text-left",
         className
       )}

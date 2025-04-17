@@ -1,9 +1,7 @@
 import React from "react";
 
 import {
-  Briefcase,
   Award,
-  HandshakeIcon,
   Users,
   Building2,
   Heart,
@@ -25,7 +23,7 @@ const Partnership = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast.success(
-      "Formulário enviado com sucesso! Entraremos em contato em breve."
+      "Formulário enviado com sucesso! Entraremos em contato em breve.",
     );
   };
 
@@ -45,7 +43,7 @@ const Partnership = () => {
         <Header />
 
         {/* Hero Section */}
-        <section className="pt-32 pb-20 bg-gradient-to-b from-primary/10 to-white">
+        <section className="pt-32 pb-20 bg-gradient-to-b from-primary/10 to-white animate-fadeIn duration-1000">
           <div className="container">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="md:w-1/2">
@@ -80,7 +78,7 @@ const Partnership = () => {
                 </div>
               </div>
               <div className="md:w-1/2 relative">
-                <div className="bg-white p-8 rounded-xl shadow-xl border border-primary/20 relative z-10">
+                <div className="bg-white p-8 rounded-xl shadow-xl border border-primary/20 relative z-10 opacity-0 animate-fadeIn delay-700">
                   <div className="grid grid-cols-3 gap-4">
                     {[Building2, Landmark, Trophy, Rocket, Award, Heart].map(
                       (Icon, idx) => (
@@ -89,7 +87,7 @@ const Partnership = () => {
                             <Icon className="text-primary w-8 h-8" />
                           </div>
                         </div>
-                      )
+                      ),
                     )}
                   </div>
                   <div className="mt-8 text-center">
@@ -108,7 +106,7 @@ const Partnership = () => {
         </section>
 
         {/* Por que ser parceiro */}
-        <section id="porque-ser-parceiro" className="py-20 bg-white">
+        <section id="porque-ser-parceiro" className="py-20 bg-white animate-fadeIn delay-700 opacity-0">
           <div className="container">
             <SectionTitle
               title="Por que ser Parceiro?"
@@ -209,6 +207,7 @@ const Partnership = () => {
                   },
                 ].map((item, idx) => (
                   <div
+                  data-aos="fade-up"
                     key={idx}
                     className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-primary"
                   >
@@ -232,7 +231,7 @@ const Partnership = () => {
               centered
             />
 
-            <div className="mt-16 flex flex-col md:flex-row gap-8 items-start">
+            <div data-aos="fade-up" data-aos-delay="1000" className="mt-16 flex flex-col md:flex-row gap-8 items-start">
               <div className="lg:w-1/2 mx-auto">
                 <div className="bg-white rounded-xl shadow-md border border-primary/20 overflow-hidden">
                   <div className="bg-primary/10 p-4">
@@ -345,7 +344,8 @@ const Partnership = () => {
                             Voluntariado Corporativo
                           </option>
                           <option value="traducao">
-                            Tradução, Interpretação e Guia-Interpretação de Libras/Lingua Portuguesa
+                            Tradução, Interpretação e Guia-Interpretação de
+                            Libras/Lingua Portuguesa
                           </option>
                           <option value="outro">Outro</option>
                         </select>
@@ -401,19 +401,10 @@ const Partnership = () => {
             />
 
             <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-              {Array.from({ length: 8 }).map((_, idx) => (
-                <div
-                  key={idx}
-                  className="bg-white p-6 rounded-lg shadow-sm flex items-center justify-center h-32 border border-gray-100 hover:shadow-md transition-shadow"
-                >
-                  <div className="text-center">
-                    <Building2 className="w-10 h-10 text-gray-400 mx-auto mb-2" />
-                    <p className="text-gray-500 font-medium">
-                      Empresa Parceira {idx + 1}
-                    </p>
-                  </div>
-                </div>
-              ))}
+              <div className="bg-sky-600 text-lg font-bold text-white flex justify-center items-center flex-col p-6 rounded-lg shadow-sm h-32 border border-gray-100 hover:shadow-md transition-shadow">
+                Wendell Palazzo
+                <span className="text-sm">Desenvolvimento Web</span>
+              </div>
             </div>
 
             <div className="mt-12 text-center">
@@ -466,7 +457,7 @@ const Partnership = () => {
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-lg shadow-md p-6 border border-primary/10 relative"
+                  className="bg-white rounded-lg shadow-md p-6 border border-primary/10 relative hover:shadow-md hover:-translate-y-1 transition-all"
                 >
                   <div className="absolute -top-4 left-6 w-8 h-8 bg-primary text-white flex items-center justify-center rounded-full">
                     <svg

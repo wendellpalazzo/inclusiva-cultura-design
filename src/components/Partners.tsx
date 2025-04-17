@@ -2,15 +2,18 @@ import { MousePointerClickIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Link } from "react-router-dom";
+import SectionTitle from "./SectionTitle";
 
 export const Partners = () => {
   return (
     <div className="px-4 mx-auto pt-20">
       <div className="text-center mb-5">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Empresas Que Nos Apoiam
-        </h2>
-        <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
+        <SectionTitle
+          title="Empresas Que Nos Apoiam"
+          subtitle="Apoie o nosso projeto e faça parte dessa transformação!"
+          light
+          centered
+        />
       </div>
       <Carousel
         opts={{

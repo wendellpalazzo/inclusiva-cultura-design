@@ -43,6 +43,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { ZapButton } from "@/components/ZapButton";
 import Seo from "@/lib/seo";
+import SectionTitle from "@/components/SectionTitle";
 
 const areas = [
   {
@@ -148,7 +149,7 @@ const Volunteer = () => {
                   size={60}
                   className="mx-auto mb-6 text-primary md:hidden"
                 />
-                <h1 className="text-4xl md:text-5xl font-bold font-playfair text-white mb-6 relative">
+                <h1 className="text-4xl md:text-7xl font-bold font-playfair text-white mb-6 relative">
                   Seja um{" "}
                   <span className="text-primary relative">
                     Voluntário
@@ -179,15 +180,13 @@ const Volunteer = () => {
           <section className="py-16 bg-white">
             <div className="container">
               <div className="mb-12 text-center">
-                <h2 className="text-3xl md:text-4xl font-bold font-playfair text-earth mb-4">
-                  Por que ser voluntário?
-                </h2>
-                <p className="text-lg text-dark/80 max-w-3xl mx-auto text-balance">
-                  Ser voluntário no Instituto Mãos de Ouro é uma oportunidade de
+                <SectionTitle
+                  title="Por que ser voluntário?"
+                  subtitle="Ser voluntário no Instituto Mãos de Ouro é uma oportunidade de
                   contribuir para uma sociedade mais inclusiva enquanto você
-                  também se desenvolve.
-                </p>
-                <div className="h-1 w-24 bg-primary rounded-full mt-6 mx-auto"></div>
+                  também se desenvolve."
+                  centered
+                />
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -233,8 +232,6 @@ const Volunteer = () => {
               </div>
             </div>
           </section>
-
-
 
           {/* Formulário de Inscrição */}
           <section id="inscricao" className="py-16 bg-primary/5">
@@ -411,7 +408,7 @@ const Volunteer = () => {
                             )}
                           />
 
-<FormField
+                          <FormField
                             control={form.control}
                             name="experiencia"
                             render={({ field }) => (
@@ -430,7 +427,8 @@ const Volunteer = () => {
                                   </FormControl>
                                   <SelectContent>
                                     <SelectItem value="nenhuma">
-                                      Nenhuma experiência - Mas estou a disposição para aprender e somar!
+                                      Nenhuma experiência - Mas estou a
+                                      disposição para aprender e somar!
                                     </SelectItem>
                                     <SelectItem value="basico">
                                       Conhecimento básico
@@ -451,13 +449,15 @@ const Volunteer = () => {
                             )}
                           />
 
-<FormField
+                          <FormField
                             control={form.control}
                             name="experiencia-libras"
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel>
-                                Experiência com Libras, comunidade surda, tradução, interpretação e guia-interpretação? *
+                                  Experiência com Libras, comunidade surda,
+                                  tradução, interpretação e guia-interpretação?
+                                  *
                                 </FormLabel>
                                 <Select
                                   onValueChange={field.onChange}
@@ -469,12 +469,8 @@ const Volunteer = () => {
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
-                                    <SelectItem value="sim">
-                                      Sim
-                                    </SelectItem>
-                                    <SelectItem value="não">
-                                      Não
-                                    </SelectItem>
+                                    <SelectItem value="sim">Sim</SelectItem>
+                                    <SelectItem value="não">Não</SelectItem>
                                   </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -482,24 +478,24 @@ const Volunteer = () => {
                             )}
                           />
 
-            { form.watch("experiencia-libras") === "sim" && <FormField
-                            control={form.control}
-                            name="experiencia-libras-opcoes"
-                            render={({ field }) => (
-                              <FormItem>
-                                <FormLabel>
-                                  Por ter selecionado a opção SIM, relate em qual ou quais áreas possui experiência *
-                                </FormLabel>
-                                <FormControl>
-                                  <Textarea
-                                    className="min-h-32"
-                                    {...field}
-                                  />
-                                </FormControl>
-                                <FormMessage />
-                              </FormItem>
-                            )}
-                          /> }
+                          {form.watch("experiencia-libras") === "sim" && (
+                            <FormField
+                              control={form.control}
+                              name="experiencia-libras-opcoes"
+                              render={({ field }) => (
+                                <FormItem>
+                                  <FormLabel>
+                                    Por ter selecionado a opção SIM, relate em
+                                    qual ou quais áreas possui experiência *
+                                  </FormLabel>
+                                  <FormControl>
+                                    <Textarea className="min-h-32" {...field} />
+                                  </FormControl>
+                                  <FormMessage />
+                                </FormItem>
+                              )}
+                            />
+                          )}
 
                           <FormField
                             control={form.control}

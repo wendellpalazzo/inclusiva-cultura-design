@@ -1,5 +1,6 @@
 import { Calendar, Check } from "lucide-react";
 import { VideoInstitucional } from "./VideoInstitucional";
+import SectionTitle from "./SectionTitle";
 
 const OurHistory = () => {
   const timelineEvents = [
@@ -70,26 +71,12 @@ const OurHistory = () => {
       >
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2
-              data-aos="fade-down"
-              data-aos-delay="200"
-              className="text-3xl md:text-4xl font-bold text-earth mb-4"
-            >
-              Nossa História
-            </h2>
-            <div
-              data-aos="fade-down"
-              data-aos-delay="250"
-              className="w-20 h-1 bg-primary mx-auto mb-6"
-            ></div>
-            <p
-              data-aos="fade-down"
-              data-aos-delay="300"
-              className="text-lg text-dark/80 max-w-3xl mx-auto"
-            >
-              Uma jornada de dedicação, superação e transformação social através
-              da inclusão e valorização da cultura surda.
-            </p>
+            <SectionTitle
+              title="Nossa História"
+              subtitle="Uma jornada de dedicação, superação e transformação social através
+              da inclusão e valorização da cultura surda."
+              centered
+            />
           </div>
 
           <div className="relative">

@@ -1,32 +1,17 @@
+import SectionTitle from "./SectionTitle";
+
 const FrequentQuestions = () => {
   return (
-    <section
-      id="nossos-projetos"
-      className="py-20 scroll-my-10"
-    >
+    <section id="nossos-projetos" className="py-20 scroll-my-10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2
-            data-aos="fade-down"
-            data-aos-delay="1000"
-            className="text-3xl md:text-4xl font-bold text-earth mb-4"
-          >
-            Perguntas Frequentes
-          </h2>
-          <div
-            data-aos="fade-down"
-            data-aos-delay="1000"
-            className="w-20 h-1 bg-primary mx-auto mb-6"
-          ></div>
-          <p
-            data-aos="fade-down"
-            data-aos-delay="1000"
-            className="text-lg text-dark/80 max-w-3xl mx-auto"
-          >
-            Tire suas principais dúvidas sobre o Instituto Mãos de Ouro e nossos
+          <SectionTitle
+            title="Perguntas Frequentes"
+            subtitle="Tire suas principais dúvidas sobre o Instituto Mãos de Ouro e nossos
             projetos. Se você não encontrar a resposta que procura, entre em
-            contato conosco!
-          </p>
+            contato conosco!"
+            centered
+          />
         </div>
 
         <ul className="space-y-6">
@@ -93,6 +78,5 @@ const FrequentQuestions = () => {
     </section>
   );
 };
-
 
 export default FrequentQuestions;

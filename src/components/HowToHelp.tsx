@@ -1,6 +1,7 @@
 import { Heart, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Partners } from "./Partners";
+import SectionTitle from "./SectionTitle";
 
 const HowToHelp = () => {
   const helpOptions = [
@@ -63,12 +64,13 @@ const HowToHelp = () => {
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Como Ajudar</h2>
-            <div className="w-20 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg text-white/80 max-w-3xl mx-auto">
-              Junte-se a nós nessa missão de transformar vidas através da
-              inclusão e valorização da cultura surda.
-            </p>
+            <SectionTitle
+              title="Como Ajudar"
+              subtitle="Junte-se a nós nessa missão de transformar vidas através da
+              inclusão e valorização da cultura surda."
+              light
+              centered
+            />
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
