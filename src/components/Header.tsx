@@ -41,9 +41,12 @@ const Header = () => {
   //   });
   // }, []);
 
+  const checkForAnimation = ["/doe", "/voluntarie-se", "/parcerias"].includes(
+    location.pathname,
+  );
+
   const onClickHandler = (e, item) => {
-    if (["/doe", "/voluntarie-se", "/parcerias"].includes(location.pathname))
-      return true;
+    if (checkForAnimation) return true;
 
     e.preventDefault();
     lenis.scrollTo(item.href !== "#" ? item.href : 0, {
@@ -71,7 +74,7 @@ const Header = () => {
 
   return (
     <header
-      data-aos="fade-down"
+      data-aos={!checkForAnimation && "fade-down"}
       data-aos-delay="1000"
       data-aos-duration="2800"
       className="fixed top-0 left-0 right-0 z-50 bg-secondary-foreground/80 backdrop-blur-lg border-b border-secondary-foreground"
@@ -92,7 +95,7 @@ const Header = () => {
           <nav className="hidden md:flex space-x-8">
             {navItems.map((item, idx) => (
               <Link
-                data-aos="fade-down"
+                data-aos={!checkForAnimation && "fade-down"}
                 data-aos-delay={1000 + idx * 200}
                 data-aos-duration="1800"
                 onClick={(e) => {

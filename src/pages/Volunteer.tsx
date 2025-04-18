@@ -132,7 +132,7 @@ const Volunteer = () => {
 
         <main className="flex-grow pt-20">
           {/* Hero Section */}
-          <section className="bg-dark text-white py-20 relative overflow-hidden">
+          <section className="bg-dark text-white py-20 relative overflow-hidden animate-fadeIn">
             {/* Background pattern */}
             <div className="mix-blend-overlay hidden md:block absolute inset-0 bg-[url('/assets/images/escola-e-comunidade-parceria-getty-images.jpg')] bg-no-repeat bg-top bg-cover opacity-40"></div>
 
@@ -177,7 +177,7 @@ const Volunteer = () => {
             </div>
           </section>
 
-          <section className="py-16 bg-white">
+          <section className="py-16 bg-white" data-aos="fade-up">
             <div className="container">
               <div className="mb-12 text-center">
                 <SectionTitle
@@ -234,7 +234,7 @@ const Volunteer = () => {
           </section>
 
           {/* Formulário de Inscrição */}
-          <section id="inscricao" className="py-16 bg-primary/5">
+          <section id="inscricao" className="py-16 bg-primary/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
             <div className="container p-4">
               <div className="mb-12 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold font-playfair text-earth mb-4">

@@ -61,7 +61,14 @@ const FrequentQuestions = () => {
                 "Você pode se inscrever como voluntário através do formulário disponível em nosso site no menu - <a class='underline text-primary' href='/#como-ajudar'>Como Ajudar</a> -. Lembrando que este formulário é apenas uma pré-inscrição e em um segundo momento poderá ser feita uma entrevista com o intúito de lhe conhecer melhor.",
             },
           ].map((faq, index) => (
-            <li key={index} className="border-b border-gray-300 pb-4">
+            <li
+              key={index}
+              className="border-b border-gray-300 pb-4"
+              data-aos="fade-left"
+              data-aos-duration="1000"
+              data-aos-delay="700"
+              data-aos-anchor-placement="center-bottom"
+            >
               <details className="group">
                 <summary className="text-lg font-semibold text-gray-700 cursor-pointer">
                   {faq.question}
