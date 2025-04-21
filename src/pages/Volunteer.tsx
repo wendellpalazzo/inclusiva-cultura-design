@@ -3,7 +3,6 @@ import {
   CheckCircle2,
   GraduationCap,
   Heart,
-  Loader,
   Loader2,
   Users,
 } from "lucide-react";
@@ -44,68 +43,62 @@ import { useForm } from "react-hook-form";
 import { ZapButton } from "@/components/ZapButton";
 import Seo from "@/lib/seo";
 import SectionTitle from "@/components/SectionTitle";
-
-const areas = [
-  {
-    id: "educacao",
-    nome: "Educação e Ensino",
-  },
-  {
-    id: "interpretacao",
-    nome: "Interpretação",
-  },
-  {
-    id: "administrativo",
-    nome: "Administrativo",
-  },
-  {
-    id: "cultural",
-    nome: "Atividades Culturais",
-  },
-  {
-    id: "desenvolvimento",
-    nome: "Desenvolvimento Pessoal",
-  },
-];
-
-const volunteerFormSchema = z.object({
-  nome: z.string().min(3, { message: "Nome deve ter pelo menos 3 caracteres" }),
-  email: z.string().email({ message: "Email inválido" }),
-  telefone: z.string().min(10, { message: "Telefone inválido" }),
-  area: z.string({ required_error: "Selecione uma área de interesse" }),
-  disponibilidade: z.string({
-    required_error: "Selecione sua disponibilidade",
-  }),
-  experiencia: z.string().optional(),
-  "experiencia-libras": z.string().optional(),
-  "experiencia-libras-opcoes": z.string().optional(),
-  mensagem: z
-    .string()
-    .min(10, { message: "Conte-nos um pouco mais sobre você" }),
-});
-
-type VolunteerFormValues = z.infer<typeof volunteerFormSchema>;
+import {
+  areas,
+  disponibilidades,
+  experiencias,
+  VOLUNTEER_MAX_FILE_SIZE,
+  volunteerFormSchema,
+  VolunteerFormValues,
+} from "@/lib/types/volunteer";
+import { formatters } from "@/lib/strings";
 
 const Volunteer = () => {
   const { toast } = useToast();
   const [success, setSuccess] = useState(false);
 
-  const form = useForm<VolunteerFormValues>({
+  const form = useForm<
+    z.input<typeof volunteerFormSchema>,
+    unknown,
+    z.output<typeof volunteerFormSchema>
+  >({
     resolver: zodResolver(volunteerFormSchema),
     defaultValues: {
-      nome: "",
-      email: "",
-      telefone: "",
-      experiencia: "",
-      "experiencia-libras": "",
-      "experiencia-libras-opcoes": "",
-      mensagem: "",
+      nome: "Teste",
+      email: "teste@teste.com",
+      telefone: "64993004045",
+      area: "Educação e Ensino",
+      disponibilidade: "Uma vez por semana",
+      experiencia: "Nenhuma experiência - Mas estou a disposição para aprender e somar!",
+      experiencia_libras: "Sim",
+      experiencia_libras_opcoes: "lorem ipsum sit amet",
+      porque_ser_voluntario: "lorem ipsum sit amet",
     },
   });
 
-  const onSubmit = (data: VolunteerFormValues) => {
-    console.log(data);
-    // Aqui você implementaria a lógica para enviar os dados para um backend
+  const onSubmit = async (data: VolunteerFormValues) => {
+    const formData = new FormData();
+
+    Object.entries(data).forEach((e) => {
+      if (e[1] !== undefined) {
+        formData.append(e[0], e[1]);
+      }
+    });
+
+    const res = await fetch("/api/save-volunteer-form", {
+      method: "POST",
+      body: formData,
+    });
+
+    if (!res.ok) {
+      toast({
+        title: "Erro ao enviar formulário",
+        description:
+          "Houve um erro ao enviar seu formulário. Tente novamente mais tarde.",
+      });
+      return;
+    }
+
     toast({
       title: "Formulário enviado com sucesso!",
       description:
@@ -234,7 +227,13 @@ const Volunteer = () => {
           </section>
 
           {/* Formulário de Inscrição */}
-          <section id="inscricao" className="py-16 bg-primary/5" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+          <section
+            id="inscricao"
+            className="py-16 bg-primary/5"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            data-aos-delay="200"
+          >
             <div className="container p-4">
               <div className="mb-12 text-center">
                 <h2 className="text-3xl md:text-4xl font-bold font-playfair text-earth mb-4">
@@ -249,19 +248,19 @@ const Volunteer = () => {
 
               <div className="max-w-2xl mx-auto">
                 {success ? (
-                  <div className="bg-green-50 border border-green-200 rounded-lg p-8 text-center">
-                    <CheckCircle2 className="w-16 h-16 text-green-500 mx-auto mb-4" />
-                    <h3 className="text-2xl font-bold font-playfair text-green-800 mb-2">
+                  <div className="border bg-earth/5 border-primary rounded-lg p-8 text-center">
+                    <CheckCircle2 className="w-16 h-16 text-primary mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold font-playfair text-primary mb-2">
                       Inscrição Enviada!
                     </h3>
-                    <p className="text-green-700 mb-6">
+                    <p className="text-primary mb-6">
                       Agradecemos seu interesse em ser voluntário. Nossa equipe
                       entrará em contato em breve para dar continuidade ao
                       processo.
                     </p>
                     <Button
                       variant="outline"
-                      className="border-green-500 text-green-600 hover:bg-green-50"
+                      className="border-primary text-primary hover:bg-primary"
                       onClick={() => setSuccess(false)}
                     >
                       Fazer nova inscrição
@@ -331,6 +330,12 @@ const Volunteer = () => {
                                     <Input
                                       placeholder="(00) 00000-0000"
                                       {...field}
+                                      onChange={(e) => {
+                                        e.target.value = formatters.phoneNumber(
+                                          e.target.value,
+                                        );
+                                        field.onChange(e);
+                                      }}
                                     />
                                   </FormControl>
                                   <FormMessage />
@@ -355,11 +360,8 @@ const Volunteer = () => {
                                     </FormControl>
                                     <SelectContent>
                                       {areas.map((area) => (
-                                        <SelectItem
-                                          key={area.id}
-                                          value={area.id}
-                                        >
-                                          {area.nome}
+                                        <SelectItem key={area} value={area}>
+                                          {area}
                                         </SelectItem>
                                       ))}
                                     </SelectContent>
@@ -386,21 +388,14 @@ const Volunteer = () => {
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
-                                    <SelectItem value="uma-vez">
-                                      Uma vez por semana
-                                    </SelectItem>
-                                    <SelectItem value="duas-vezes">
-                                      Duas vezes por semana
-                                    </SelectItem>
-                                    <SelectItem value="mais-vezes">
-                                      Mais de duas vezes por semana
-                                    </SelectItem>
-                                    <SelectItem value="eventos">
-                                      Apenas em eventos específicos
-                                    </SelectItem>
-                                    <SelectItem value="remoto">
-                                      Trabalho remoto
-                                    </SelectItem>
+                                    {disponibilidades.map((disponib) => (
+                                      <SelectItem
+                                        key={disponib}
+                                        value={disponib}
+                                      >
+                                        {disponib}
+                                      </SelectItem>
+                                    ))}
                                   </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -426,19 +421,14 @@ const Volunteer = () => {
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
-                                    <SelectItem value="nenhuma">
-                                      Nenhuma experiência - Mas estou a
-                                      disposição para aprender e somar!
-                                    </SelectItem>
-                                    <SelectItem value="basico">
-                                      Conhecimento básico
-                                    </SelectItem>
-                                    <SelectItem value="intermediario">
-                                      Conhecimento intermediário
-                                    </SelectItem>
-                                    <SelectItem value="avancado">
-                                      Conhecimento avançado
-                                    </SelectItem>
+                                    {experiencias.map((experiencia) => (
+                                      <SelectItem
+                                        key={experiencia}
+                                        value={experiencia}
+                                      >
+                                        {experiencia}
+                                      </SelectItem>
+                                    ))}
                                   </SelectContent>
                                 </Select>
                                 <FormDescription>
@@ -451,7 +441,7 @@ const Volunteer = () => {
 
                           <FormField
                             control={form.control}
-                            name="experiencia-libras"
+                            name="experiencia_libras"
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel>
@@ -469,8 +459,8 @@ const Volunteer = () => {
                                     </SelectTrigger>
                                   </FormControl>
                                   <SelectContent>
-                                    <SelectItem value="sim">Sim</SelectItem>
-                                    <SelectItem value="não">Não</SelectItem>
+                                    <SelectItem value="Sim">Sim</SelectItem>
+                                    <SelectItem value="Não">Não</SelectItem>
                                   </SelectContent>
                                 </Select>
                                 <FormMessage />
@@ -478,10 +468,10 @@ const Volunteer = () => {
                             )}
                           />
 
-                          {form.watch("experiencia-libras") === "sim" && (
+                          {form.watch("experiencia_libras") === "Sim" && (
                             <FormField
                               control={form.control}
-                              name="experiencia-libras-opcoes"
+                              name="experiencia_libras_opcoes"
                               render={({ field }) => (
                                 <FormItem>
                                   <FormLabel>
@@ -499,7 +489,7 @@ const Volunteer = () => {
 
                           <FormField
                             control={form.control}
-                            name="mensagem"
+                            name="porque_ser_voluntario"
                             render={({ field }) => (
                               <FormItem>
                                 <FormLabel>
@@ -513,6 +503,70 @@ const Volunteer = () => {
                                   />
                                 </FormControl>
                                 <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="proposta_acao"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>
+                                  Proposta de ação para área de educação ou
+                                  ensino
+                                </FormLabel>
+                                <FormControl>
+                                  <Input
+                                    type="file"
+                                    accept="application/pdf"
+                                    name={field.name}
+                                    id="proposta_acao"
+                                    onChange={(e) => {
+                                      const file = e.target.files?.[0];
+                                      field.onChange(file);
+                                    }}
+                                    onBlur={field.onBlur}
+                                    ref={field.ref}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                                <FormDescription>
+                                  Arquivo em PDF de até{" "}
+                                  {VOLUNTEER_MAX_FILE_SIZE / 1024 / 1024} MB
+                                </FormDescription>
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="antecedentes_criminais"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>
+                                  Envie um arquivo em pdf dos seus antecedentes
+                                  criminais (no máximo com 30 dias) *
+                                </FormLabel>
+                                <FormControl>
+                                  <Input
+                                    type="file"
+                                    accept="application/pdf"
+                                    name={field.name}
+                                    id="antecedentes_criminais"
+                                    onChange={(e) => {
+                                      const file = e.target.files?.[0];
+                                      field.onChange(file);
+                                    }}
+                                    onBlur={field.onBlur}
+                                    ref={field.ref}
+                                  />
+                                </FormControl>
+                                <FormMessage />
+                                <FormDescription>
+                                  Arquivo em PDF de até{" "}
+                                  {VOLUNTEER_MAX_FILE_SIZE / 1024 / 1024} MB
+                                </FormDescription>
                               </FormItem>
                             )}
                           />
