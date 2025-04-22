@@ -8,8 +8,10 @@ export const contactSchema = z.object({
     .string()
     .min(1, defaultRequiredMsg)
     .email({ message: "Este email não é válido" }),
+  phone: z.string().min(15, defaultRequiredMsg),
   subject: z.string().min(1, defaultRequiredMsg),
   message: z.string().min(1, defaultRequiredMsg)
 });
 
 export type ContactSchema = z.infer<typeof contactSchema>;
+

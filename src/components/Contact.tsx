@@ -17,6 +17,7 @@ import { Textarea } from "./ui/textarea";
 import { Button } from "./ui/button";
 import { generateRecaptchaToken } from "@/lib/recaptcha";
 import SectionTitle from "./SectionTitle";
+import { formatters } from "@/lib/strings";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -28,6 +29,7 @@ const Contact = () => {
       email: "",
       subject: "",
       message: "",
+      phone: "",
     },
   });
 
@@ -124,6 +126,31 @@ const Contact = () => {
                       <FormControl>
                         <Input
                           {...field}
+                          className="w-full px-4 py-6 rounded-lg border border-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-primary"
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="phone"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel className="text-base font-normal block text-dark/80 mb-2">
+                        Telefone *
+                      </FormLabel>
+                      <FormControl>
+                        <Input
+                          {...field}
+                          onChange={(e) => {
+                            e.target.value = formatters.phoneNumber(
+                              e.target.value,
+                            );
+                            field.onChange(e);
+                          }}
                           className="w-full px-4 py-6 rounded-lg border border-gray-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-0 focus-visible:ring-primary"
                         />
                       </FormControl>

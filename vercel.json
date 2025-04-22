@@ -1,0 +1,7 @@
+{
+  "functions": {
+     "api/save-volunteer-form.ts":  {
+       "includeFiles": "*"
+     }
+  }
+}

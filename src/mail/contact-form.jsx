@@ -65,6 +65,10 @@ export const Template = ({
                     {email}
                   </Text>
                   <Text style={paragraph}>
+                  <b>Telefone: </b>
+                    {phone || "Não informado"}
+                  </Text>
+                  <Text style={paragraph}>
                     <b>Mensagem: </b>
                     {message}
                   </Text>
