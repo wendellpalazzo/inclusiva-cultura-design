@@ -1,4 +1,5 @@
-import { Template } from "../../src/mail/contact-form.jsx";
+import { render } from 'jsx-email';
+import { Template } from "../../src/mail/contact-form.js";
 import { Resend } from "resend";
 import { contactSchema } from "../../src/lib/types/contact.js";
 import { z } from "zod";
@@ -50,11 +51,13 @@ export async function POST(request: Request) {
     );
   }
 
+  const html = await render(Template({ ...data }));
+
   const resendResp = await resend.emails.send({
     from: "Site | I.M.O<mailer@institutomaosdeouro.org.br>",
     to: [toMail],
     subject: "Um novo contato feito pelo site institutomaosdeouro.org.br",
-    react: Template({ ...data }),
+    html,
   });
 
   if (resendResp.error) {

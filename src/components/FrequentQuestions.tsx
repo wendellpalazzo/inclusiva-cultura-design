@@ -2,7 +2,7 @@ import SectionTitle from "./SectionTitle";
 
 const FrequentQuestions = () => {
   return (
-    <section id="nossos-projetos" className="py-20 scroll-my-10">
+    <section id="nossos-projetos" className="py-20 scroll-my-10 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <SectionTitle
