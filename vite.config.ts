@@ -49,6 +49,7 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     rollupOptions: {
+      external: ['jsx-email'],
       output: {
         manualChunks: {
           react: ["react", "react-dom", "react-router-dom"],

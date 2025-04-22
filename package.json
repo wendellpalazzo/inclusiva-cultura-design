@@ -43,6 +43,7 @@
     "@radix-ui/react-tooltip": "^1.1.4",
     "@tanstack/react-query": "^5.56.2",
     "@types/grecaptcha": "^3.0.9",
+    "@vercel/node": "^5.1.14",
     "aos": "^2.3.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
@@ -73,7 +74,6 @@
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "vite-plugin-html": "^3.2.2",
     "@eslint/js": "^9.9.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "^22.14.1",
@@ -94,8 +94,12 @@
     "typescript-eslint": "^8.0.1",
     "vite": "^5.4.1",
     "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-html": "^3.2.2",
     "vite-plugin-image-optimizer": "^1.1.8",
     "vite-plugin-sitemap": "^0.7.1",
     "vite-plugin-vercel": "^9.0.5"
+  },
+  "engines": {
+    "node": "20"
   }
 }
