@@ -1,9 +1,6 @@
 {
   "functions": {
-     "api/save-volunteer-form.ts":  {
-       "includeFiles": "*"
-     },
-     "api/sendmail/contact.ts":  {
+     "api/**/*":  {
        "includeFiles": "*"
      }
   }
