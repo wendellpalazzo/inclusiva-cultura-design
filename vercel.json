@@ -1,10 +1,10 @@
 {
   "functions": {
      "api/sendmail/contact.ts":  {
-       "includeFiles": ["src/mail/contact-form.js","src/lib/types/contact.js"]
+       "includeFiles": "src"
      },
      "api/save-volunteer-form.ts":{
-      "includeFiles":["src/lib/types/volunteer.js", "src/lib/utils.js"]
+      "includeFiles":"src"
      }
   }
 }
