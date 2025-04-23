@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { formatBytes } from "../utils";
+import { formatBytes } from "../utils.js";
 
 export const VOLUNTEER_MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
 export const VOLUNTEER_ACCEPTED_FILE_TYPES = ["application/pdf"];

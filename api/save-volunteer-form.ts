@@ -1,5 +1,5 @@
 import { Buffer } from "buffer";
-import { VolunteerFormFieldGForm, VolunteerFormValues} from "../src/lib/types/volunteer";
+import { VolunteerFormFieldGForm, VolunteerFormValues} from "../src/lib/types/volunteer.js";
 
 export async function POST(request: Request) {
   const formData = await request.formData();

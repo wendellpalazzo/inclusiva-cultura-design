@@ -1,7 +1,7 @@
 import { render } from 'jsx-email';
-import { Template } from "../../src/mail/contact-form";
+import { Template } from "../../src/mail/contact-form.js";
 import { Resend } from "resend";
-import { contactSchema } from "../../src/lib/types/contact";
+import { contactSchema } from "../../src/lib/types/contact.js";
 import { z } from "zod";
 
 const contactSchemaWithRecaptcha = contactSchema.extend({
