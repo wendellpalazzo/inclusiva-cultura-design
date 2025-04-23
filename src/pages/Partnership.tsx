@@ -18,6 +18,7 @@ import { toast } from "sonner";
 import { ZapButton } from "@/components/ZapButton";
 import { Link } from "react-router-dom";
 import Seo from "@/lib/seo";
+import { PartnerForm } from "@/components/PartnerForm";
 
 const Partnership = () => {
   const handleFormSubmit = (e: React.FormEvent) => {
@@ -240,137 +241,7 @@ const Partnership = () => {
                     </h3>
                   </div>
                   <div className="p-5">
-                    <form onSubmit={handleFormSubmit} className="space-y-4">
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="empresa"
-                          className="text-sm font-medium text-earth"
-                        >
-                          Nome da Empresa
-                        </label>
-                        <input
-                          type="text"
-                          id="empresa"
-                          className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          required
-                        />
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <label
-                            htmlFor="nome"
-                            className="text-sm font-medium text-earth"
-                          >
-                            Nome do Responsável
-                          </label>
-                          <input
-                            type="text"
-                            id="nome"
-                            className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <label
-                            htmlFor="cargo"
-                            className="text-sm font-medium text-earth"
-                          >
-                            Cargo
-                          </label>
-                          <input
-                            type="text"
-                            id="cargo"
-                            className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <label
-                            htmlFor="email"
-                            className="text-sm font-medium text-earth"
-                          >
-                            E-mail
-                          </label>
-                          <input
-                            type="email"
-                            id="email"
-                            className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                            required
-                          />
-                        </div>
-                        <div className="space-y-2">
-                          <label
-                            htmlFor="telefone"
-                            className="text-sm font-medium text-earth"
-                          >
-                            Telefone
-                          </label>
-                          <input
-                            type="tel"
-                            id="telefone"
-                            className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                            required
-                          />
-                        </div>
-                      </div>
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="interesse"
-                          className="text-sm font-medium text-earth"
-                        >
-                          Tipo de Parceria de Interesse
-                        </label>
-                        <select
-                          id="interesse"
-                          className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          required
-                        >
-                          <option value="">Selecione uma opção</option>
-                          <option value="patrocinio">
-                            Patrocínio de Projetos
-                          </option>
-                          <option value="doacao">
-                            Doação de Produtos/Serviços
-                          </option>
-                          <option value="contratacao">
-                            Contratação de Pessoas Surdas
-                          </option>
-                          <option value="marketing">
-                            Marketing Relacionado à Causa
-                          </option>
-                          <option value="voluntariado">
-                            Voluntariado Corporativo
-                          </option>
-                          <option value="traducao">
-                            Tradução, Interpretação e Guia-Interpretação de
-                            Libras/Lingua Portuguesa
-                          </option>
-                          <option value="outro">Outro</option>
-                        </select>
-                      </div>
-                      <div className="space-y-2">
-                        <label
-                          htmlFor="mensagem"
-                          className="text-sm font-medium text-earth"
-                        >
-                          Mensagem
-                        </label>
-                        <textarea
-                          id="mensagem"
-                          rows={4}
-                          className="w-full p-3 border border-gray-200 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                          required
-                        ></textarea>
-                      </div>
-                      <Button
-                        type="submit"
-                        className="w-full bg-primary hover:bg-primary-600"
-                      >
-                        Enviar Solicitação
-                      </Button>
-                    </form>
+                    <PartnerForm />
                     <div className="my-8 text-center">
                       <p className="lg:text-lg text-balance">
                         Ficou com alguma dúvida? <br /> Entre em contato conosco
