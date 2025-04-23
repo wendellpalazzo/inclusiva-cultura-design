@@ -64,15 +64,15 @@ const Volunteer = () => {
   >({
     resolver: zodResolver(volunteerFormSchema),
     defaultValues: {
-      nome: "Teste",
-      email: "teste@teste.com",
-      telefone: "64993004045",
-      area: "Educação e Ensino",
-      disponibilidade: "Uma vez por semana",
-      experiencia: "Nenhuma experiência - Mas estou a disposição para aprender e somar!",
-      experiencia_libras: "Sim",
-      experiencia_libras_opcoes: "lorem ipsum sit amet",
-      porque_ser_voluntario: "lorem ipsum sit amet",
+      nome: "",
+      email: "",
+      telefone: "",
+      // area: "",
+      // disponibilidade: "",
+      // experiencia: "",
+      experiencia_libras: "",
+      experiencia_libras_opcoes: "",
+      porque_ser_voluntario: "",
     },
   });
 
