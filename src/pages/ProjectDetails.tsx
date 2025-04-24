@@ -286,7 +286,7 @@ const ProjectDetails = () => {
                     transformando vidas através da educação e da cultura surda.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link to="/doe" className="btn-primary">
+                    <Link to="/como-ajudar/doe" className="btn-primary">
                       Doe Agora
                     </Link>
                   </div>

@@ -11,10 +11,8 @@ import vercel from "vite-plugin-vercel";
 
 const routes = [
   "/",
-  "/doe",
-  "/voluntarie-se",
-  "/parcerias",
-  "/#blog",
+  "/projetos",
+  "/blog",
   "/como-ajudar",
   "/como-ajudar/doe",
   "/como-ajudar/volutarie-se",
