@@ -25,6 +25,7 @@ export const SocialShare = ({title, titleColor, url}:SocialShareProps) => {
           padding: 0,
           margin: 0,
           gap: 10,
+          flexDirection: window.screen.width < 600 ? "column":"row"
         },
       }}
       url={url}
