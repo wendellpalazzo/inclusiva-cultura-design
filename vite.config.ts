@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 
 import Sitemap from "vite-plugin-sitemap";
 import { createHtmlPlugin } from "vite-plugin-html";
@@ -10,11 +9,20 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 
 import vercel from "vite-plugin-vercel";
 
-const routes = ["/", "/doe", "/voluntarie-se", "/parcerias", "/#blog"];
+const routes = [
+  "/",
+  "/doe",
+  "/voluntarie-se",
+  "/parcerias",
+  "/#blog",
+  "/como-ajudar",
+  "/como-ajudar/doe",
+  "/como-ajudar/volutarie-se",
+  "/como-ajudar/parcerias",
+];
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // base: "/inclusiva-cultura-design/",
   server: {
     host: "::",
     port: process.env.PORT as unknown as number,
@@ -24,9 +32,17 @@ export default defineConfig(({ mode }) => ({
     react(),
     ViteImageOptimizer({
       includePublic: true,
+      jpg: {
+        progressive: true,
+      },
+      jpeg: {
+        progressive: true,
+      },
+      png: {
+        progressive: true,
+      },
     }),
     viteCompression(),
-    mode === "development" && componentTagger(),
     Sitemap({
       hostname: "https://institutomaosdeouro.org.br/",
       dynamicRoutes: routes,
