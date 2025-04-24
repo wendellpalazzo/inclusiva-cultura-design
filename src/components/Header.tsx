@@ -59,11 +59,13 @@ const Header = () => {
                 data-aos-delay={1000 + idx * 200}
                 data-aos-duration="1800"
                 key={item.name}
-                href={item.href.includes("/") ? `${item.href}` : `/#${item.href}`}
+                href={
+                  item.href.includes("/") ? `${item.href}` : `/#${item.href}`
+                }
                 onClick={(e) => {
-                  if(!item.href.includes("/")){
-                  e.preventDefault();
-                  goTo(item.href);
+                  if (!item.href.includes("/")) {
+                    e.preventDefault();
+                    goTo(item.href);
                   }
                 }}
                 className="nav-link cursor-pointer"
@@ -90,10 +92,15 @@ const Header = () => {
               {navItems.map((item) => (
                 <a
                   key={item.name}
+                  href={
+                    item.href.includes("/") ? `${item.href}` : `/#${item.href}`
+                  }
                   onClick={(e) => {
-                    e.preventDefault();
-                    goTo(item.href);
-                    setIsOpen(false);
+                    if (!item.href.includes("/")) {
+                      e.preventDefault();
+                      goTo(item.href);
+                      setIsOpen(false);
+                    }
                   }}
                   className="block px-3 py-2 rounded-md text-base font-medium text-white hover:text-primary hover:bg-gray-50/10"
                 >

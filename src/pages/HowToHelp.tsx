@@ -48,9 +48,10 @@ const HowToHelp = () => {
   ];
 
   const bgURL =
-    window.screen.width > 768
-      ? `url('https://images.unsplash.com/photo-1578357078586-491adf1aa5ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=${window.screen.width}&q=80')`
-      : "";
+    // window.screen.width > 768
+      // ?
+       `url('/assets/images/bg-como-ajudar.jpg')`
+      // : "";
 
   return (
     <section id="como-ajudar" className="pt-20">

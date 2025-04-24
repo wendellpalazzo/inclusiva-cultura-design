@@ -116,7 +116,7 @@ const Volunteer = () => {
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Voluntarie-se | Instituto Mãos de Ouro",
-          url: "https://institutomaosdeouro.org.br/voluntarie-se",
+          url: "https://institutomaosdeouro.org.br/como-ajudar/voluntarie-se",
         }}
       />
       <div className="min-h-dvh flex flex-col">
@@ -124,22 +124,18 @@ const Volunteer = () => {
           {/* Hero Section */}
           <section className="bg-dark text-white py-20 relative overflow-hidden animate-fadeIn">
             {/* Background pattern */}
-            <div className="mix-blend-overlay hidden md:block absolute inset-0 bg-[url('/assets/images/escola-e-comunidade-parceria-getty-images.jpg')] bg-no-repeat bg-top bg-cover opacity-40"></div>
+            <div className="mix-blend-overlay  md:block absolute inset-0 bg-[url('/assets/images/escola-e-comunidade-parceria-getty-images.jpg')] bg-no-repeat bg-top bg-cover opacity-40"></div>
 
             <div className="container mx-auto px-4 relative z-10">
               <a
                 key={"voltar-para-como-ajudar"}
                 href={`/como-ajudar`}
-                className="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-8 transition-colors"
+                className="inline-flex items-center text-primary hover:text-primary/80 font-semibold relative -top-10 mb-10 transition-colors"
               >
                 <ArrowLeft size={16} className="mr-2" /> Voltar para Como Ajudar
               </a>
 
               <div className="text-center max-w-4xl mx-auto">
-                <Heart
-                  size={60}
-                  className="mx-auto mb-6 text-primary md:hidden"
-                />
                 <h1 className="text-4xl md:text-7xl font-bold font-playfair text-white mb-6 relative">
                   Seja um{" "}
                   <span className="text-primary relative">
@@ -168,7 +164,7 @@ const Volunteer = () => {
             </div>
           </section>
 
-          <section className="py-16 bg-white" data-aos="fade-up">
+          <section className="py-16 bg-white" data-aos="fade-in" data-aos-anchor-placement="top">
             <div className="container">
               <div className="mb-12 text-center">
                 <SectionTitle
@@ -230,7 +226,6 @@ const Volunteer = () => {
             className="py-16 bg-primary/5"
             data-aos="fade-up"
             data-aos-duration="1000"
-            data-aos-delay="200"
           >
             <div className="container p-4">
               <div className="mb-12 text-center">

@@ -24,7 +24,7 @@ const Partnership = () => {
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Parcerias | Instituto Mãos de Ouro",
-          url: "https://institutomaosdeouro.org.br/parcerias",
+          url: "https://institutomaosdeouro.org.br/como-ajudar/parcerias",
         }}
       />
       <div className="min-h-screen flex flex-col">

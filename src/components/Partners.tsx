@@ -24,6 +24,7 @@ export const Partners = () => {
           AutoScroll({
             stopOnInteraction: false,
             startDelay: 300,
+            speed: 0.95
           }),
         ]}
       >
@@ -35,16 +36,18 @@ export const Partners = () => {
             </div>
           </CarouselItem>
           <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4">
-            <div className="relative text-lg hover:bg-slate-600 hover:text-slate-300 text-center p-4 text-slate-600 bg-slate-300 size-48 rounded-xl font-bold flex justify-center items-center flex-col">
-              <span className="text-sm my-4">
-                Sua empresa pode aparecer aqui!
-              </span>
-              <Link to="/parcerias/">Clique aqui e Saiba Mais!</Link>
-              <MousePointerClickIcon className="size-10 stroke-primary/70" />
-            </div>
+            <Link to="/como-ajudar/parcerias/">
+              <div className="relative text-lg hover:bg-slate-600 hover:text-slate-300 text-center p-4 text-slate-600 bg-slate-300 size-48 rounded-xl font-bold flex justify-center items-center flex-col">
+                <span className="text-sm my-4">
+                  Sua empresa pode aparecer aqui!
+                </span>
+                Clique aqui e Saiba Mais!
+                <MousePointerClickIcon className="size-10 stroke-primary/70" />
+              </div>
+            </Link>
           </CarouselItem>
           <CarouselItem className="flex items-center justify-center md:basis-1/3 lg:basis-1/4">
-            <HandHeartIcon className="size-20" strokeWidth={1}/>
+            <HandHeartIcon className="size-20" strokeWidth={1} />
           </CarouselItem>
         </CarouselContent>
       </Carousel>

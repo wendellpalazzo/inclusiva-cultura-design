@@ -34,7 +34,7 @@ const Doe = () => {
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "Doe | Instituto Mãos de Ouro",
-          url: "https://institutomaosdeouro.org.br/doe",
+          url: "https://institutomaosdeouro.org.br/como-ajudar/doe",
         }}
       />
       <div className="min-h-dvh flex flex-col">
@@ -42,22 +42,18 @@ const Doe = () => {
           {/* Hero Section */}
           <section className="bg-dark text-white py-20 relative overflow-hidden animate-fadeIn">
             {/* Background pattern */}
-            <div className="hidden md:block absolute inset-0 bg-[url('/assets/images/instituto-maos-de-ouro-hero-doe.jpeg')] bg-no-repeat bg-bottom bg-cover opacity-40"></div>
+            <div className="block absolute inset-0 bg-[url('/assets/images/instituto-maos-de-ouro-hero-doe.jpeg')] bg-no-repeat bg-bottom bg-cover opacity-40"></div>
 
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="container mx-auto px-2 relative z-10">
               <a
                 key={"voltar-para-como-ajudar"}
                 href={`/como-ajudar`}
-                className="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-8 transition-colors"
+                className="inline-flex items-center text-primary hover:text-primary/80 font-semibold relative -top-10 transition-colors"
               >
                 <ArrowLeft size={16} className="mr-2" /> Voltar para Como Ajudar
               </a>
 
               <div className="text-center max-w-4xl mx-auto">
-                <Heart
-                  size={60}
-                  className="mx-auto mb-6 text-primary md:hidden"
-                />
                 <h1 className="text-4xl md:text-7xl font-bold font-playfair text-white mb-6 relative">
                   Doe e
                   <span className="mx-2 text-primary relative">
@@ -88,7 +84,7 @@ const Doe = () => {
             </div>
           </section>
 
-          <section className="py-16 bg-white" data-aos="fade-up">
+          <section className="py-16 bg-white" data-aos="fade-in" data-aos-anchor-placement="top">
             <div className="container">
               <div className="mb-12 text-center">
                 <SectionTitle
