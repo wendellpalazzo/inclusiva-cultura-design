@@ -1,4 +1,4 @@
-import { HandCoins, HandHeartIcon, MousePointerClickIcon } from "lucide-react";
+import { HandHeartIcon, HeartHandshakeIcon, MousePointerClickIcon } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import AutoScroll from "embla-carousel-auto-scroll";
 import { Link } from "react-router-dom";
@@ -24,11 +24,14 @@ export const Partners = () => {
           AutoScroll({
             stopOnInteraction: false,
             startDelay: 300,
-            speed: 0.95
+            speed: 1.5
           }),
         ]}
       >
         <CarouselContent className="p-4">
+          <CarouselItem className="flex items-center justify-center md:basis-1/3 lg:basis-1/4">
+            <HeartHandshakeIcon className="size-20" strokeWidth={1} />
+          </CarouselItem>
           <CarouselItem className="flex justify-center md:basis-1/3 lg:basis-1/4 ">
             <div className="bg-sky-600 text-lg text-center p-4 text-white rounded-xl size-48 font-bold flex justify-center items-center flex-col">
               Wendell Palazzo
