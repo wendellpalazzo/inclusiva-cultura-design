@@ -6,26 +6,24 @@ export function useSmoothScroll() {
   const location = useLocation();
   const navigate = useNavigate();
 
-
   function scrollToId(id: string) {
-
     const tryScroll = (retries = 10) => {
       const el = document.getElementById(id);
-      console.log(retries, el)
+
       if (el) {
-
-        lenis?.scrollTo(el, {
-          offset: -80, // ajuste se tiver header fixo
-          duration: 1.2,
-          easing: (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic
-        });
-
+        setTimeout(() => {
+          lenis?.scrollTo(el, {
+            offset: -80, // ajuste se tiver header fixo
+            duration: 1.2,
+            easing: (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic
+          });
+        }, 1000);
       } else if (retries > 0) {
         setTimeout(() => tryScroll(retries - 1), 200);
       }
     };
 
-    tryScroll();
+    tryScroll(2);
   }
 
   function goToHashFromAnyPage(id: string) {
