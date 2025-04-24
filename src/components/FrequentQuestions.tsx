@@ -29,7 +29,7 @@ const FrequentQuestions = () => {
             {
               question: "Como posso ajudar o instituto?",
               answer:
-                "Você pode ajudar através de doações, voluntariado ou participando de nossos eventos. Veja mais detalhes na seção - <a class='underline text-primary' href='/#como-ajudar'>Como Ajudar</a>.",
+                "Você pode ajudar através de doações, voluntariado ou participando de nossos eventos. Veja mais detalhes na seção - <a class='underline text-primary' href='/como-ajudar'>Como Ajudar</a>.",
             },
             {
               question: "O instituto oferece cursos para ouvintes?",
@@ -53,12 +53,12 @@ const FrequentQuestions = () => {
             {
               question: "O instituto aceita doações?",
               answer:
-                "Sim, aceitamos doações financeiras e de materiais. Acesse o menu - <a class='underline text-primary' href='/#como-ajudar'>Como Ajudar</a> - para saber mais.",
+                "Sim, aceitamos doações financeiras e de materiais. Acesse o menu - <a class='underline text-primary' href='/como-ajudar'>Como Ajudar</a> - para saber mais.",
             },
             {
               question: "Como posso me voluntariar?",
               answer:
-                "Você pode se inscrever como voluntário através do formulário disponível em nosso site no menu - <a class='underline text-primary' href='/#como-ajudar'>Como Ajudar</a> -. Lembrando que este formulário é apenas uma pré-inscrição e em um segundo momento poderá ser feita uma entrevista com o intúito de lhe conhecer melhor.",
+                "Você pode se inscrever como voluntário através do formulário disponível em nosso site no menu - <a class='underline text-primary' href='/como-ajudar'>Como Ajudar</a> -. Lembrando que este formulário é apenas uma pré-inscrição e em um segundo momento poderá ser feita uma entrevista com o intúito de lhe conhecer melhor.",
             },
           ].map((faq, index) => (
             <li

@@ -128,7 +128,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#como-ajudar"
+                  href="/como-ajudar"
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Como Ajudar

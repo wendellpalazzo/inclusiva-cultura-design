@@ -1,24 +1,11 @@
 import {
   ArrowLeft,
-  CaseUpper,
   Computer,
-  GraduationCap,
   Heart,
-  Home,
   LucideTrendingUp,
-  MessageSquare,
-  PersonStanding,
   Presentation,
-  Users,
 } from "lucide-react";
-import { Link } from "react-router-dom";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { WhatsApp } from "@/lib/whatsapp";
-import { useEffect, useState } from "react";
 import { ZapButton } from "@/components/ZapButton";
 import { toast } from "sonner";
 import Seo from "@/lib/seo";
@@ -51,9 +38,6 @@ const Doe = () => {
         }}
       />
       <div className="min-h-dvh flex flex-col">
-        {/* Modified Header for Doe Page */}
-        <Header />
-
         <main className="flex-grow pt-20">
           {/* Hero Section */}
           <section className="bg-dark text-white py-20 relative overflow-hidden animate-fadeIn">
@@ -61,12 +45,13 @@ const Doe = () => {
             <div className="hidden md:block absolute inset-0 bg-[url('/assets/images/instituto-maos-de-ouro-hero-doe.jpeg')] bg-no-repeat bg-bottom bg-cover opacity-40"></div>
 
             <div className="container mx-auto px-4 relative z-10">
-              <Link
-                to="/#como-ajudar"
+              <a
+                key={"voltar-para-como-ajudar"}
+                href={`/como-ajudar`}
                 className="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-8 transition-colors"
               >
                 <ArrowLeft size={16} className="mr-2" /> Voltar para Como Ajudar
-              </Link>
+              </a>
 
               <div className="text-center max-w-4xl mx-auto">
                 <Heart
@@ -276,8 +261,6 @@ const Doe = () => {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   );

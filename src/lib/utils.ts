@@ -13,3 +13,8 @@ export const formatBytes = (bytes: number, decimals = 2) => {
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + " " + sizes[i];
 };
+
+export const optimizeImg = (url:string) =>{
+  //optimizeImg(`${props.src}&width=420&quality=100`
+  return `http://localhost:3333/resize?url=${url}`
+}

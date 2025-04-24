@@ -1,12 +1,18 @@
-import { ShareSocial } from "react-share-social";
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, MapPin, Link as LinkIcon } from "lucide-react";
-import Footer from "@/components/Footer";
+import {
+  ArrowLeft,
+  Calendar,
+  MapPin,
+  Link as LinkIcon,
+  Loader2,
+} from "lucide-react";
 import { useEffect, useState } from "react";
-import Header from "@/components/Header";
 import { getContent } from "@/lib/contentLoader";
 import Seo from "@/lib/seo";
 import { SocialShare } from "@/components/SocialShare";
+
+import { MasonryPhotoAlbum } from "react-photo-album";
+import "react-photo-album/masonry.css";
 
 // Define the project type
 export interface Project {
@@ -28,18 +34,33 @@ export interface Project {
 const ProjectDetails = () => {
   const { slug } = useParams<{ slug: string }>();
   const [project, setProject] = useState<Project | null>(null);
+  const [loading, setLoading] = useState(true); // novo estado
 
   useEffect(() => {
     // Find the project by id
     if (slug) {
+      setLoading(true);
       getContent<Project>("projetos", slug)
         .then((data) => {
           setProject(data);
           window.scrollTo(0, 0);
         })
-        .catch((err) => console.error(err));
+        .catch((err) => console.error(err))
+        .finally(() => {
+          setLoading(false);
+        });
     }
   }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="min-h-dvh flex items-center justify-center bg-gray-100">
+        <div className="text-center p-8">
+          <Loader2 className="animate-spin size-20 stroke-primary ease-in-out" />
+        </div>
+      </div>
+    );
+  }
 
   if (!project) {
     return (
@@ -93,13 +114,10 @@ const ProjectDetails = () => {
         image="/assets/images/logo-instituto-maos-de-ouro.png"
       />
       <div className="min-h-dvh flex flex-col">
-        {/* Header - Same as Doe page */}
-        <Header />
-
         <main className="flex-grow pt-20">
           {/* Hero Section */}
           <section
-            className={`py-20 relative overflow-hidden text-white bg-primary`}
+            className={`py-20 relative overflow-hidden text-white ${project.color}`}
           >
             <div className="absolute inset-0 bg-black/30"></div>
 
@@ -182,32 +200,72 @@ const ProjectDetails = () => {
                     ))}
                   </ul>
                 </div>
-
-                {/* Gallery */}
+              </div>
+            </div>
+            {/* Gallery */}
+            <div className="container mx-auto px-4">
+              <div className="max-w-7xl mx-auto">
                 <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-earth mb-6">
+                  {/* <h2 className="text-3xl font-bold text-earth mb-6">
                     Galeria
-                  </h2>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {project.gallery.map((image, index) => (
-                      <div
-                        key={index}
-                        className="rounded-lg overflow-hidden h-64 relative group"
-                      >
-                        <img
-                          loading="lazy"
-                          src={image}
-                          alt={`${project.title} - Imagem ${index + 1}`}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div
-                          className={`absolute inset-0 ${project.color} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
-                        ></div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                  </h2> */}
+                  <MasonryPhotoAlbum
+                    render={{
+                      extras: (_, { photo: { label } }) => {
+                        return label ? (
+                          <div
+                            className="absolute w-full bg-slate-900/80 text-white bottom-1 p-2 text-xs"
+                            dangerouslySetInnerHTML={{ __html: label }}
+                          ></div>
+                        ) : null;
+                      },
+                      // <FavoriteIcon photo={photo} index={index} />
 
+                      image: (props) => (
+                        <img
+                          {...props}
+                          className="border-b-4 border-primary"
+                          src={props.src}
+                        />
+                      ),
+                      wrapper: (props) => (
+                        <div
+                          {...props}
+                          className="transform-gpu hover:saturate-100 saturate-[0.65] hover:shadow-xl hover:shadow-black/60 transition-all duration-300 cursor-pointer ease-in-out hover:scale-105 hover:z-50"
+                        />
+                      ),
+                      // button: (props) => <button {...props}>OI</button>
+                      // extras: (_, { photo, index }) => (
+                      //   <FavoriteIcon photo={photo} index={index} />
+                      // ),
+                    }}
+                    columns={(containerWidth) => {
+                      if (containerWidth < 400) return 1;
+                      if (containerWidth < 800) return 3;
+                      return 3;
+                    }}
+                    spacing={(containerWidth) => {
+                      if (containerWidth >= 1200) return 10;
+                      if (containerWidth >= 600 && containerWidth < 1200)
+                        return 10;
+                      if (containerWidth >= 300 && containerWidth < 600)
+                        return 5;
+                      if (containerWidth < 300) return 5;
+                    }}
+                    photos={project.gallery.map((i) => ({
+                      title: `Instituto Mãos de Ouro - ${i?.[1]?.replace(/<br\/>/g, "")}`,
+                      alt: `Instituto Mãos de Ouro - ${i?.[1]?.replace(/<br\/>/g, "")}`,
+                      label: i?.[1],
+                      width: 100,
+                      height: 0,
+                      src: i[0],
+                    }))}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
                 {/* Impact */}
                 <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">
                   <h2 className="text-3xl font-bold text-earth mb-6">
@@ -244,8 +302,6 @@ const ProjectDetails = () => {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   );

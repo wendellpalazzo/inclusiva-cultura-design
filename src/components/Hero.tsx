@@ -49,9 +49,9 @@ const Hero = () => {
             </h1>
 
             <p
-              // data-aos="zoom-out-left"
-              // data-aos-delay="500"
-              // data-aos-duration="3000"
+              data-aos="zoom-out-left"
+              data-aos-delay="500"
+              data-aos-duration="3000"
               className="text-lg md:text-3xl opacity-90 text-white/80 font-opensans"
             >
               - As Mãos Que Transformam Vidas -
@@ -62,7 +62,7 @@ const Hero = () => {
                 data-aos="zoom-out"
                 data-aos-delay="900"
                 data-aos-duration="3000"
-                href="#como-ajudar"
+                href="/como-ajudar"
                 className="btn-primary flex items-center gap-2 w-full sm:w-auto justify-center"
               >
                 Doe Agora

@@ -85,7 +85,7 @@ const Contact = () => {
           <div
             className="bg-earth/5 rounded-xl p-8"
             data-aos="fade-in"
-            data-aos-delay="1200"
+            data-aos-delay="1000"
           >
             {" "}
             <h3 className="text-2xl font-bold text-earth mb-6">
@@ -232,7 +232,7 @@ const Contact = () => {
             <div
               className="bg-primary/10 rounded-xl p-8 mb-8"
               data-aos="fade-in"
-              data-aos-delay="1400"
+              data-aos-delay="1200"
             >
               <h3 className="text-2xl font-bold text-earth mb-6">
                 Informações de Contato
@@ -310,7 +310,7 @@ const Contact = () => {
             <div
               className="rounded-xl overflow-hidden h-80 shadow-lg"
               data-aos="fade-in"
-              data-aos-delay="1600"
+              data-aos-delay="1400"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15476.244489946484!2d-50.48185609027021!3d-1.6865712130664778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x929839ad6446f7ab%3A0xa90502c5cedd0365!2sM%C3%A3os%20de%20Ouro%20%2F%20SEDE!5e1!3m2!1spt-BR!2sbr!4v1742016159452!5m2!1spt-BR!2sbr"

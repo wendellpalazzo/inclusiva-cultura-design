@@ -1,15 +1,14 @@
-import Header from "@/components/Header";
+import { Suspense, lazy } from "react";
+
 import Hero from "@/components/Hero";
-import { lazy } from "react";
 
 const AboutUs = lazy(() => import("@/components/AboutUs"));
 const OurHistory = lazy(() => import("@/components/OurHistory"));
 const OurProjects = lazy(() => import("@/components/OurProjects"));
-const HowToHelp = lazy(() => import("@/components/HowToHelp"));
 const Testimonials = lazy(() => import("@/components/Testimonials"));
 const Blog = lazy(() => import("@/components/Blog"));
 const Contact = lazy(() => import("@/components/Contact"));
-const Footer = lazy(() => import("@/components/Footer"));
+
 const FrequentQuestions = lazy(() => import("@/components/FrequentQuestions"));
 import Seo from "@/lib/seo";
 
@@ -28,17 +27,16 @@ const Index = () => {
         image="/assets/images/logo-instituto-maos-de-ouro.png"
       />
       <div className="min-h-dvh">
-        <Header />
         <Hero />
-        <AboutUs />
-        <OurHistory />
-        <OurProjects />
-        <HowToHelp />
-        <Testimonials />
-        <Blog />
-        <FrequentQuestions />
-        <Contact />
-        <Footer />
+        <Suspense fallback={null}>
+          <AboutUs />
+          <OurHistory />
+          <OurProjects />
+          <Testimonials />
+          <Blog />
+          <FrequentQuestions />
+          <Contact />
+        </Suspense>
       </div>
     </>
   );

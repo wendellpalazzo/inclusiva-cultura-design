@@ -1,11 +1,8 @@
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft, Calendar, MapPin, Link as LinkIcon } from "lucide-react";
-import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
-import Header from "@/components/Header";
 import { getContent } from "@/lib/contentLoader";
 import Seo from "@/lib/seo";
-import { ShareSocial } from "react-share-social";
 import { SocialShare } from "@/components/SocialShare";
 
 // Define the project type
@@ -93,9 +90,6 @@ const BlogDetails = () => {
         image="/assets/images/logo-instituto-maos-de-ouro.png"
       />
       <div className="min-h-dvh flex flex-col">
-        {/* Header - Same as Doe page */}
-        <Header />
-
         <main className="flex-grow pt-20">
           {/* Hero Section */}
           <section
@@ -220,8 +214,6 @@ const BlogDetails = () => {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   );

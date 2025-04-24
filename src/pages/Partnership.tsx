@@ -1,5 +1,3 @@
-import React from "react";
-
 import {
   Award,
   Users,
@@ -10,24 +8,13 @@ import {
   Rocket,
   ArrowLeft,
 } from "lucide-react";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import SectionTitle from "@/components/SectionTitle";
 import { Button } from "@/components/ui/button";
-import { toast } from "sonner";
 import { ZapButton } from "@/components/ZapButton";
-import { Link } from "react-router-dom";
 import Seo from "@/lib/seo";
 import { PartnerForm } from "@/components/PartnerForm";
 
 const Partnership = () => {
-  const handleFormSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast.success(
-      "Formulário enviado com sucesso! Entraremos em contato em breve.",
-    );
-  };
-
   return (
     <>
       <Seo
@@ -41,20 +28,19 @@ const Partnership = () => {
         }}
       />
       <div className="min-h-screen flex flex-col">
-        <Header />
-
         {/* Hero Section */}
         <section className="pt-32 pb-20 bg-gradient-to-b from-primary/10 to-white animate-fadeIn duration-1000">
           <div className="container">
             <div className="flex flex-col md:flex-row items-center justify-between gap-8">
               <div className="md:w-1/2">
-                <Link
-                  to="/#como-ajudar"
+                <a
+                  key={"voltar-para-como-ajudar"}
+                  href={`/como-ajudar`}
                   className="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-8 transition-colors"
                 >
                   <ArrowLeft size={16} className="mr-2" /> Voltar para Como
                   Ajudar
-                </Link>
+                </a>
                 <h1 className="text-4xl md:text-5xl font-playfair font-bold text-earth mb-6">
                   Parcerias que Transformam Vidas
                 </h1>
@@ -107,7 +93,10 @@ const Partnership = () => {
         </section>
 
         {/* Por que ser parceiro */}
-        <section id="porque-ser-parceiro" className="py-20 bg-white animate-fadeIn delay-700 opacity-0">
+        <section
+          id="porque-ser-parceiro"
+          className="py-20 bg-white animate-fadeIn delay-700 opacity-0"
+        >
           <div className="container">
             <SectionTitle
               title="Por que ser Parceiro?"
@@ -208,7 +197,7 @@ const Partnership = () => {
                   },
                 ].map((item, idx) => (
                   <div
-                  data-aos="fade-up"
+                    data-aos="fade-up"
                     key={idx}
                     className="bg-white rounded-lg shadow-sm p-6 border-l-4 border-primary"
                   >
@@ -232,7 +221,11 @@ const Partnership = () => {
               centered
             />
 
-            <div data-aos="fade-up" data-aos-delay="1000" className="mt-16 flex flex-col md:flex-row gap-8 items-start">
+            <div
+              data-aos="fade-up"
+              data-aos-delay="1000"
+              className="mt-16 flex flex-col md:flex-row gap-8 items-start"
+            >
               <div className="lg:w-1/2 mx-auto">
                 <div className="bg-white rounded-xl shadow-md border border-primary/20 overflow-hidden">
                   <div className="bg-primary/10 p-4">
@@ -366,8 +359,6 @@ const Partnership = () => {
             </div>
           </div>
         </section>
-
-        <Footer />
       </div>
     </>
   );

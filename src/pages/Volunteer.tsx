@@ -120,9 +120,6 @@ const Volunteer = () => {
         }}
       />
       <div className="min-h-dvh flex flex-col">
-        {/* Modified Header for Doe Page */}
-        <Header />
-
         <main className="flex-grow pt-20">
           {/* Hero Section */}
           <section className="bg-dark text-white py-20 relative overflow-hidden animate-fadeIn">
@@ -130,12 +127,13 @@ const Volunteer = () => {
             <div className="mix-blend-overlay hidden md:block absolute inset-0 bg-[url('/assets/images/escola-e-comunidade-parceria-getty-images.jpg')] bg-no-repeat bg-top bg-cover opacity-40"></div>
 
             <div className="container mx-auto px-4 relative z-10">
-              <Link
-                to="/#como-ajudar"
+              <a
+                key={"voltar-para-como-ajudar"}
+                href={`/como-ajudar`}
                 className="inline-flex items-center text-primary hover:text-primary/80 font-semibold mb-8 transition-colors"
               >
                 <ArrowLeft size={16} className="mr-2" /> Voltar para Como Ajudar
-              </Link>
+              </a>
 
               <div className="text-center max-w-4xl mx-auto">
                 <Heart
@@ -603,8 +601,6 @@ const Volunteer = () => {
             </div>
           </section>
         </main>
-
-        <Footer />
       </div>
     </>
   );

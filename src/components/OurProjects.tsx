@@ -1,7 +1,6 @@
 import Autoplay from "embla-carousel-autoplay";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import {
   Carousel,
   CarouselContent,
@@ -37,11 +36,13 @@ const OurProjects = () => {
         {/* Project Grid */}
         <Carousel
           opts={{
-            align: "start",
+            align: "center",
           }}
           plugins={[
             Autoplay({
-              delay: 10000,
+              stopOnInteraction: true,
+              stopOnFocusIn: true,
+              stopOnMouseEnter: true
             }),
           ]}
         >
@@ -49,7 +50,7 @@ const OurProjects = () => {
             {projects.map((project, idx) => (
               <CarouselItem
                 data-aos="zoom-in"
-                data-aos-delay={idx * 1000 + 100}
+                data-aos-delay={idx * 500 + 100}
                 key={project.slug}
                 className="md:basis-1/3"
               >
@@ -57,15 +58,15 @@ const OurProjects = () => {
                   key={project.slug}
                   className="group relative bg-white rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-2 hover:shadow-xl"
                 >
-                  <div className="relative h-[220px] overflow-hidden">
+                  <div className="relative overflow-hidden">
                     {/* Colored overlay */}
                     <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
 
                     <img
                       loading="lazy"
-                      src={project.image}
+                      src={`${project.image}`}
                       alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-auto transform-gpu transition-transform duration-500 group-hover:scale-110"
                     />
                   </div>
 
