@@ -47,11 +47,7 @@ const HowToHelp = () => {
     },
   ];
 
-  const bgURL =
-    // window.screen.width > 768
-      // ?
-       `url('/assets/images/bg-como-ajudar.jpg')`
-      // : "";
+  const bgURL = `url('/assets/images/bg-como-ajudar.jpg')`;
 
   return (
     <section id="como-ajudar" className="pt-20">
