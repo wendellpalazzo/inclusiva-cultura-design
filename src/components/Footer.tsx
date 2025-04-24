@@ -1,7 +1,9 @@
+import { useSmoothScroll } from "@/lib/hashScroll";
 import { useLenis } from "lenis/react";
 import { ArrowUp } from "lucide-react";
 
 const Footer = () => {
+  const goTo = useSmoothScroll();
   const lenis = useLenis();
   const scrollToTop = () => {
     location.hash = "";
@@ -105,6 +107,10 @@ const Footer = () => {
               <li>
                 <a
                   href="#quem-somos"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goTo("quem-somos");
+                  }}
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Quem Somos
@@ -113,6 +119,10 @@ const Footer = () => {
               <li>
                 <a
                   href="#nossa-historia"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goTo("nossa-historia");
+                  }}
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Nossa História
@@ -121,6 +131,10 @@ const Footer = () => {
               <li>
                 <a
                   href="#nossos-projetos"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goTo("nossos-projetos");
+                  }}
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Nossos Projetos
@@ -137,6 +151,10 @@ const Footer = () => {
               <li>
                 <a
                   href="#contato"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goTo("contato");
+                  }}
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Contato
@@ -178,6 +196,10 @@ const Footer = () => {
               <li>
                 <a
                   href="#blog"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    goTo("blog");
+                  }}
                   className="text-white/70 hover:text-primary transition-colors"
                 >
                   Blog e Artigos
@@ -192,14 +214,6 @@ const Footer = () => {
                   Galeria de Vídeos
                 </a>
               </li>
-              {/* <li>
-                <a
-                  href="#accessibility"
-                  className="text-white/70 hover:text-primary transition-colors"
-                >
-                  Acessibilidade
-                </a>
-              </li> */}
             </ul>
           </div>
 
