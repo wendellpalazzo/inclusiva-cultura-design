@@ -221,7 +221,7 @@ const Doe = () => {
                     <img
                       loading="lazy"
                       className="mx-auto"
-                      src="qrcode-pix.png"
+                      src="/qrcode-pix.png"
                     />
                     <Button
                       className="w-11/12 lg:w-80 mx-auto"
