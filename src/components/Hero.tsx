@@ -1,8 +1,10 @@
 import { useIsMobile } from "@/hooks/use-mobile";
+import { useSmoothScroll } from "@/lib/hashScroll";
 import { ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const isMobile = useIsMobile();
+  const goTo = useSmoothScroll()
   return (
     <>
       <section
@@ -68,11 +70,16 @@ const Hero = () => {
                 Doe Agora
                 <ArrowRight size={20} />
               </a>
+
               <a
                 data-aos="zoom-out"
                 data-aos-delay="1000"
                 data-aos-duration="3000"
                 href="#quem-somos"
+                onClick={(e) => {
+                  e.preventDefault();
+                  goTo("quem-somos");
+                }}
                 className="btn-secondary w-full sm:w-auto"
               >
                 Saiba Mais
