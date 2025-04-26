@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import SectionTitle from "@/components/SectionTitle";
 import { Partners } from "@/components/Partners";
+import Seo from "@/lib/seo";
 
 const HowToHelp = () => {
   const helpOptions = [
@@ -50,6 +51,17 @@ const HowToHelp = () => {
   const bgURL = `url('/assets/images/bg-como-ajudar.jpg')`;
 
   return (
+    <>
+    <Seo
+        title="Como Ajudar"
+        description="Como Ajudar - Junte-se a nós nessa missão de transformar vidas através da inclusão e valorização da cultura surda."
+        schemaMarkup={{
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          name: "Como Ajudar | Instituto Mãos de Ouro",
+          url: "https://institutomaosdeouro.org.br/como-ajudar",
+        }}
+      />
     <section id="como-ajudar" className="pt-20">
       <div className="py-20 bg-dark text-white relative overflow-hidden">
         {/* Background pattern */}
@@ -217,6 +229,7 @@ const HowToHelp = () => {
         <Partners />
       </div>
     </section>
+    </>
   );
 };
 
