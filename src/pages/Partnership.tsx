@@ -13,6 +13,7 @@ import { Button } from "@/components/ui/button";
 import { ZapButton } from "@/components/ZapButton";
 import Seo from "@/lib/seo";
 import { PartnerForm } from "@/components/PartnerForm";
+import { Partners } from "@/components/Partners";
 
 const Partnership = () => {
   return (
@@ -223,7 +224,6 @@ const Partnership = () => {
 
             <div
               data-aos="fade-up"
-              data-aos-delay="1000"
               className="mt-16 flex flex-col md:flex-row gap-8 items-start"
             >
               <div className="lg:w-1/2 mx-auto">
@@ -258,18 +258,13 @@ const Partnership = () => {
         {/* Empresas Parceiras */}
         <section id="parceiros-atuais" className="py-20 bg-primary/10">
           <div className="container">
-            <SectionTitle
-              title="Nossos Parceiros"
-              subtitle="Conheça algumas das empresas que já fazem parte da nossa rede de parceiros e nos ajudam a transformar vidas."
-              centered
-            />
-
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="bg-sky-600 text-lg font-bold text-white flex justify-center items-center flex-col p-6 rounded-lg shadow-sm h-32 border border-gray-100 hover:shadow-md transition-shadow">
-                Wendell Palazzo
-                <span className="text-sm">Desenvolvimento Web</span>
-              </div>
-            </div>
+            <Partners>
+              <SectionTitle
+                title="Nossos Parceiros"
+                subtitle="Conheça algumas das empresas que já fazem parte da nossa rede de parceiros e nos ajudam a transformar vidas."
+                centered
+              />
+            </Partners>
 
             <div className="mt-12 text-center">
               <p className="text-dark/80 mb-4">
