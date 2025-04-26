@@ -42,7 +42,7 @@ const OurProjects = () => {
             Autoplay({
               stopOnInteraction: true,
               stopOnFocusIn: true,
-              stopOnMouseEnter: true
+              stopOnMouseEnter: true,
             }),
           ]}
         >

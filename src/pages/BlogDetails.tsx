@@ -7,18 +7,19 @@ import { SocialShare } from "@/components/SocialShare";
 
 // Define the project type
 export interface BlogContent {
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-  color: string;
-  fullDescription: string;
-  date: string;
-  location: string;
+  slug?: string;
+  title?: string;
+  description?: string;
+  image?: string;
+  color?: string;
+  fullDescription?: string;
+  date?: string;
+  location?: string;
   website?: string;
-  gallery: string[];
-  objectives: string[];
-  impact: string;
+  gallery?: string[];
+  objectives?: string[];
+  impact?: string;
+  video?: string;
   category: "eventos";
 }
 
@@ -161,21 +162,37 @@ const BlogDetails = () => {
                     {post.gallery.map((image, index) => (
                       <div
                         key={index}
-                        className="rounded-lg overflow-hidden h-64 relative group"
+                        className="rounded-lg overflow-hidden h-64 relative group  border-b-4 border-primary"
                       >
                         <img
                           loading="lazy"
-                          src={image}
+                          src={image?.[0]}
                           alt={`${post.title} - Imagem ${index + 1}`}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
-                        <div
-                          className={`absolute inset-0 ${post.color} opacity-0 group-hover:opacity-50 transition-opacity duration-300`}
-                        ></div>
+                        {image?.[1] && (
+                          <div
+                            className="absolute w-full bg-slate-900/80 text-white bottom-0 p-2 text-xs"
+                            dangerouslySetInnerHTML={{ __html: image?.[1] }}
+                          ></div>
+                        )}
                       </div>
                     ))}
                   </div>
                 </div>
+
+                {post.video && (
+                  <iframe
+                    width="560"
+                    height="640"
+                    src="https://www.youtube-nocookie.com/embed/eufK25HZLew?si=muQnG_ehHchuJKe1"
+                    title="YouTube video player"
+                    className="border-none w-full aspect-video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                )}
 
                 {/* Impact */}
                 <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">
@@ -198,9 +215,6 @@ const BlogDetails = () => {
                     <Link to="/como-ajudar/doe" className="btn-primary">
                       Doe Agora
                     </Link>
-                    {/* <a href="/#contato" className="btn-secondary">
-                    Entre em Contato
-                  </a> */}
                   </div>
                 </div>
                 <div className="mt-12 flex justify-center">

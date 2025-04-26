@@ -44,7 +44,8 @@ const Blog = () => {
                 <h3 className="text-xl font-bold text-earth mb-3">
                   {post.title}
                 </h3>
-                <p className="text-dark/80 mb-4">{post.description}</p>
+                <p className="text-dark/80 mb-6">{post.description}</p>
+                <div className="bottom-4 absolute">
                 <Link
                   to={`/blog/${post.slug}`}
                   className="inline-flex items-center text-sm text-primary font-semibold hover:text-primary/80 transition-colors group"
@@ -55,12 +56,7 @@ const Blog = () => {
                     className="ml-1 group-hover:translate-x-1 transition-transform"
                   />
                 </Link>
-                {/* <a
-                  href="#"
-                  className="inline-flex items-center text-primary font-semibold hover:text-primary/80 transition-colors"
-                >
-                  Ler mais <ArrowRight size={16} className="ml-2" />
-                </a> */}
+                </div>
               </div>
             </div>
           ))}
