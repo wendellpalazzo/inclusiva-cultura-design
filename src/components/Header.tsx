@@ -1,21 +1,37 @@
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { useSmoothScroll } from "@/lib/hashScroll";
+import { buttonVariants } from "./ui/button";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const goTo = useSmoothScroll();
+  const barRef = useRef(null);
 
   // Abre e fecha o menu
   const location = useLocation();
+
+  useLayoutEffect(() => {
+    if (location.pathname === "/") {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > document.querySelector("#hero")?.getBoundingClientRect().height - 150) {
+          barRef?.current?.classList.remove("bg-transparent");
+          barRef?.current?.classList.add("bg-secondary-foreground/80");
+        } else {
+          barRef?.current?.classList.remove("bg-secondary-foreground/80");
+          barRef?.current?.classList.add("bg-transparent");
+        }
+      });
+    }
+  },[]);
 
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Quem Somos", href: "quem-somos" },
     { name: "Nossa História", href: "nossa-historia" },
     { name: "Nossos Projetos", href: "nossos-projetos" },
-    { name: "Como Ajudar", href: "/como-ajudar" },
+    // { name: "Como Ajudar", href: "/como-ajudar" },
     { name: "Blog", href: "blog" },
     { name: "Contato", href: "contato" },
   ];
@@ -27,10 +43,11 @@ const Header = () => {
 
   return (
     <header
+      ref={barRef}
       data-aos={!checkForAnimation && "fade-down"}
       data-aos-delay="1000"
       data-aos-duration="2800"
-      className="fixed top-0 left-0 right-0 z-50 bg-secondary-foreground/80 backdrop-blur-lg border-b border-secondary-foreground"
+      className={`will-change-all fixed top-0 left-0 right-0 z-50 shadow-xl backdrop-blur-lg ${location.pathname !== "/" && "bg-secondary-foreground/80"}`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
@@ -73,6 +90,16 @@ const Header = () => {
                 {item.name}
               </a>
             ))}
+            <a
+              data-aos={!checkForAnimation && "fade-down"}
+              data-aos-delay={2000 + navItems.length + 1 * 200}
+              data-aos-duration="1800"
+              key="como-ajudar"
+              href="/como-ajudar"
+              className={buttonVariants({ variant: "default" })}
+            >
+              Como Ajudar
+            </a>
           </nav>
 
           {/* Mobile Navigation Button */}
@@ -107,6 +134,13 @@ const Header = () => {
                   {item.name}
                 </a>
               ))}
+              <a
+                key="como-ajudar"
+                href="/como-ajudar"
+                className={buttonVariants({ variant: "default" })}
+              >
+                Como Ajudar
+              </a>
             </div>
           </div>
         )}
