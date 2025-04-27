@@ -10,30 +10,7 @@ const Header = () => {
   const barRef = useRef(null);
 
   // Abre e fecha o menu
-  const location = useLocation();
-
-  useLayoutEffect(() => {
-    if (location.pathname === "/") {
-      window.addEventListener("scroll", () => {
-        console.log("scroll");
-        if (
-          window.scrollY >
-          document.querySelector("#hero")?.getBoundingClientRect().height - 150
-        ) {
-          barRef?.current?.classList.remove("bg-transparent");
-          barRef?.current?.classList.add("bg-secondary-foreground/80");
-        } else {
-          barRef?.current?.classList.remove("bg-secondary-foreground/80");
-          barRef?.current?.classList.add("bg-transparent");
-        }
-      });
-      barRef?.current?.classList.remove("bg-secondary-foreground/80");
-      barRef?.current?.classList.add("bg-transparent");
-    } else {
-      barRef?.current?.classList.remove("bg-transparent");
-      barRef?.current?.classList.add("bg-secondary-foreground/80");
-    }
-  }, [location]);
+  const location = useLocation();  
 
   const navItems = [
     { name: "Home", href: "/" },
