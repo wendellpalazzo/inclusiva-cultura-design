@@ -185,8 +185,8 @@ const BlogDetails = () => {
                   <iframe
                     width="560"
                     height="640"
-                    src="https://www.youtube-nocookie.com/embed/eufK25HZLew?si=muQnG_ehHchuJKe1"
-                    title="YouTube video player"
+                    src={post.video}
+                    title={post.title}
                     className="border-none w-full aspect-video"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"

@@ -1,6 +1,6 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useSmoothScroll } from "@/lib/hashScroll";
 import { buttonVariants } from "./ui/button";
 
@@ -15,7 +15,11 @@ const Header = () => {
   useLayoutEffect(() => {
     if (location.pathname === "/") {
       window.addEventListener("scroll", () => {
-        if (window.scrollY > document.querySelector("#hero")?.getBoundingClientRect().height - 150) {
+        console.log("scroll");
+        if (
+          window.scrollY >
+          document.querySelector("#hero")?.getBoundingClientRect().height - 150
+        ) {
           barRef?.current?.classList.remove("bg-transparent");
           barRef?.current?.classList.add("bg-secondary-foreground/80");
         } else {
@@ -23,8 +27,13 @@ const Header = () => {
           barRef?.current?.classList.add("bg-transparent");
         }
       });
+      barRef?.current?.classList.remove("bg-secondary-foreground/80");
+      barRef?.current?.classList.add("bg-transparent");
+    } else {
+      barRef?.current?.classList.remove("bg-transparent");
+      barRef?.current?.classList.add("bg-secondary-foreground/80");
     }
-  },[]);
+  }, [location]);
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -37,7 +46,7 @@ const Header = () => {
   ];
 
   const checkForAnimation =
-    /^\/(projetos|doe|voluntarie-se|parcerias|projetos|como-ajudar)/.test(
+    /^\/(projetos|doe|voluntarie-se|parcerias|projetos|como-ajudar|blog)/.test(
       location.pathname,
     );
 
@@ -47,17 +56,14 @@ const Header = () => {
       data-aos={!checkForAnimation && "fade-down"}
       data-aos-delay="1000"
       data-aos-duration="2800"
-      className={`will-change-all fixed top-0 left-0 right-0 z-50 shadow-xl backdrop-blur-lg ${location.pathname !== "/" && "bg-secondary-foreground/80"}`}
+      className={`will-change-all fixed top-0 left-0 right-0 z-50 shadow-xl backdrop-blur-lg bg-secondary-foreground/80`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <div className="flex-shrink-0">
-            <a
-              href={`/`}
-              onClick={(e) => {
-                e.preventDefault();
-                goTo("hero");
-              }}
+            <Link
+              to="/"
+              viewTransition
               className="flex items-center"
             >
               <img
@@ -65,7 +71,7 @@ const Header = () => {
                 alt="Instituto Mãos de Ouro"
                 className="h-16 w-auto"
               />
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
