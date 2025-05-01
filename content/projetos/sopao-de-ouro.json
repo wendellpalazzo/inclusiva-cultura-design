@@ -1,0 +1,17 @@
+{
+  "id": 1,
+  "slug": "sopao-de-ouro",
+  "title": "Projeto \"Sopão de Ouro\"",
+  "description": "Levamos dignidade e calor humano a quem mais precisa!",
+  "image": "/assets/contents/projetos/sopao-de-ouro/0.png",
+  "color": "bg-primary",
+  "fullDescription": "Em cada sábado, atuamos em um bairro da cidade de Breves, distribuindo sopas para as famílias necessitadas. Você pode colaborar sendo voluntário, com alimentos ou financeiramente, e será de grande ajuda para que dezenas de famílias durmam alimentadas.",
+  "date": "Desde 2021",
+  "location": "Breves - PA",
+  "website": "",
+  "gallery": [
+    ["/assets/contents/projetos/sopao-de-ouro/ists.jpg","IST's: Infecções Sexualmente Transmissíveis (15/09/21)"]
+  ],
+  "objectives": [],
+  "impact": ""
+}
