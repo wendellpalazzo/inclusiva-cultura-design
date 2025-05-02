@@ -1,7 +1,6 @@
 import { cn } from "@/lib/utils";
 import { WhatsApp } from "@/lib/whatsapp";
-import { ClassValue } from "clsx";
-import { ReactNode, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 interface ZapButtonProps {
   text?: string;
@@ -32,7 +31,7 @@ export const ZapButton = ({iconClass, text, phone, className, showText = "WhatsA
     >
       <WhatsApp className={cn([
         "fill-white inline-block -mt-1 text-2xl mr-2",
-        iconClass        
+        iconClass
         ])} /> {showText}
     </a>
   );

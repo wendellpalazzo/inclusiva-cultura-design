@@ -145,7 +145,7 @@ const VolunteerFormFieldGForm = {
 
 export async function POST(request: Request) {
   const formData = await request.formData();
-  let data = Object.fromEntries(formData.entries());
+  const data = Object.fromEntries(formData.entries());
   const proposta_acao = formData.get(
     VolunteerFormFieldGForm.proposta_acao,
   ) as File;

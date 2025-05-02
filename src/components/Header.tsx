@@ -10,7 +10,7 @@ const Header = () => {
   const barRef = useRef(null);
 
   // Abre e fecha o menu
-  const location = useLocation();  
+  const location = useLocation();
 
   const navItems = [
     { name: "Home", href: "/" },
@@ -52,7 +52,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             {navItems.map((item, idx) => (
               <a
                 data-aos={!checkForAnimation && "fade-down"}
@@ -87,7 +87,7 @@ const Header = () => {
 
           {/* Mobile Navigation Button */}
           <button
-            className="md:hidden p-2 rounded-lg text-white hover:bg-earth"
+            className="lg:hidden p-2 rounded-lg text-white hover:bg-earth"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -97,7 +97,7 @@ const Header = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <div className="px-0 pt-2 pb-3 space-y-1 slide-up">
               {navItems.map((item) => (
                 <a

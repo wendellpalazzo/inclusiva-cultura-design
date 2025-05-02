@@ -93,13 +93,13 @@ const BlogDetails = () => {
           "@type": "Article",
           mainEntityOfPage: {
             "@type": "WebPage",
-            "@id": `https://institutomaosdeouro.org.br/projetos/${post.slug}`,
+            "@id": `https://institutomaosdeouro.org.br/blog/${post.slug}`,
           },
           headline: post.title,
           description: post.description,
           image: post.image,
           name: "Instituto Mãos de Ouro",
-          url: `https://institutomaosdeouro.org.br/projetos/${post.slug}`,
+          url: `https://institutomaosdeouro.org.br/blog/${post.slug}`,
           author: {
             "@type": "Organization",
             name: "Instituto Mãos de Ouro",
@@ -118,7 +118,6 @@ const BlogDetails = () => {
       />
       <div className="min-h-dvh flex flex-col">
         <main className="flex-grow pt-20">
-          {/* Hero Section */}
           <section
             className={`py-20 relative overflow-hidden text-white bg-primary`}
           >
@@ -126,6 +125,7 @@ const BlogDetails = () => {
 
             <div className="container mx-auto px-4 relative z-10">
               <Link
+                viewTransition
                 to="/#blog"
                 className="inline-flex items-center text-white hover:text-white/80 font-semibold mb-8 transition-colors"
               >

@@ -1,7 +1,7 @@
 export const VideoInstitucional = () => {
   return (
-    <div className="bg-dark/90 text-white p-5 lg:p-20 flex lg:flex-row justify-evenly items-center flex-col space-y-10 lg:space-y-0">
-      <div className="space-y-3 lg:w-1/4">
+    <div className="overflow-hidden bg-dark/90 text-white p-5 lg:p-20 flex lg:flex-row justify-evenly items-center flex-col space-y-10 lg:space-y-0">
+      <div className="space-y-3 lg:w-1/4 drop-shadow-sm">
         <h2 className="text-white text-3xl font-opensans">
           Veja esse vídeo e conheça um pouco mais sobre o Instituto Mãos de
           Ouro.
@@ -12,13 +12,14 @@ export const VideoInstitucional = () => {
         </p>
       </div>
 
-      <div className="mt-8 lg:w-1/2">
+      <div className="mt-8 w-full lg:w-1/2">
         <iframe
-          src="https://www.youtube-nocookie.com/embed/qQSKEr3oCzU?si=zwVG-5Au9InN0Crs"
+          src="https://www.youtube-nocookie.com/embed/qQSKEr3oCzU?rel=0"
           title="Instituto Mãos de Ouro - Vídeo Institucional"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
+          loading="lazy"
           className="w-full h-[300px] md:h-[400px] rounded-lg shadow-xl shadow-zinc-900 border-none"
         ></iframe>
       </div>

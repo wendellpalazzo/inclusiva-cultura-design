@@ -216,25 +216,6 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-
-          {/* <div>
-            <h3 className="text-lg font-bold mb-6 text-white">Newsletter</h3>
-            <p className="text-white/70 mb-4">
-              Inscreva-se para receber novidades, artigos e informações sobre
-              nossos projetos.
-            </p>
-            <form className="space-y-3">
-              <input
-                type="email"
-                placeholder="Seu e-mail"
-                className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white
-                focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button type="submit" className="w-full btn-primary">
-                Inscrever-se
-              </button>
-            </form>
-          </div> */}
         </div>
 
         <div className="border-t border-white/10 py-8 flex flex-col md:flex-row justify-between items-center">
@@ -257,6 +238,17 @@ const Footer = () => {
             </button>
           </div>
         </div>
+      </div>
+      <div className="h-4 w-full mt-4 relative bg-primary">
+        <div
+          style={{
+            backgroundImage: "url('/assets/images/gregas.png')",
+            backgroundSize: "280px",
+            backgroundRepeat: "repeat-x",
+            backgroundPositionY: "-233px",
+          }}
+          className="h-4 w-full mt-4"
+        ></div>
       </div>
     </footer>
   );

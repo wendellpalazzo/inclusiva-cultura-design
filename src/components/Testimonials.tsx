@@ -85,8 +85,8 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="bg-earth text-white rounded-xl p-4 lg:p-8 md:p-10">
-          <div className="flex flex-col md:flex-row items-center gap-10">
+        <div className="bg-earth text-white rounded-xl p-4 lg:p-8 md:p-10 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center gap-10 relative z-10">
             <div className="md:w-1/3">
               <h3 className="text-2xl font-bold mb-4">Nosso Impacto</h3>
               <p className="text-white/80 mb-6">
@@ -113,6 +113,16 @@ const Testimonials = () => {
                 </div>
               ))}
             </div>
+          </div>
+          <div
+          className="absolute w-28 h-96 top-0 -right-6 opacity-20 rotate-12"
+          style={{
+            backgroundImage: "url('/assets/images/gregas.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundPositionY: "-40px"
+          }}
+          >
+
           </div>
         </div>
       </div>

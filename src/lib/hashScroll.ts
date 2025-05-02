@@ -38,7 +38,7 @@ export function useSmoothScroll() {
   useEffect(() => {
     const hash = location.hash.replace("#", "");
     if (hash) scrollToId(hash);
-  }, [location.pathname]);
+  }, [location]);
 
   return goToHashFromAnyPage;
 }

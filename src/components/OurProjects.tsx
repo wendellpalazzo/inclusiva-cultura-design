@@ -56,32 +56,30 @@ const OurProjects = () => {
               >
                 <div
                   key={project.slug}
-                  className="group relative bg-white rounded-lg overflow-hidden shadow-lg transform transition-transform hover:-translate-y-2 hover:shadow-xl"
+                  className="group flex flex-col h-full border rounded-xl overflow-hidden shadow-lg relative"
                 >
                   <div className="relative overflow-hidden">
-                    {/* Colored overlay */}
                     <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
-
                     <img
                       loading="lazy"
                       src={`${project.image}`}
                       alt={project.title}
-                      className="w-full h-auto transform-gpu transition-transform duration-500 group-hover:scale-110"
+                      className="w-full"
                     />
                   </div>
 
-                  <div className="p-6 border-t-4 border-primary">
-                    <h3 className="text-xl font-bold text-earth mb-2 group-hover:text-primary transition-colors pointer-events-none">
+                  <div className="flex flex-col flex-1 p-4 border-t-4 border-primary">
+                    <h2 className="text-xl font-bold mb-2 text-earth group-hover:text-primary transition-colors pointer-events-none">
                       {project.title}
-                    </h3>
-                    <p className="text-dark/70 text-sm mb-4 line-clamp-2 pointer-events-none min-h-10">
+                    </h2>
+                    <p className="text-dark/70 text-sm mb-4 pointer-events-none flex-1">
                       {project.description}
                     </p>
                     <Link
                       to={`/projetos/${project.slug}`}
-                      className="inline-flex items-center text-sm text-primary font-semibold hover:text-primary/80 transition-colors group"
+                      className="mt-4 inline-flex items-center text-sm text-primary font-semibold"
                     >
-                      Ver projeto
+                      Ler mais{" "}
                       <ArrowRight
                         size={16}
                         className="ml-1 group-hover:translate-x-1 transition-transform"

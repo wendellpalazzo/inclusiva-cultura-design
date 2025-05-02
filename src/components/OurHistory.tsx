@@ -1,4 +1,4 @@
-import { Calendar, Check } from "lucide-react";
+import { Calendar } from "lucide-react";
 import { VideoInstitucional } from "./VideoInstitucional";
 import SectionTitle from "./SectionTitle";
 
@@ -78,9 +78,7 @@ const OurHistory = () => {
               centered
             />
           </div>
-
           <div className="relative">
-            {/* Timeline events */}
             <div
               className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px
           md:before:mx-auto md:before:translate-x-0
@@ -88,7 +86,6 @@ const OurHistory = () => {
             >
               {timelineEvents.map((event, index) => (
                 <div
-                  // data-aos-offset="300"
                   data-aos-anchor-placement="top-center"
                   data-aos-delay="300"
                   data-aos={index % 2 ? "fade-right" : "fade-left"}
@@ -119,7 +116,7 @@ const OurHistory = () => {
             <img
               loading="lazy"
               className="-rotate-12 -scale-x-100 top-3 drop-shadow-md left-0 absolute opacity-80 size-16 md:size-auto"
-              src="https://cdn-icons-png.flaticon.com/128/3776/3776585.png"
+              src="/assets/images/victory-hand.png"
             />
             <div className="inline-flex items-center gap-2 text-white px-6 py-3">
               <span className="font-semibold text-2xl">
@@ -129,7 +126,7 @@ const OurHistory = () => {
             <img
               loading="lazy"
               className="rotate-12 drop-shadow-md top-3 right-0 absolute opacity-80 size-16 md:size-auto"
-              src="https://cdn-icons-png.flaticon.com/128/3776/3776585.png"
+              src="/assets/images/victory-hand.png"
             />
           </div>
         </div>

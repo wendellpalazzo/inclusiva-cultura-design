@@ -1,5 +1,3 @@
-import { Send, Users } from "lucide-react";
-import { Button } from "./ui/button";
 import { ZapButton } from "./ZapButton";
 import SectionTitle from "./SectionTitle";
 
