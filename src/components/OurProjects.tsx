@@ -74,7 +74,7 @@ const OurProjects = () => {
                     <h3 className="text-xl font-bold text-earth mb-2 group-hover:text-primary transition-colors pointer-events-none">
                       {project.title}
                     </h3>
-                    <p className="text-dark/70 text-sm mb-4 line-clamp-2 pointer-events-none">
+                    <p className="text-dark/70 text-sm mb-4 line-clamp-2 pointer-events-none min-h-10">
                       {project.description}
                     </p>
                     <Link

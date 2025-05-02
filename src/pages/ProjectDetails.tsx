@@ -29,12 +29,14 @@ export interface Project {
   gallery: string[];
   objectives: string[];
   impact: string;
+  galleryColumn?: number;
+  videos?:[[Record<string,number>]]
 }
 
 const ProjectDetails = () => {
   const { slug } = useParams<{ slug: string }>();
   const [project, setProject] = useState<Project | null>(null);
-  const [loading, setLoading] = useState(true); // novo estado
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Find the project by id
@@ -72,7 +74,7 @@ const ProjectDetails = () => {
           <p className="mb-6 text-dark/80">
             O projeto que você está procurando não existe ou foi removido.
           </p>
-          <Link to="/#nossos-projetos" className="btn-primary">
+          <Link to="/#nossos-projetos" className="btn-primary" viewTransition>
             Voltar para Projetos
           </Link>
         </div>
@@ -183,23 +185,25 @@ const ProjectDetails = () => {
                 </div>
 
                 {/* Objectives */}
-                <div className="mb-12">
-                  <h2 className="text-3xl font-bold text-earth mb-6">
-                    Objetivos
-                  </h2>
-                  <ul className="space-y-4 text-dark/80">
-                    {project.objectives.map((objective, index) => (
-                      <li key={index} className="flex items-start">
-                        <span
-                          className={`flex-shrink-0 ${project.color} text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-1`}
-                        >
-                          {index + 1}
-                        </span>
-                        <span className="text-lg">{objective}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                {project?.objectives?.length > 0 && (
+                  <div className="mb-12">
+                    <h2 className="text-3xl font-bold text-earth mb-6">
+                      Objetivos
+                    </h2>
+                    <ul className="space-y-4 text-dark/80">
+                      {project.objectives.map((objective, index) => (
+                        <li key={index} className="flex items-start">
+                          <span
+                            className={`flex-shrink-0 ${project.color} text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-1`}
+                          >
+                            {index + 1}
+                          </span>
+                          <span className="text-lg">{objective}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
               </div>
             </div>
             {/* Gallery */}
@@ -224,7 +228,9 @@ const ProjectDetails = () => {
                       image: (props) => (
                         <img
                           {...props}
+                          data-aos="fade-in"
                           className="border-b-4 border-primary"
+                          loading="lazy"
                           src={props.src}
                         />
                       ),
@@ -242,7 +248,7 @@ const ProjectDetails = () => {
                     columns={(containerWidth) => {
                       if (containerWidth < 400) return 1;
                       if (containerWidth < 800) return 3;
-                      return 3;
+                      return project.galleryColumn || 3;
                     }}
                     spacing={(containerWidth) => {
                       if (containerWidth >= 1200) return 10;
@@ -252,14 +258,22 @@ const ProjectDetails = () => {
                         return 5;
                       if (containerWidth < 300) return 5;
                     }}
-                    photos={project.gallery.map((i) => ({
-                      title: `Instituto Mãos de Ouro - ${i?.[1]?.replace(/<br\/>/g, "")}`,
-                      alt: `Instituto Mãos de Ouro - ${i?.[1]?.replace(/<br\/>/g, "")}`,
-                      label: i?.[1],
-                      width: 100,
-                      height: 0,
-                      src: i[0],
-                    }))}
+                    photos={project.gallery.map((i) => {
+                      let titleText = `Instituto Mãos de Ouro`;
+
+                      if (i?.[1]) {
+                        titleText = `${titleText} - ${i?.[1]?.replace(/<br\/>/g, "")}`;
+                      }
+
+                      return {
+                        title: i[0],
+                        alt: titleText,
+                        label: i?.[1],
+                        width: 100,
+                        height: 0,
+                        src: i[0],
+                      };
+                    })}
                   />
                 </div>
               </div>
@@ -267,14 +281,16 @@ const ProjectDetails = () => {
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
                 {/* Impact */}
-                <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">
-                  <h2 className="text-3xl font-bold text-earth mb-6">
-                    Impacto
-                  </h2>
-                  <p className="text-lg text-dark/80 leading-relaxed">
-                    {project.impact}
-                  </p>
-                </div>
+                {project.impact && (
+                  <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">
+                    <h2 className="text-3xl font-bold text-earth mb-6">
+                      Impacto
+                    </h2>
+                    <p className="text-lg text-dark/80 leading-relaxed">
+                      {project.impact}
+                    </p>
+                  </div>
+                )}
 
                 {/* Call to Action */}
                 <div className="text-center mt-12 p-8 rounded-xl bg-primary/10">

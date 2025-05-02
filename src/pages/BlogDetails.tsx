@@ -1,5 +1,5 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, MapPin, Link as LinkIcon } from "lucide-react";
+import { ArrowLeft, Calendar, MapPin, Link as LinkIcon, Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { getContent } from "@/lib/contentLoader";
 import Seo from "@/lib/seo";
@@ -19,25 +19,40 @@ export interface BlogContent {
   gallery?: string[];
   objectives?: string[];
   impact?: string;
-  video?: string;
+  videos?: [[string, number]];
   category: "eventos";
 }
 
 const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogContent | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Find the project by id
     if (slug) {
+      setLoading(true);
       getContent<BlogContent>("blog", slug)
         .then((data) => {
           setPost(data);
           window.scrollTo(0, 0);
         })
-        .catch((err) => console.error(err));
+        .catch((err) => console.error(err))
+        .finally(() => {
+          setLoading(false);
+        });
     }
   }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="min-h-dvh flex items-center justify-center bg-gray-100">
+        <div className="text-center p-8">
+          <Loader2 className="animate-spin size-20 stroke-primary ease-in-out" />
+        </div>
+      </div>
+    );
+  }
 
   if (!post) {
     return (
@@ -49,13 +64,24 @@ const BlogDetails = () => {
           <p className="mb-6 text-dark/80">
             O post que você está procurando não existe ou foi removido.
           </p>
-          <Link to="/" className="btn-primary">
+          <Link to="/" className="btn-primary" viewTransition>
             Voltar para Home
           </Link>
         </div>
       </div>
     );
   }
+
+  const firstVideo =
+    post?.videos?.length > 0
+      ? post.videos.find((video) => video[1] === 1)
+      : null;
+  const galleryVideos =
+    post?.videos?.length > 0
+      ? post.videos
+          .filter((video) => video[1] !== 1)
+          .sort((a, b) => a[1] - b[1])
+      : [];
 
   return (
     <>
@@ -168,6 +194,7 @@ const BlogDetails = () => {
                           loading="lazy"
                           src={image?.[0]}
                           alt={`${post.title} - Imagem ${index + 1}`}
+                          data-aos="fade-in"
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                         />
                         {image?.[1] && (
@@ -181,17 +208,40 @@ const BlogDetails = () => {
                   </div>
                 </div>
 
-                {post.video && (
+                {firstVideo && (
                   <iframe
+                  data-aos="fade-in"
+                    key={firstVideo[1]}
                     width="560"
                     height="640"
-                    src={post.video}
+                    src={firstVideo[0]}
                     title={post.title}
-                    className="border-none w-full aspect-video"
+                    loading="lazy"
+                    className="border-none w-full aspect-video mb-4"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerPolicy="strict-origin-when-cross-origin"
                     allowFullScreen
                   ></iframe>
+                )}
+
+                {galleryVideos.length > 0 && (
+                  <div className="grid grid-cols-[repeat(auto-fit,33%)] gap-1 justify-center mb-12">
+                    {galleryVideos.map((video, idx) => (
+                        <iframe
+                        loading="lazy"
+                        data-aos="fade-in"
+                        key={idx}
+                        width="0"
+                        height="0"
+                        src={video[0]}
+                        title={post.title}
+                        className="border-none w-full h-auto"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerPolicy="strict-origin-when-cross-origin"
+                        allowFullScreen
+                      ></iframe>
+                    ))}
+                  </div>
                 )}
 
                 {/* Impact */}
