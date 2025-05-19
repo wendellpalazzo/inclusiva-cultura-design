@@ -218,7 +218,7 @@ const ProjectDetails = () => {
                       extras: (_, { photo: { label } }) => {
                         return label ? (
                           <div
-                            className="absolute w-full bg-slate-900/80 text-white bottom-1 p-2 text-xs"
+                            className="absolute w-full bg-slate-900/80 text-white bottom-1 m-0 p-2 text-xs group-hover:bottom-0 group-hover:scale-105 transition-all duration-300"
                             dangerouslySetInnerHTML={{ __html: label }}
                           ></div>
                         ) : null;
@@ -229,7 +229,7 @@ const ProjectDetails = () => {
                         <img
                           {...props}
                           data-aos="fade-in"
-                          className="border-b-4 border-primary"
+                          className="border-b-4 border-primary group-hover:scale-105"
                           loading="lazy"
                           src={props.src}
                         />
@@ -237,7 +237,7 @@ const ProjectDetails = () => {
                       wrapper: (props) => (
                         <div
                           {...props}
-                          className="transform-gpu hover:saturate-100 saturate-[0.65] hover:shadow-xl hover:shadow-black/60 transition-all duration-300 cursor-pointer ease-in-out hover:scale-105 hover:z-50"
+                          className="transform-gpu hover:saturate-100 saturate-[0.65] hover:shadow-xl hover:shadow-black/60 transition-all duration-300 cursor-pointer ease-in-out group hover:scale-105 hover:z-50"
                         />
                       ),
                       // button: (props) => <button {...props}>OI</button>
