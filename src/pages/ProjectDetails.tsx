@@ -13,25 +13,8 @@ import { SocialShare } from "@/components/SocialShare";
 
 import { MasonryPhotoAlbum } from "react-photo-album";
 import "react-photo-album/masonry.css";
-
-// Define the project type
-export interface Project {
-  id: number;
-  slug: string;
-  title: string;
-  description: string;
-  image: string;
-  color: string;
-  fullDescription: string;
-  date: string;
-  location: string;
-  website?: string;
-  gallery: string[];
-  objectives: string[];
-  impact: string;
-  galleryColumn?: number;
-  videos?:[[Record<string,number>]]
-}
+import { PostGalleryVideos } from "@/components/PostGalleryVideos";
+import { Project } from "@/lib/types/project";
 
 const ProjectDetails = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -119,10 +102,11 @@ const ProjectDetails = () => {
         <main className="flex-grow pt-20">
           {/* Hero Section */}
           <section
-            className={`py-20 relative overflow-hidden text-white ${project.color}`}
+            style={{backgroundImage: project.image ? `url(${project.image})` : ""}}
+            className={`py-20 relative overflow-hidden text-white bg-cover bg-no-repeat`}
           >
-            <div className="absolute inset-0 bg-black/30"></div>
 
+            <div className="absolute inset-0 bg-earth/80 backdrop-blur-2xl"></div>
             <div className="container mx-auto px-4 relative z-10">
               <Link
                 to="/#nossos-projetos"
@@ -179,9 +163,13 @@ const ProjectDetails = () => {
                   <h2 className="text-3xl font-bold text-earth mb-6">
                     Sobre o Projeto
                   </h2>
-                  <p className="text-lg text-dark/80 leading-relaxed">
-                    {project.fullDescription}
-                  </p>
+
+                  <div
+                    className="text-lg text-dark/80 leading-relaxed"
+                    dangerouslySetInnerHTML={{
+                      __html: project.fullDescription,
+                    }}
+                  ></div>
                 </div>
 
                 {/* Objectives */}
@@ -194,7 +182,7 @@ const ProjectDetails = () => {
                       {project.objectives.map((objective, index) => (
                         <li key={index} className="flex items-start">
                           <span
-                            className={`flex-shrink-0 ${project.color} text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-1`}
+                            className={`flex-shrink-0 bg-primary/70 text-white w-6 h-6 rounded-full flex items-center justify-center mr-3 mt-1`}
                           >
                             {index + 1}
                           </span>
@@ -278,8 +266,10 @@ const ProjectDetails = () => {
                 </div>
               </div>
             </div>
+
             <div className="container mx-auto px-4">
               <div className="max-w-4xl mx-auto">
+            <PostGalleryVideos title={project.title} videos={project.videos} />
                 {/* Impact */}
                 {project.impact && (
                   <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">

@@ -1,27 +1,17 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, Calendar, MapPin, Link as LinkIcon, Loader2 } from "lucide-react";
+import {
+  ArrowLeft,
+  Calendar,
+  MapPin,
+  Link as LinkIcon,
+  Loader2,
+} from "lucide-react";
 import { useEffect, useState } from "react";
 import { getContent } from "@/lib/contentLoader";
 import Seo from "@/lib/seo";
 import { SocialShare } from "@/components/SocialShare";
-
-// Define the project type
-export interface BlogContent {
-  slug?: string;
-  title?: string;
-  description?: string;
-  image?: string;
-  color?: string;
-  fullDescription?: string;
-  date?: string;
-  location?: string;
-  website?: string;
-  gallery?: string[];
-  objectives?: string[];
-  impact?: string;
-  videos?: [[string, number]];
-  category: "eventos";
-}
+import { PostGalleryVideos } from "@/components/PostGalleryVideos";
+import { BlogContent } from "@/lib/types/blog-content";
 
 const BlogDetails = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -72,17 +62,6 @@ const BlogDetails = () => {
     );
   }
 
-  const firstVideo =
-    post?.videos?.length > 0
-      ? post.videos.find((video) => video[1] === 1)
-      : null;
-  const galleryVideos =
-    post?.videos?.length > 0
-      ? post.videos
-          .filter((video) => video[1] !== 1)
-          .sort((a, b) => a[1] - b[1])
-      : [];
-
   return (
     <>
       <Seo
@@ -119,9 +98,10 @@ const BlogDetails = () => {
       <div className="min-h-dvh flex flex-col">
         <main className="flex-grow pt-20">
           <section
-            className={`py-20 relative overflow-hidden text-white bg-primary`}
+            style={{ backgroundImage: post.image ? `url(${post.image})` : "" }}
+            className={`py-20 relative overflow-hidden text-white bg-cover bg-no-repeat`}
           >
-            <div className="absolute inset-0 bg-black/30"></div>
+            <div className="absolute inset-0 bg-earth/80 backdrop-blur-3xl"></div>
 
             <div className="container mx-auto px-4 relative z-10">
               <Link
@@ -208,41 +188,7 @@ const BlogDetails = () => {
                   </div>
                 </div>
 
-                {firstVideo && (
-                  <iframe
-                  data-aos="fade-in"
-                    key={firstVideo[1]}
-                    width="560"
-                    height="640"
-                    src={firstVideo[0]}
-                    title={post.title}
-                    loading="lazy"
-                    className="border-none w-full aspect-video mb-4"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
-                )}
-
-                {galleryVideos.length > 0 && (
-                  <div className="grid grid-cols-[repeat(auto-fit,33%)] gap-1 justify-center mb-12">
-                    {galleryVideos.map((video, idx) => (
-                        <iframe
-                        loading="lazy"
-                        data-aos="fade-in"
-                        key={idx}
-                        width="0"
-                        height="0"
-                        src={video[0]}
-                        title={post.title}
-                        className="border-none w-full h-auto"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerPolicy="strict-origin-when-cross-origin"
-                        allowFullScreen
-                      ></iframe>
-                    ))}
-                  </div>
-                )}
+                <PostGalleryVideos title={post.title} videos={post.videos} />
 
                 {/* Impact */}
                 <div className="mb-12 p-8 rounded-xl bg-gray-50 border border-gray-100">

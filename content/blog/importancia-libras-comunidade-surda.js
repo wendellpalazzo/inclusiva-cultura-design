@@ -1,4 +1,4 @@
-{
+export default {
   "slug": "importancia-libras-comunidade-surda",
   "title": "A Importância da LIBRAS na Comunidade Surda",
   "description": "Entenda como a Língua Brasileira de Sinais (LIBRAS) é essencial para a comunicação e inclusão dos surdos.",

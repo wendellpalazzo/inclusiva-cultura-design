@@ -1,4 +1,4 @@
-{
+export default {
   "slug": "entrevista-com-aina-lyvea-instituto-maos-de-ouro-14-anos",
   "title": "Entrevista com Aina Lyvea",
   "description": "Aina Lyvea: Primeira surda da UFPA Breves. Uma história de superação e inclusão. Assista ao vídeo e celebre conosco essa vitória da diversidade e do conhecimento!",

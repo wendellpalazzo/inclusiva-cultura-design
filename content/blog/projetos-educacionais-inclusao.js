@@ -1,4 +1,4 @@
-{
+export default{
   "slug": "projetos-educacionais-inclusao",
   "title": "Projetos Educacionais e de Inclusão do Instituto Mãos de Ouro",
   "description": "Descubra como os projetos educacionais do Instituto transformam vidas e promovem a inclusão social.",

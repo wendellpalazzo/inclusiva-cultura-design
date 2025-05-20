@@ -58,34 +58,36 @@ const OurProjects = () => {
                   key={project.slug}
                   className="group flex flex-col h-full border rounded-xl overflow-hidden shadow-lg relative"
                 >
-                  <div className="relative overflow-hidden">
-                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
-                    <img
-                      loading="lazy"
-                      src={`${project.image}`}
-                      alt={project.title}
-                      className="w-full"
-                    />
-                  </div>
-
-                  <div className="flex flex-col flex-1 p-4 border-t-4 border-primary">
-                    <h2 className="text-xl font-bold mb-2 text-earth group-hover:text-primary transition-colors pointer-events-none">
-                      {project.title}
-                    </h2>
-                    <p className="text-dark/70 text-sm mb-4 pointer-events-none flex-1">
-                      {project.description}
-                    </p>
-                    <Link
-                      to={`/projetos/${project.slug}`}
-                      className="mt-4 inline-flex items-center text-sm text-primary font-semibold"
-                    >
-                      Ler mais{" "}
-                      <ArrowRight
-                        size={16}
-                        className="ml-1 group-hover:translate-x-1 transition-transform"
+                  <Link
+                    to={`/projetos/${project.slug}`}
+                    className="flex flex-col h-full"
+                  >
+                    <div className="relative overflow-hidden">
+                      <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
+                      <img
+                        loading="lazy"
+                        src={`${project.image}`}
+                        alt={project.title}
+                        className="w-full"
                       />
-                    </Link>
-                  </div>
+                    </div>
+
+                    <div className="flex flex-col flex-1 p-4 border-t-4 border-primary">
+                      <h2 className="text-xl font-bold mb-2 text-earth group-hover:text-primary transition-colors pointer-events-none">
+                        {project.title}
+                      </h2>
+                      <p className="text-dark/70 text-sm mb-4 pointer-events-none flex-1">
+                        {project.description}
+                      </p>
+                      <div className="mt-0 inline-flex items-center text-sm text-primary font-semibold">
+                        Ler mais{" "}
+                        <ArrowRight
+                          size={16}
+                          className="ml-1 group-hover:translate-x-1 transition-transform"
+                        />
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </CarouselItem>
             ))}

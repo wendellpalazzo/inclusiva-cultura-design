@@ -1,4 +1,4 @@
-{
+export default {
   "id": 1,
   "slug": "sopao-de-ouro",
   "title": "Projeto \"Sopão de Ouro\"",

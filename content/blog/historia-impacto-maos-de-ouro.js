@@ -1,4 +1,4 @@
-{
+export default {
   "slug": "historia-impacto-maos-de-ouro",
   "title": "História e Impacto do Instituto Mãos de Ouro",
   "description": "Conheça a trajetória do Instituto Mãos de Ouro e seu impacto na promoção da inclusão e valorização da cultura surda.",
