@@ -10,8 +10,8 @@ import {
   CarouselPrevious,
 } from "./ui/carousel";
 import { listContent } from "../lib/contentLoader";
-import { Project } from "@/pages/ProjectDetails";
 import SectionTitle from "./SectionTitle";
+import { Project } from "@/lib/types/project";
 
 const OurProjects = () => {
   const projects = listContent<Project>("projetos");

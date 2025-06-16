@@ -1,5 +1,5 @@
 export async function getContent<T>(type, slug) {
-  const t = await import(`../../content/${type}/${slug}.js`)
+  const t = await import(`../data/${type}/${slug}.js`)
   return t["default"] as T;
 }
 
@@ -8,12 +8,12 @@ export function listContent<T>(type) {
 
   switch (type) {
     case "projetos":
-      modules = import.meta.glob([`../../content/projetos/*.js`], {
+      modules = import.meta.glob([`../data/projetos/*.js`], {
         eager: true,
       });
       break;
     case "blog":
-      modules = import.meta.glob(`../../content/blog/*.js`, {
+      modules = import.meta.glob(`../data/blog/*.js`, {
         eager: true,
       });
       break;

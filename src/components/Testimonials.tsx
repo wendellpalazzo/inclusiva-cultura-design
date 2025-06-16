@@ -1,34 +1,8 @@
 import { ChartBar } from "lucide-react";
 import SectionTitle from "./SectionTitle";
+import testimonials from "../data/testimonials";
 
 const Testimonials = () => {
-  const testimonials = [
-    {
-      quote:
-        "Os cursos de Libras transformaram a comunicação na minha família. Agora posso conversar com meu filho surdo sem barreiras.",
-      author: "Mariana Alves",
-      role: "Mãe de aluno",
-      image:
-        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-    },
-    {
-      quote:
-        "Graças ao programa de capacitação profissional, consegui me inserir no mercado de trabalho e conquistar minha independência financeira.",
-      author: "Lucas Mendonça",
-      role: "Aluno formado",
-      image:
-        "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-    },
-    {
-      quote:
-        "O festival de cultura surda ampliou minha visão sobre as possibilidades artísticas e expressivas das pessoas surdas.",
-      author: "Fernanda Costa",
-      role: "Participante",
-      image:
-        "https://images.unsplash.com/photo-1558898479-33c0057a5d12?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80",
-    },
-  ];
-
   const impactStats = [
     { number: "5,000+", label: "Pessoas beneficiadas" },
     { number: "200+", label: "Profissionais formados" },
@@ -49,11 +23,11 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-earth/5 rounded-xl p-6 relative">
-              <div className="absolute top-0 right-0 h-20 w-20 bg-primary/10 rounded-bl-xl"></div>
-              <div className="absolute bottom-0 left-0 h-20 w-20 bg-secondary/10 rounded-tr-xl"></div>
-
-              <div className="relative z-10">
+            <div
+              key={index}
+              className="group bg-earth/5 rounded-xl p-6 relative hover:bg-earth/10 transition-colors duration-300"
+            >
+              <div className="relative z-10 flex flex-col flex-1 h-full pointer-events-none">
                 <svg
                   className="w-10 h-10 text-primary/30 mb-4"
                   fill="currentColor"
@@ -62,16 +36,17 @@ const Testimonials = () => {
                   <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                 </svg>
 
-                <p className="text-dark/80 mb-6 italic">
-                  "{testimonial.quote}"
-                </p>
+                <div
+                  className="text-dark/80 mb-6 italic text-balance flex-1"
+                  dangerouslySetInnerHTML={{ __html: testimonial.quote }}
+                />
 
                 <div className="flex items-center">
                   <img
                     loading="lazy"
                     src={testimonial.image}
                     alt={testimonial.author}
-                    className="w-12 h-12 rounded-full object-cover mr-4"
+                    className="w-20 h-20 rounded-full object-cover mr-4 group-hover:border-primary group-hover:border-2 transition-transform group-hover:duration-500 group-hover:scale-105"
                   />
                   <div>
                     <h4 className="font-bold text-earth">
@@ -115,15 +90,13 @@ const Testimonials = () => {
             </div>
           </div>
           <div
-          className="absolute w-28 h-96 top-0 -right-6 opacity-20 rotate-12"
-          style={{
-            backgroundImage: "url('/assets/images/gregas.png')",
-            backgroundRepeat: "no-repeat",
-            backgroundPositionY: "-40px"
-          }}
-          >
-
-          </div>
+            className="absolute w-28 h-96 top-0 -right-6 opacity-20 rotate-12"
+            style={{
+              backgroundImage: "url('/assets/images/gregas.png')",
+              backgroundRepeat: "no-repeat",
+              backgroundPositionY: "-40px",
+            }}
+          ></div>
         </div>
       </div>
     </section>
