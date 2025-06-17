@@ -49,7 +49,7 @@ const Testimonials = () => {
                     loading="lazy"
                     src={testimonial.image}
                     alt={testimonial.author}
-                    className="flex-grow-0 flex-shrink-0 w-12 md:w-20 h-12 md:h-20 rounded-full object-cover mr-4 group-hover:border-primary group-hover:border-2 transition-transform group-hover:duration-500 group-hover:scale-105"
+                    className="w-12 md:w-20 h-12 md:h-20 rounded-full object-cover mr-4 group-hover:shadow-primary/60 group-hover:shadow-lg transition-shadow duration-300"
                   />
                   <div>
                     <h4 className="font-bold text-earth">
