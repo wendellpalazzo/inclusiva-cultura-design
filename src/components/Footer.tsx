@@ -34,7 +34,7 @@ const Footer = () => {
                 href="https://www.facebook.com/profile.php?id=100008441749488"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors pulse-beat h-7"
                 aria-label="Facebook do Instituto Mãos de Ouro"
                 title="Facebook do Instituto Mãos de Ouro"
               >
@@ -51,7 +51,7 @@ const Footer = () => {
                 href="https://www.instagram.com/instituto_maos_de_ouro?igsh=Z2NrcDBmNWN4eDIy"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors pulse-beat h-7"
                 aria-label="Instagram do Instituto Mãos de Ouro"
                 title="Instagram do Instituto Mãos de Ouro"
               >
@@ -68,7 +68,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href="https://youtube.com/channel/UCLSls60vMfBReAUIsC-H6Tw?si=JW7BXIXYuqohpnyF"
-                className="text-white hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors pulse-beat h-7"
                 aria-label="YouTube do Instituto Mãos de Ouro"
                 title="YouTube do Instituto Mãos de Ouro"
               >
@@ -85,7 +85,7 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 href={`https://t.me/+55${import.meta.env.VITE_CONTACT_ZAP}`}
-                className="text-white hover:text-primary transition-colors"
+                className="text-white hover:text-primary transition-colors pulse-beat h-7"
                 aria-label="Telegram do Instituto Mãos de Ouro"
                 title="Telegram do Instituto Mãos de Ouro"
               >
@@ -227,7 +227,7 @@ const Footer = () => {
             <span className="text-white/70 text-sm">
               Feito com muito ♥️
               <br />
-              Wendell Palazzo - Desenvolvimento Web
+              <a target="_blank" className="text-primary hover:text-transparent bg-clip-text hover:bg-gradient-to-b duration-700 hover:from-primary hover:via-amber-400 hover:to-slate-200" href="https://devwendell.com.br">Wendell Palazzo - Desenvolvimento Web</a>
             </span>
             <button
               onClick={scrollToTop}

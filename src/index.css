@@ -37,7 +37,6 @@
 }
 
 @layer base {
-
   * {
     @apply border-border;
   }
@@ -45,10 +44,15 @@
   body {
     overflow-x: hidden;
     @apply bg-background text-foreground font-opensans antialiased;
-    @apply [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb:hover]:cursor-grabbing
+    @apply [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-gray-100 [&::-webkit-scrollbar-thumb]:bg-primary [&::-webkit-scrollbar-thumb:hover]:cursor-grabbing;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-playfair;
   }
 }
@@ -70,7 +74,7 @@
 }
 
 .nav-link::after {
-  content: '';
+  content: "";
   @apply absolute left-0 bottom-0 w-0 h-0.5 bg-primary transition-all duration-200;
 }
 
@@ -99,4 +103,49 @@
   @apply bg-white rounded-lg shadow-sm border border-gray-100 p-6 transition-all;
 }
 
-.grecaptcha-badge { visibility: hidden; }
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.shiny-sec {
+  background: linear-gradient(135deg, #e2c719 25%, #eee5ff 50%, #e2c719 75%);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shine 3s linear infinite alternate;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100% 50%;
+  }
+  30%,
+  70% {
+    background-position: 0% 50%;
+  }
+}
+
+.pulse-beat:hover{
+  transition: all 0.3s ease;
+  will-change: transform;
+  animation: pulse-beat 0.6s ease-in-out;
+}
+
+@keyframes pulse-beat {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.05) rotate(5deg);
+  }
+  50% {
+    transform: translateY(4px) scale(0.95) rotate(-3deg);
+  }
+  75% {
+    transform: translateY(-3px) scale(1.02) rotate(3deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}

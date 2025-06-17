@@ -123,10 +123,10 @@ const Testimonials = () => {
                 key={index}
                 className={`border-primary/20 bg-gradient-to-t from-earth/40 to-white/5 border-2 rounded-lg p-6 text-center flex flex-col justify-center items-center ${index === 0 ? "md:col-span-2" : ""}`}
               >
-                <div className="text-3xl font-bold text-secondary">
+                <p className="text-3xl font-bold text-secondary shiny-sec">
                   {stat.number}
-                </div>
-                <div className="text-white/90 text-balance">{stat.label}</div>
+                </p>
+                <div className="text-white/90 text-balance shiny-sec">{stat.label}</div>
               </div>
             ))}
           </div>
