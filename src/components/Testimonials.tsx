@@ -4,14 +4,17 @@ import testimonials from "../data/testimonials";
 
 const Testimonials = () => {
   const impactStats = [
-    { number: "5,000+", label: "Pessoas beneficiadas" },
-    { number: "200+", label: "Profissionais formados" },
-    { number: "50+", label: "Escolas parceiras" },
-    { number: "11+", label: "Anos de atuação" },
+    { number: "9.000+", label: "Pessoas atingidas no Arquipélago Marajoara" },
+    { number: "7.000+", label: "Profissionais formados" },
+    { number: "20+", label: "Escolas parceiras" },
+    { number: "141+", label: "Anos de atuação" },
+    { number: "1.200+", label: "Cestas básicas doadas" },
+    { number: "180+", label: "Atendimentos psicológicos" },
+    { number: "970+", label: "Crianças atendidas com o projeto PROJETANDO O AMANHÃ" },
   ];
 
   return (
-    <section id="testimonials" className="py-20 bg-white">
+    <section id="testimonials" className="mt-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <SectionTitle
@@ -46,7 +49,7 @@ const Testimonials = () => {
                     loading="lazy"
                     src={testimonial.image}
                     alt={testimonial.author}
-                    className="w-20 h-20 rounded-full object-cover mr-4 group-hover:border-primary group-hover:border-2 transition-transform group-hover:duration-500 group-hover:scale-105"
+                    className="flex-grow-0 flex-shrink-0 w-12 md:w-20 h-12 md:h-20 rounded-full object-cover mr-4 group-hover:border-primary group-hover:border-2 transition-transform group-hover:duration-500 group-hover:scale-105"
                   />
                   <div>
                     <h4 className="font-bold text-earth">
@@ -60,10 +63,13 @@ const Testimonials = () => {
           ))}
         </div>
 
-        <div className="bg-earth text-white rounded-xl p-4 lg:p-8 md:p-10 relative overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center gap-10 relative z-10">
-            <div className="md:w-1/3">
-              <h3 className="text-2xl font-bold mb-4">Nosso Impacto</h3>
+      </div>
+
+
+        <div className="bg-gradient-to-b from-earth to-dark text-white p-4 lg:p-8 md:p-10 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center gap-10 relative z-10 max-w-screen-xl mx-auto">
+            <div className="md:w-1/3 rounded-r-md">
+              <h3 className="text-3xl font-bold mb-4">Nosso Impacto</h3>
               <p className="text-white/80 mb-6">
                 Ao longo dos anos, nosso trabalho tem gerado resultados
                 significativos na inclusão e no desenvolvimento da comunidade
@@ -74,31 +80,22 @@ const Testimonials = () => {
                 <span className="font-bold">Números que transformam vidas</span>
               </div>
             </div>
-
-            <div className="md:w-2/3 grid grid-cols-2 gap-6">
+            <div className="md:w-2/3 grid md:grid-cols-2 gap-6">
               {impactStats.map((stat, index) => (
                 <div
                   key={index}
-                  className="bg-white/10 rounded-lg p-6 text-center"
+                  className={`border-primary/20 bg-gradient-to-t from-earth/40 to-white/5 border-2 rounded-lg p-6 text-center flex flex-col justify-center items-center ${index===0 ? "md:col-span-2" : ""}`}
                 >
-                  <div className="text-3xl font-bold text-secondary mb-2">
+                  <div className="text-3xl font-bold text-secondary">
                     {stat.number}
                   </div>
-                  <div className="text-white/90">{stat.label}</div>
+                  <div className="text-white/90 text-balance">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
-          <div
-            className="absolute w-28 h-96 top-0 -right-6 opacity-20 rotate-12"
-            style={{
-              backgroundImage: "url('/assets/images/gregas.png')",
-              backgroundRepeat: "no-repeat",
-              backgroundPositionY: "-40px",
-            }}
-          ></div>
         </div>
-      </div>
+
     </section>
   );
 };
