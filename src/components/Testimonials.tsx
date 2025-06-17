@@ -7,7 +7,7 @@ const Testimonials = () => {
     { number: "9.000+", label: "Pessoas atingidas no Arquipélago Marajoara" },
     { number: "7.000+", label: "Profissionais formados" },
     { number: "20+", label: "Escolas parceiras" },
-    { number: "141+", label: "Anos de atuação" },
+    { number: "14+", label: "Anos de atuação" },
     { number: "1.200+", label: "Cestas básicas doadas" },
     { number: "180+", label: "Atendimentos psicológicos" },
     { number: "970+", label: "Crianças atendidas com o projeto PROJETANDO O AMANHÃ" },
