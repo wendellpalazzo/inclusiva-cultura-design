@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"path-intellisense.autoTriggerNextSuggestion": true,
+		"path-intellisense.ignoreTsConfigBaseUrl": true,
+		"path-intellisense.mappings": {
+			"/": "${workspaceFolder}/public"
+		}
+	}
+}
