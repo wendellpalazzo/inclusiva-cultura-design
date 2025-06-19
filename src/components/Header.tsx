@@ -81,7 +81,7 @@ const Header = () => {
               href="/como-ajudar"
               className={buttonVariants({ variant: "default" })}
             >
-              Como Ajudar
+              Doe Agora
             </a>
           </nav>
 
