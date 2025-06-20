@@ -1,11 +1,8 @@
 export default [
   {
-    quote: `<p><span class="text-2xl leading-10 font-bold">R</span>ecordo-me como se fosse hoje o dia 24 de abril de 2011.
-    Data onde criei o então Grupo Mãos de Ouro, hoje, Instituto Mãos de Ouro, e é com imensa alegria, celebro os 14 anos de existencia,
-     fruto de um sonho que se tornou realidade.</p>
-     <p>Desde a sua criação, tivemos o privilégio de desenvolver ações voluntárias que tocaram vidas em Breves e no arquipélago marajoara.
-      Cada sorriso, cada conquista e cada desafio superado reforçam nosso compromisso com a comunidade surda e
-       ou comunidades em vulnerabilidade.</p><p>Parabéns a todos que fizeram e que fazem parte dessa jornada incrível!</p>`,
+    quote: `<p><span class="text-2xl leading-10 font-bold">R</span>ecordo-me como se fosse hoje o dia 24 de abril de 2011 , data em que criei o então Grupo Mãos de Ouro, hoje, Instituto Mãos de Ouro, e com imensa alegria, celebro os 14 anos de existência, fruto de um sonho que se tornou realidade</p>
+     <p>Desde a sua criação, tivemos o privilégio de desenvolver ações voluntárias que tocaram vidas em Breves e no Arquipélago Marajoara. Cada sorriso, cada conquista e cada desafio superado reforçam nosso compromisso com a comunidade surda e com comunidades em vulnerabilidade.</p>
+     <p>Parabéns a todos que fizeram e que fazem parte dessa jornada incrível!</p>`,
     author: "Fabrício Martins Balieiro",
     role: "Sócio Fundador e Presidente do Instituto Mãos de Ouro",
     image: "/assets/images/fabricio-martins-balieiro-dep.jpeg",

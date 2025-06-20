@@ -37,14 +37,20 @@ const Testimonials = () => {
             />
           </div>
 
-          <div className="relative container mx-auto mb-20 overflow-hidden">
+          <div className="relative container mx-auto mb-20">
             <div className="max-w-lg lg:max-w-7xl mx-auto">
               <div className="flex flex-wrap -mx-4 ">
                 <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-                  <div className="lg:max-w-md xl:max-w-lg ml-auto">
-                    <img
-                    width={512}
+                  <div className="lg:max-w-md xl:max-w-lg ml-auto relative">
+                    <div
                       data-aos="zoom-out-left"
+                      data-aos-duration="1000"
+                      className="absolute bg-[#f687017a] w-full h-full -top-[21px] -left-[18px] rounded-lg"
+                    ></div>
+                    <img
+                      width={512}
+                      data-aos="zoom-out-left"
+                      data-aos-delay="600"
                       data-aos-duration="1000"
                       className="block w-full lg:h-96 object-cover rounded-lg object-top"
                       loading="lazy"
@@ -78,7 +84,7 @@ const Testimonials = () => {
             </div>
           </div>
 
-          <div className="relative container mx-auto mb-10 overflow-hidden">
+          <div className="relative container mx-auto mb-10">
             <div className="max-w-lg lg:max-w-7xl mx-auto">
               <div className="flex flex-wrap-reverse -mx-4 ">
                 <div className="w-full lg:w-1/2 px-4">
@@ -103,10 +109,16 @@ const Testimonials = () => {
                   </div>
                 </div>
                 <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
-                  <div className="lg:max-w-md xl:max-w-lg mr-auto">
-                    <img
-                    width={512}
+                  <div className="lg:max-w-md xl:max-w-lg mr-auto relative">
+                    <div
                       data-aos="zoom-out-left"
+                      data-aos-duration="1000"
+                      className="absolute bg-[#f687017a] w-full h-full -top-[21px] left-[18px] rounded-lg"
+                    ></div>
+                    <img
+                      width={512}
+                      data-aos="zoom-out-left"
+                      data-aos-delay="600"
                       data-aos-duration="1000"
                       className="block w-full lg:h-96 object-cover rounded-lg object-top"
                       loading="lazy"
@@ -115,7 +127,6 @@ const Testimonials = () => {
                     />
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
