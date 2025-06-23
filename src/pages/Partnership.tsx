@@ -43,7 +43,7 @@ const Partnership = () => {
                   Ajudar
                 </a>
                 <h1 className="text-4xl md:text-5xl font-playfair font-bold text-earth mb-6">
-                  Parcerias que Transformam Vidas
+                  Permita com que a sua instituição seja nossa parceira
                 </h1>
                 <p className="text-lg text-dark/80 mb-8">
                   Junte-se a nós na missão de promover a educação e inclusão de
