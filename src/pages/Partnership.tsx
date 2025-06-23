@@ -66,26 +66,12 @@ const Partnership = () => {
                 </div>
               </div>
               <div className="md:w-1/2 relative">
-                <div className="bg-white p-8 rounded-xl shadow-xl border border-primary/20 relative z-10 opacity-0 animate-fadeIn delay-700">
-                  <div className="grid grid-cols-3 gap-4">
-                    {[Building2, Landmark, Trophy, Rocket, Award, Heart].map(
-                      (Icon, idx) => (
-                        <div key={idx} className="flex justify-center">
-                          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10">
-                            <Icon className="text-primary w-8 h-8" />
-                          </div>
-                        </div>
-                      ),
-                    )}
-                  </div>
-                  <div className="mt-8 text-center">
-                    <h3 className="text-xl font-opensans font-semibold text-earth mb-2">
-                      +30 Empresas Parceiras
-                    </h3>
-                    <p className="text-dark/80">
-                      Fazendo a diferença com a gente
-                    </p>
-                  </div>
+                <div className="rounded-xl shadow-xl border border-primary/20 relative z-10 opacity-0 animate-fadeIn delay-700">
+                  <img
+                    src="/assets/images/parcerias.jpg"
+                    alt="Parcerias"
+                    loading="lazy"
+                    className="w-full h-96 object-cover rounded-xl object-left"/>                  
                 </div>
                 <div className="absolute -bottom-5 -right-5 w-full h-full bg-primary/10 rounded-xl -z-10"></div>
               </div>

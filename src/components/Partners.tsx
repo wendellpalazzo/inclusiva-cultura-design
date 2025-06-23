@@ -44,11 +44,18 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
           <CarouselItem className="flex items-center justify-center md:basis-1/3 xl:basis-1/5">
             <HeartHandshakeIcon className="size-20" strokeWidth={1} />
           </CarouselItem>
-          <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5 ">
-            <div className="bg-sky-600 text-lg text-center p-4 text-white rounded-xl size-48 font-bold flex justify-center items-center flex-col">
-              Wendell Palazzo
-              <span className="text-sm">Desenvolvimento Web</span>
-            </div>
+          <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
+            <Link to="https://devwendell.com.br/" target="_blank">
+              <div className="p-4 bg-[#101010] size-48 rounded-xl font-bold flex justify-center items-center flex-col">
+                <img
+                  src="/assets/partners/devwendell.webp"
+                  loading="lazy"
+                />
+                <span className="text-sm mt-2 text-[#80d7ff] text-center">
+                  Wendell Palazzo<br/>Desenvolvimento Web
+                </span>
+              </div>
+            </Link>
           </CarouselItem>
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
             <Link to="http://www.cepacbreves.com.br/" target="_blank">
@@ -62,7 +69,18 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
             </Link>
           </CarouselItem>
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
-            <Link to="/como-ajudar/parcerias/">
+            <Link to="https://www.instagram.com/kenistonoficial/" target="_blank">
+              <div className="p-4 bg-black size-48 rounded-xl font-bold flex justify-center items-center flex-col">
+                <img
+                  src="/assets/partners/dep-federal-keniston.jpg"
+                  loading="lazy"
+                />
+              </div>
+            </Link>
+          </CarouselItem>
+
+          <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
+            <Link to="/como-ajudar/part/">
               <div className="relative text-lg hover:bg-slate-600 hover:text-slate-300 text-center p-4 text-slate-600 bg-slate-300 size-48 rounded-xl font-bold flex justify-center items-center flex-col">
                 <span className="text-sm my-4">
                   Sua empresa pode aparecer aqui!
