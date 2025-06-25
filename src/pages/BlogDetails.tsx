@@ -89,11 +89,11 @@ const BlogDetails = () => {
             name: "Instituto Mãos de Ouro",
             logo: {
               "@type": "ImageObject",
-              url: "/assets/images/logo-instituto-maos-de-ouro.png",
+              url: "/assets/images/logo-instituto-maos-de-ouro.webp",
             },
           },
         }}
-        image="/assets/images/logo-instituto-maos-de-ouro.png"
+        image="/assets/images/logo-instituto-maos-de-ouro.webp"
       />
       <div className="min-h-dvh flex flex-col">
         <main className="flex-grow pt-20">

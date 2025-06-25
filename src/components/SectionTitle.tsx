@@ -54,7 +54,7 @@ const SectionTitle = ({
       >
         <div
           style={{
-            backgroundImage: "url('/assets/images/gregas.png')",
+            backgroundImage: "url('/assets/images/gregas.webp')",
             backgroundSize: "280px",
             backgroundRepeat: "repeat-x",
             backgroundPositionY: "-233px",

@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 
-const Seo = ({ title="", description, canonical = "", image="/assets/images/logo-instituto-maos-de-ouro.png", schemaMarkup }) => (
+const Seo = ({ title="", description, canonical = "", image="/assets/images/logo-instituto-maos-de-ouro.webp", schemaMarkup }) => (
   <Helmet defaultTitle='Instituto Mãos de Ouro - As Mãos Que Transformam Vidas' prioritizeSeoTags titleTemplate={title ? `%s | Instituto Mãos de Ouro - As Mãos Que Transformam Vidas` : undefined}>
     <title>{title}</title>
     <meta name="description" content={description} />

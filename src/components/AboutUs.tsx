@@ -5,42 +5,42 @@ const equipe = [
   {
     name: "Fabrício Martins Balieiro",
     role: "Presidente",
-    image: "/assets/images/fabricio-martins-balieiro.jpeg",
+    image: "/assets/images/equipe/fabricio-martins-balieiro.jpeg",
   },
   {
     name: "Bernarda Santana Dias",
     role: "Vice-Presidente",
-    image: "/assets/images/bernarda-santana-dias.jpeg",
+    image: "/assets/images/equipe/bernarda-santana-dias.jpeg",
   },
   {
     name: "Luiz Antônio Amaral Balieiro",
     role: "1 Tesoureiro",
-    image: "/assets/images/luiz-antonio-amaral-balieiro.jpeg",
+    image: "/assets/images/equipe/luiz-antonio-amaral-balieiro.jpeg",
   },
   {
     name: "Ranna Bitencoute",
     role: "2 Tesoureira",
-    image: "/assets/images/ranna-bitencoute.jpeg",
+    image: "/assets/images/equipe/ranna-bitencoute.jpeg",
   },
   {
     name: "Claudete Pacheco",
     role: "Conselho Fiscal",
-    image: "/assets/images/claudete-pacheco.jpeg",
+    image: "/assets/images/equipe/claudete-pacheco.jpeg",
   },
   {
     name: "Neucilene Fonseca",
     role: "Conselho Fiscal",
-    image: "/assets/images/neucilene-fonseca.jpeg",
+    image: "/assets/images/equipe/neucilene-fonseca.jpeg",
   },
   {
     name: "Railene Martins",
     role: "2 Secretária",
-    image: "/assets/images/railene-martins.jpeg",
+    image: "/assets/images/equipe/railene-martins.jpeg",
   },
   {
     name: "Jenny Rodrigues",
     role: "Conselheira Fiscal/Suplente",
-    image: "/assets/images/jenny-rodrigues.jpeg",
+    image: "/assets/images/equipe/jenny-rodrigues.jpeg",
   },
 ];
 
@@ -110,8 +110,10 @@ const AboutUs = () => {
               data-aos="zoom-in"
             >
               <img
+                width={600}
+                height={450}
                 loading="lazy"
-                src="/assets/images/instituto-maos-de-ouro-quem-somos-visao-missao-valor.png"
+                src="/assets/images/instituto-maos-de-ouro-quem-somos-visao-missao-valor.webp"
                 alt="Equipe Mãos de Ouro"
                 className="object-contain w-full"
               />
@@ -138,12 +140,14 @@ const AboutUs = () => {
                   src={member.image}
                   alt={member.name}
                   className="w-full p-4"
+                  width={300}
+                  height={300}
                 />
                 <div className="p-6">
                   <h4 className="text-xl font-bold text-earth">
                     {member.name}
                   </h4>
-                  <p className="text-dark/70">{member.role}</p>
+                  <p className="text-dark/80">{member.role}</p>
                 </div>
               </div>
             ))}

@@ -101,11 +101,11 @@ const OurHistory = () => {
                       <div className="font-bold text-amber-900">
                         {event.title}
                       </div>
-                      <time className="font-caveat font-medium text-amber-500">
+                      <time className="font-caveat font-medium text-amber-900">
                         {event.year}
                       </time>
                     </div>
-                    <div className="text-slate-500">{event.description}</div>
+                    <div className="text-slate-600">{event.description}</div>
                   </div>
                 </div>
               ))}
@@ -117,8 +117,9 @@ const OurHistory = () => {
               loading="lazy"
               className="-rotate-12 -scale-x-100 top-3 drop-shadow-md left-0 absolute opacity-80 size-16 md:size-auto"
               src="/assets/images/victory-hand.png"
+              alt="Imagem de mão vitoriosa"
             />
-            <div className="inline-flex items-center gap-2 text-white px-6 py-3">
+            <div className="inline-flex items-center gap-2 text-slate-800 px-6 py-3">
               <span className="font-semibold text-2xl">
                 Mais de uma década transformando vidas
               </span>
@@ -127,6 +128,7 @@ const OurHistory = () => {
               loading="lazy"
               className="rotate-12 drop-shadow-md top-3 right-0 absolute opacity-80 size-16 md:size-auto"
               src="/assets/images/victory-hand.png"
+              alt="Imagem de mão vitoriosa"
             />
           </div>
         </div>

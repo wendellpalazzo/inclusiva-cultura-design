@@ -19,9 +19,11 @@ const Footer = () => {
               <a href="/" className="block">
                 <img
                   loading="lazy"
-                  src="/assets/images/logo-instituto-maos-de-ouro.png"
+                  src="/assets/images/logo-instituto-maos-de-ouro.webp"
                   alt="Logo Instituto Mãos de Ouro"
                   className="h-20 w-auto"
+                  width={80}
+                  height={80}
                 />
               </a>
             </div>
@@ -242,7 +244,7 @@ const Footer = () => {
       <div className="h-4 w-full mt-4 relative bg-primary">
         <div
           style={{
-            backgroundImage: "url('/assets/images/gregas.png')",
+            backgroundImage: "url('/assets/images/gregas.webp')",
             backgroundSize: "280px",
             backgroundRepeat: "repeat-x",
             backgroundPositionY: "-233px",

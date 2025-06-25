@@ -24,7 +24,7 @@ const Index = () => {
           name: "Instituto Mãos de Ouro - Transformando Vidas",
           url: "https://institutomaosdeouro.org.br/",
         }}
-        image="/assets/images/logo-instituto-maos-de-ouro.png"
+        image="/assets/images/logo-instituto-maos-de-ouro.webp"
       />
       <div className="min-h-dvh">
         <Hero />

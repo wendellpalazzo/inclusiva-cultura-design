@@ -75,7 +75,7 @@ const Testimonials = () => {
                     <span className="block text-gray-900 font-semibold mb-1">
                       — {testimonials[0].author}
                     </span>
-                    <span className="block text-gray-500">
+                    <span className="block text-gray-600 font-medium">
                       {testimonials[0].role}
                     </span>
                   </div>
@@ -103,7 +103,7 @@ const Testimonials = () => {
                     <span className="block text-gray-900 font-semibold mb-1">
                       — {testimonials[1].author}
                     </span>
-                    <span className="block text-gray-500">
+                    <span className="block text-gray-600 font-medium">
                       {testimonials[1].role}
                     </span>
                   </div>
@@ -168,7 +168,7 @@ const Testimonials = () => {
                         </svg>
 
                         <div
-                          className="text-dark/90 mb-6 italic text-balance space-y-2 flex-1"
+                          className="text-dark mb-6 italic text-balance space-y-2 flex-1"
                           dangerouslySetInnerHTML={{
                             __html: testimonial.quote,
                           }}
@@ -185,7 +185,7 @@ const Testimonials = () => {
                             <h4 className="font-bold text-earth">
                               {testimonial.author}
                             </h4>
-                            <p className="text-dark/60 text-sm">
+                            <p className="text-dark/80 text-sm">
                               {testimonial.role}
                             </p>
                           </div>

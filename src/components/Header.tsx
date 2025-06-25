@@ -44,9 +44,11 @@ const Header = () => {
               className="flex items-center"
             >
               <img
-                src="/assets/images/logo-instituto-maos-de-ouro.png"
+                src="/assets/images/logo-instituto-maos-de-ouro.webp"
                 alt="Instituto Mãos de Ouro"
                 className="h-16 w-auto"
+                width={64}
+                height={64}
               />
             </Link>
           </div>
@@ -79,7 +81,7 @@ const Header = () => {
               data-aos-duration="1800"
               key="como-ajudar"
               href="/como-ajudar"
-              className={buttonVariants({ variant: "default" })}
+              className={`${buttonVariants({ variant: "default"})} text-slate-900`}
             >
               Doe Agora
             </a>
