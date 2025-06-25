@@ -6,6 +6,8 @@ import Sitemap from "vite-plugin-sitemap";
 import { createHtmlPlugin } from "vite-plugin-html";
 import viteCompression from "vite-plugin-compression";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import MsClarity from 'vite-plugin-ms-clarity';
+
 
 import vercel from "vite-plugin-vercel";
 
@@ -55,6 +57,9 @@ export default defineConfig(({ mode }) => ({
         },
       },
     }),
+    MsClarity({      
+      id: 's47m54ayur',
+    })
   ].filter(Boolean),
   resolve: {
     alias: {

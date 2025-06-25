@@ -98,6 +98,7 @@
     "vite-plugin-compression": "^0.5.1",
     "vite-plugin-html": "^3.2.2",
     "vite-plugin-image-optimizer": "^1.1.8",
+    "vite-plugin-ms-clarity": "^1.0.0",
     "vite-plugin-sitemap": "^0.7.1",
     "vite-plugin-vercel": "^9.0.5"
   },
