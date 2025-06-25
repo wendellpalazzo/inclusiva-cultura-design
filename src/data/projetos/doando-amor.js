@@ -3,7 +3,7 @@ export default {
   slug: "doando-amor",
   title: "Projeto Doando Amor",
   description: "Acreditamos que fazer o bem, faz bem, por isso, continuaremos lutando para desenvolvermos um melhor trabalho.",
-  image: "/assets/contents/projetos/doando-amor/0.png",
+  image: "/assets/contents/projetos/doando-amor/0.webp",
   color: "#b2b0dc",
   fullDescription: `
   <div>

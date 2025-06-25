@@ -5,7 +5,7 @@ export default {
   description:
     "Qualificar e certificar, por meio de processo formativo, profissionais em tradução/interpretação e guia-interpretação de Libras-Língua Portuguesa",
   image:
-    "/assets/contents/projetos/curso-de-extensao-em-formacao-de-tradutores-e-interpretes-de-libras/0.png",
+    "/assets/contents/projetos/curso-de-extensao-em-formacao-de-tradutores-e-interpretes-de-libras/0.webp",
   color: "#294551",
   fullDescription: `<div class="space-y-4"><p>O curso é uma ação interinstitucional entre o Campus Universitário do Marajó-Breves
   (CUMB/UFPA), por meio do seu coordenador Prof. Dr. Ronaldo Rodrigues, com o Instituto Mãos de Ouro (IMO), por meio do seu

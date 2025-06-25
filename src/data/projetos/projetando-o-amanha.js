@@ -3,7 +3,7 @@ export default {
   "slug": "projetando-o-amanha",
   "title": "Projetando o Amanhã",
   "description": "Oferece educação e atividades para crianças em vulnerabilidade desde 2014.",
-  "image": "/assets/contents/projetos/projetando-o-amanha/0.png",
+  "image": "/assets/contents/projetos/projetando-o-amanha/0.webp",
   "color": "bg-primary",
   "fullDescription": "Atendemos crianças de 5 a 12 anos com aulas de Libras, Violão, Matemática, Português e Atividades Extras. ",
   "date": "Desde 2014",

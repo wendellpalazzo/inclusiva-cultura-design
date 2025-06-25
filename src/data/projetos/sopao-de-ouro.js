@@ -3,7 +3,7 @@ export default {
   "slug": "sopao-de-ouro",
   "title": "Projeto \"Sopão de Ouro\"",
   "description": "Levamos dignidade e calor humano a quem mais precisa!",
-  "image": "/assets/contents/projetos/sopao-de-ouro/0.png",
+  "image": "/assets/contents/projetos/sopao-de-ouro/0.webp",
   "color": "bg-primary",
   "fullDescription": "Em cada sábado, atuamos em um bairro da cidade de Breves, distribuindo sopas para as famílias necessitadas. Você pode colaborar sendo voluntário, com alimentos ou financeiramente, e será de grande ajuda para que dezenas de famílias durmam alimentadas.",
   "date": "Desde 2021",

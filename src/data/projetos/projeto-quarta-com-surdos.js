@@ -3,7 +3,7 @@ export default {
   "slug": "projeto-quarta-com-surdos",
   "title": "Projeto \"Quarta com Surdos\"",
   "description": "Possibilitar discussões e orientações acerca de temas relevantes para o indivíduo surdo.",
-  "image": "/assets/contents/projetos/projeto-quarta-com-surdos/0.png",
+  "image": "/assets/contents/projetos/projeto-quarta-com-surdos/0.webp",
   "color": "bg-primary",
   "fullDescription": "Em 2020, devido à pandemia da Covid-19, divulgamos em nossas redes sociais vídeos em LIBRAS com orientações sobre os avanços da doença no Marajó - Pará. Além disso, lançamos um canal específico para possibilitar ajuda psicológicas e alimentícia às comunidades surda e ouvinte da referida localidade. Com o avanço das procuras por nosso serviços, criamos o projeto \"QUARTA COM OS SURDOS\", tendo como objetivo possibilitar discussões e orientações acerca de temas de grande relevância para o indivíduo surdo.",
   "date": "Desde 2020",
