@@ -243,7 +243,7 @@ const Partnership = () => {
 
         {/* Empresas Parceiras */}
         <section id="parceiros-atuais" className="py-20 bg-primary/10">
-          <div className="container">
+          <div className="container p-4 md:p-4">
             <Partners>
               <SectionTitle
                 title="Nossos Parceiros"

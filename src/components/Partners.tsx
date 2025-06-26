@@ -46,7 +46,7 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
           </CarouselItem>
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
             <Link to="https://devwendell.com.br/" target="_blank">
-              <div className="p-4 bg-[#101010] size-48 rounded-xl font-bold flex justify-center items-center flex-col">
+              <div className="p-4 bg-[#101010] size-56 rounded-xl font-bold flex justify-center items-center flex-col">
                 <img
                   src="/assets/partners/devwendell.webp"
                   loading="lazy"
@@ -59,7 +59,7 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
           </CarouselItem>
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
             <Link to="http://www.cepacbreves.com.br/" target="_blank">
-              <div className="p-4 bg-white size-48 hover:bg-slate-200 rounded-xl font-bold flex justify-center items-center flex-col">
+              <div className="p-4 bg-white size-56 hover:bg-slate-200 rounded-xl font-bold flex justify-center items-center flex-col">
                 <img
                   src="/assets/partners/centro-educacional-paulo-carvalho.jpg"
                   loading="lazy"
@@ -70,7 +70,7 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
           </CarouselItem>
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
             <Link to="https://www.instagram.com/kenistonoficial/" target="_blank">
-              <div className="p-4 bg-black size-48 rounded-xl font-bold flex justify-center items-center flex-col">
+              <div className="p-4 bg-black size-56 rounded-xl font-bold flex justify-center items-center flex-col">
                 <img
                   src="/assets/partners/dep-federal-keniston.jpg"
                   loading="lazy"
@@ -80,8 +80,20 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
           </CarouselItem>
 
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
+            <Link to="https://www.instagram.com/i9oficiall/" target="_blank">
+              <div className="p-4 bg-black size-56 rounded-xl font-bold flex justify-center items-center flex-col">
+                <img
+                  src="/assets/partners/inove.png"
+                  loading="lazy"
+                  className="object-scale-down w-full h-full"                  
+                />
+              </div>
+            </Link>
+          </CarouselItem>
+
+          <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
             <Link to="/como-ajudar/part/">
-              <div className="relative text-lg hover:bg-slate-600 hover:text-slate-300 text-center p-4 text-slate-600 bg-slate-300 size-48 rounded-xl font-bold flex justify-center items-center flex-col">
+              <div className="relative text-lg hover:bg-slate-600 hover:text-slate-300 text-center p-4 text-slate-600 bg-slate-300 size-56 rounded-xl font-bold flex justify-center items-center flex-col">
                 <span className="text-sm my-4">
                   Sua empresa pode aparecer aqui!
                 </span>
