@@ -1,5 +1,3 @@
-- adicionar o ganalytcs
-
 umbler
 faleconosco@institutomaosdeouro.org.br
 [o9Xn#{AvrN2
