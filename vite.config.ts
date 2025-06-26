@@ -19,6 +19,13 @@ const routes = [
   "/como-ajudar/doe",
   "/como-ajudar/volutarie-se",
   "/como-ajudar/parcerias",
+  "/blog/entrevista-com-aina-lyvea-instituto-maos-de-ouro-14-anos",
+  "/blog/historia-impacto-maos-de-ouro",
+  "/blog/importancia-libras-comunidade-surda",
+  "/blog/projetos-educacionais-inclusao",
+  "/projetos/curso-de-extensao-em-formacao-de-tradutores-e-interpretes-de-libras",
+  "/projetos/doando-amor",
+  "/projetos/sopao-de-ouro"
 ];
 
 // https://vitejs.dev/config/
@@ -57,7 +64,7 @@ export default defineConfig(({ mode }) => ({
         },
       },
     }),
-    MsClarity({      
+    MsClarity({
       id: 's47m54ayur',
     })
   ].filter(Boolean),
