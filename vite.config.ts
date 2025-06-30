@@ -35,6 +35,12 @@ export default defineConfig(({ mode }) => ({
     port: process.env.PORT as unknown as number,
   },
   plugins: [
+    Sitemap({            
+      hostname: "https://institutomaosdeouro.org.br",
+      dynamicRoutes: routes,
+      generateRobotsTxt: true,
+      readable: true,
+    }),
     vercel(),
     react(),
     ViteImageOptimizer({
@@ -49,13 +55,7 @@ export default defineConfig(({ mode }) => ({
         progressive: true,
       },
     }),
-    viteCompression(),
-    Sitemap({            
-      hostname: "https://institutomaosdeouro.org.br",
-      dynamicRoutes: routes,
-      generateRobotsTxt: true,
-      readable: true,
-    }),
+    viteCompression(),    
     createHtmlPlugin({
       minify: true,
       inject: {

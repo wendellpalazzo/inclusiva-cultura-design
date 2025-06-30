@@ -1,6 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://institutomaosdeouro.org.br/sitemap.xml
-
-User-agent: Googlebot
