@@ -157,9 +157,8 @@ const BlogDetails = () => {
               <div className="max-w-4xl mx-auto">
                 {/* Full Description */}
                 <div className="mb-12">
-                  <p className="text-lg text-dark/80 leading-relaxed">
-                    {post.fullDescription}
-                  </p>
+                  <div className="text-lg text-dark/80 leading-relaxed" dangerouslySetInnerHTML={{ __html: post.fullDescription }}>                    
+                  </div>
                 </div>
 
                 {/* Gallery */}
