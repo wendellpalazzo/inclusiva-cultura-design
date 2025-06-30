@@ -23,7 +23,8 @@ const routes = [
   "/blog/historia-impacto-maos-de-ouro",
   "/blog/importancia-libras-comunidade-surda",
   "/blog/projetos-educacionais-inclusao",
-  "/projetos/curso-de-extensao-em-formacao-de-tradutores-e-interpretes-de-libras",
+  "/blog/comemoracao-de-14-anos-do-instituto-maos-de-ouro",
+  "/projetos/curso-de-extensao-em-formacao-de-tradutores-e-interpretes-de-libras",  
   "/projetos/doando-amor",
   "/projetos/sopao-de-ouro"
 ];
