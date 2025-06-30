@@ -50,10 +50,11 @@ export default defineConfig(({ mode }) => ({
       },
     }),
     viteCompression(),
-    Sitemap({
-      hostname: "https://institutomaosdeouro.org.br/",
+    Sitemap({            
+      hostname: "https://institutomaosdeouro.org.br",
       dynamicRoutes: routes,
       generateRobotsTxt: true,
+      readable: true,
     }),
     createHtmlPlugin({
       minify: true,
