@@ -216,6 +216,15 @@ const Footer = () => {
                   Galeria de Vídeos
                 </a>
               </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://g.page/r/CWUD3c7FAgWpEBM/review"
+                  className="text-white/70 hover:text-primary transition-colors"
+                >
+                  Avalie-nos no Google
+                </a>
+              </li>
             </ul>
           </div>
         </div>
