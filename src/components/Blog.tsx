@@ -59,7 +59,7 @@ const Blog = () => {
                         loading="lazy"
                         src={`${blogPost.image}`}
                         alt={blogPost.title}
-                        className="w-full h-full object-cover"
+                        className="w-full h-56 object-cover object-top"
                       />
                     </div>
 
