@@ -1,7 +1,8 @@
 import { Suspense, lazy } from "react";
+import Seo from "@/lib/seo";
 
-import Hero from "@/components/Hero";
 
+const Hero = lazy(() => import("@/components/Hero"))
 const AboutUs = lazy(() => import("@/components/AboutUs"));
 const OurHistory = lazy(() => import("@/components/OurHistory"));
 const OurProjects = lazy(() => import("@/components/OurProjects"));
@@ -10,7 +11,6 @@ const Blog = lazy(() => import("@/components/Blog"));
 const Contact = lazy(() => import("@/components/Contact"));
 
 const FrequentQuestions = lazy(() => import("@/components/FrequentQuestions"));
-import Seo from "@/lib/seo";
 
 const Index = () => {
   return (
@@ -30,11 +30,23 @@ const Index = () => {
         <Hero />
         <Suspense fallback={null}>
           <AboutUs />
+        </Suspense>
+        <Suspense fallback={null}>
           <OurHistory />
+        </Suspense>
+        <Suspense fallback={null}>
           <OurProjects />
+        </Suspense>
+        <Suspense fallback={null}>
           <Testimonials />
+        </Suspense>
+        <Suspense fallback={null}>
           <Blog />
+        </Suspense>
+        <Suspense fallback={null}>
           <FrequentQuestions />
+        </Suspense>
+        <Suspense fallback={null}>
           <Contact />
         </Suspense>
       </div>

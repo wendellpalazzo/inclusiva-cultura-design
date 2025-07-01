@@ -92,7 +92,7 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
           </CarouselItem>
 
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
-            <Link to="/como-ajudar/part/">
+            <Link to="/como-ajudar/parcerias">
               <div className="relative text-lg hover:bg-slate-600 hover:text-slate-300 text-center p-4 text-slate-600 bg-slate-300 size-56 rounded-xl font-bold flex justify-center items-center flex-col">
                 <span className="text-sm my-4">
                   Sua empresa pode aparecer aqui!

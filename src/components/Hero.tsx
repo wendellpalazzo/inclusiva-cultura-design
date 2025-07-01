@@ -19,10 +19,14 @@ const Hero = () => {
           {!isMobile && (
             <video
               poster="/assets/images/hero.webp"
-              preload="auto"
+              preload="metadata"
               className="w-full h-full object-cover object-center"
               loop
-              autoPlay
+              onLoadedData={e => {
+                setTimeout(() => {
+                  (e.target as HTMLVideoElement)?.play();
+                }, 3000);
+              }}
               controls={false}
               muted
             >
