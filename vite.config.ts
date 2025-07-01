@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
+import { globSync } from 'glob';
 
 import Sitemap from "vite-plugin-sitemap";
 import { createHtmlPlugin } from "vite-plugin-html";
@@ -8,26 +9,19 @@ import viteCompression from "vite-plugin-compression";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import MsClarity from 'vite-plugin-ms-clarity';
 
-
 import vercel from "vite-plugin-vercel";
 
-const routes = [
-  "/",
-  "/projetos",
-  "/blog",
-  "/como-ajudar",
-  "/como-ajudar/doe",
-  "/como-ajudar/volutarie-se",
-  "/como-ajudar/parcerias",
-  "/blog/entrevista-com-aina-lyvea-instituto-maos-de-ouro-14-anos",
-  "/blog/historia-impacto-maos-de-ouro",
-  "/blog/importancia-libras-comunidade-surda",
-  "/blog/projetos-educacionais-inclusao",
-  "/blog/comemoracao-de-14-anos-do-instituto-maos-de-ouro",
-  "/projetos/curso-de-extensao-em-formacao-de-tradutores-e-interpretes-de-libras",  
-  "/projetos/doando-amor",
-  "/projetos/sopao-de-ouro"
-];
+
+const routes = () => {
+  return [
+    "/",
+    "/como-ajudar",
+    "/como-ajudar/doe",
+    "/como-ajudar/voluntarie-se",
+    "/como-ajudar/parcerias",
+    ...globSync(["src/data/blog/*", 'src/data/projetos/*']).map(route => route.replace("src/data/blog", "blog").replace("src/data/projetos", "projetos"))
+  ]
+}
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
@@ -36,9 +30,9 @@ export default defineConfig(({ mode }) => ({
     port: process.env.PORT as unknown as number,
   },
   plugins: [
-    Sitemap({            
-      hostname: "https://institutomaosdeouro.org.br",
-      dynamicRoutes: routes,
+    Sitemap({
+      hostname: "https://institutomaosdeouro.org.br",      
+      dynamicRoutes: routes(),
       generateRobotsTxt: true,
       readable: true,
       outDir: path.resolve(__dirname, "public"),
@@ -57,7 +51,7 @@ export default defineConfig(({ mode }) => ({
         progressive: true,
       },
     }),
-    viteCompression(),    
+    viteCompression(),
     createHtmlPlugin({
       minify: true,
       inject: {
