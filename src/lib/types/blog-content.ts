@@ -5,6 +5,7 @@ export interface BlogContent {
   image?: string;
   fullDescription?: string;
   date?: string;
+  dateFormated?: string;
   location?: string;
   website?: string;
   gallery?: string[];

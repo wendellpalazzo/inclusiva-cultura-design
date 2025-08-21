@@ -5,7 +5,8 @@ export default {
   "image": "/assets/contents/blog/entrevista-com-aina-lyvea-instituto-maos-de-ouro-14-anos/0.jpg",
   "fullDescription": "No Dia Nacional da Libras, celebramos também os 14 anos do Instituto Mãos de Ouro. Hoje, 24 de abril. Parabéns ao Instituto e ao professor Fabrício Balieiro pelo compromisso incansável em difundir o ensino de Libras e promover a acessibilidade na região do Marajó. É uma honra compartilhar a entrevista com a professora Aina Lyvea, primeira aluna surda da UFPA - Campus Breves. Sua trajetória inspira e reforça como a educação inclusiva transforma vidas. Assista ao vídeo e celebre conosco essa vitória da diversidade e do conhecimento!",
   "color": "bg-primary",
-  "date": "24 de Abril de 2025",
+  "date": "2025-04-24",
+  "dateFormated": "24 de Abril de 2025",
   "location": "Breves - PA",
   "category": "14 anos Instituto Mãos de Ouro",
   "videos": [

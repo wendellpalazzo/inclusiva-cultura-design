@@ -13,7 +13,8 @@ export default {
 </div>
   `,
   "color": "bg-primary",
-  "date": "26 de Junho de 2025",
+  "date": "2025-06-26",
+  "dateFormated": "26 de Junho de 2025",
   "location": "Breves - PA",
   "category": "",
   "videos": [

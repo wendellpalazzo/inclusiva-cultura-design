@@ -8,11 +8,13 @@ export function listContent<T>(type) {
 
   switch (type) {
     case "projetos":
+      modules = {}
       modules = import.meta.glob([`../data/projetos/*.js`], {
         eager: true,
       });
       break;
     case "blog":
+      modules = {}
       modules = import.meta.glob(`../data/blog/*.js`, {
         eager: true,
       });
@@ -21,5 +23,7 @@ export function listContent<T>(type) {
 
   return Object.values(modules)
     .map((module) => module["default"])
-    .sort((a, b) => a.title - b.title) as T[];
+    .sort((a, b) => {
+      return a.date > b.date ? -1 : 1;
+    }) as T[];
 }

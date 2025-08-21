@@ -5,7 +5,8 @@ export default {
   "image": "/assets/contents/blog/historia-impacto-maos-de-ouro/0.jpg",
   "color": "bg-blue",
   "fullDescription": "Desde sua fundação, o Instituto Mãos de Ouro tem sido um pilar na promoção dos direitos e na inclusão da comunidade surda. Com ações voltadas para a difusão da LIBRAS e valorização das expressões culturais, a instituição tem contribuído para a formação de uma identidade forte e para o reconhecimento dos artistas surdos. Ao longo dos anos, seus projetos transformaram a percepção da sociedade sobre a cultura surda, inspirando outras iniciativas de inclusão e gerando debates sobre acessibilidade e direitos humanos.",
-  "date": "Maio de 2025",
+  "dateFormated": "Maio de 2025",
+  "date": "2025-05-01",
   "location": "Breves, Marajó - Pará",
   "gallery": [],
   "objectives": [

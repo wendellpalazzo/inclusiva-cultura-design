@@ -5,7 +5,8 @@ export default{
   "image": "/assets/contents/blog/projetos-educacionais-inclusao/0.jpg",
   "fullDescription": "O Instituto Mãos de Ouro desenvolve uma série de projetos que visam à educação inclusiva, oferecendo cursos de LIBRAS, oficinas culturais e atividades lúdicas. Essas iniciativas não só ampliam o acesso ao conhecimento para a comunidade surda, mas também fortalecem a autoestima e promovem a integração entre surdos e ouvintes. Por meio desses projetos, a instituição tem contribuído para a formação de uma rede de apoio que transforma a realidade educacional em diversas cidades do Marajó.",
   "color": "bg-primary",
-  "date": "Junho de 2019",
+  "dateFormated": "Junho de 2019",
+  "date": "2019-06-01",
   "location": "Diversas cidades do Marajó",
   "videos": [
     ["https://www.youtube-nocookie.com/embed/fKCDqwHJbIE?rel=0",1],

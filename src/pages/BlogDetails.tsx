@@ -122,7 +122,7 @@ const BlogDetails = () => {
                 <div className="flex flex-wrap gap-4 mb-8">
                   <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
                     <Calendar size={18} className="mr-2" />
-                    <span>{post.date}</span>
+                    <span>{post.dateFormated}</span>
                   </div>
 
                   <div className="flex items-center bg-white/20 px-4 py-2 rounded-lg">
