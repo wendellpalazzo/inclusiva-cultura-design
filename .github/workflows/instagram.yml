@@ -29,13 +29,13 @@ jobs:
           echo "$FIREBASE_CREDENTIALS" > serviceAccountKey.json
           python .github/workflows/main.py
 
+      - name: Configure Git
+          run: |
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
       - name: Commit changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
-          git add src/data/blog public/assets/contents/blog
-          git commit -m "Atualiza posts do Instagram e blog [skip ci]" || echo "Nenhuma mudança para commit"
-          git push origin HEAD:main
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            git add src/data/blog public/assets/contents/blog
+            git diff --cached --quiet || git commit -m "Atualiza posts do Instagram e blog [skip ci]"
+            git push origin HEAD
