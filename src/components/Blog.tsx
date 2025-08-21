@@ -52,7 +52,7 @@ const Blog = () => {
                   key={blogPost.slug}
                   className="group flex flex-col h-full border rounded-xl overflow-hidden shadow-lg relative"
                 >
-                  <Link to={`/blog/${blogPost.slug}`}>
+                  <Link to={`/blog/${blogPost.slug}`} className="flex flex-col h-full">
                     <div className="relative overflow-hidden">
                       <div className="absolute inset-0 bg-primary/20 group-hover:bg-primary/10 transition-colors z-10"></div>
                       <img
