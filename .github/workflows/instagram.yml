@@ -1,8 +1,8 @@
-name: Instagram Scraper to Firestore + Blog Files
+name: Instagram Scraper to Firestore
 
 on:
   schedule:
-    - cron: "*/240 * * * *"  # roda a cada 4 horas
+    - cron: "*/120 * * * *"  # roda a cada 2 horas
   workflow_dispatch:       # permite rodar manualmente também
 
 jobs:
@@ -21,9 +21,13 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r ./.github/workflows/requirements.txt
+      - name: Check for new instagram posts
+        run: |
+          python .github/workflows/check_new_posts.py
 
       - name: Run main.py
         env:
+          GEMINI_API: ${{ secrets.GEMINI_API}}
           FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
         run: |
           echo "$FIREBASE_CREDENTIALS" > serviceAccountKey.json

@@ -2,3 +2,4 @@ requests
 pandas
 firebase-admin
 schedule
+google-genai
