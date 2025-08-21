@@ -71,7 +71,9 @@ df_posts = pd.DataFrame(posts)
 filtered_posts = df_posts[df_posts["legenda"].str.contains(r"(?mi)#site|#vaiprosite", regex=True, na=False)]
 
 # --- Pasta para arquivos ---
-base_path = "/src/data/blog"
+repo_path = os.getcwd()  # ou os.environ['GITHUB_WORKSPACE']
+base_path = os.path.join(repo_path, "src/data/blog")
+
 os.makedirs(base_path, exist_ok=True)
 
 new_files_count = 0
@@ -104,7 +106,8 @@ for _, row in filtered_posts.iterrows():
     video_url = row.get("video_url", "")  # caso exista
 
     if img_url:
-        img_folder = f"/public/assets/contents/blog/{slug}/"
+        img_folder = os.path.join(repo_path, "public/assets/contents/blog", slug)
+
         os.makedirs(img_folder, exist_ok=True)
         
         img_name = "1.png"  # você pode incrementar se quiser várias imagens
