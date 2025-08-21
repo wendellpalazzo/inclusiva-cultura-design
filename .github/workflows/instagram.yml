@@ -27,7 +27,7 @@ jobs:
           FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
         run: |
           echo "$FIREBASE_CREDENTIALS" > serviceAccountKey.json
-          python ./.github/workflowsmain.py
+          python .github/workflows/main.py
 
       - name: Commit generated blog files
         run: |
