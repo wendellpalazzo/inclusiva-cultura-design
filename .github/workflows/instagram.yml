@@ -30,12 +30,13 @@ jobs:
           python .github/workflows/main.py
 
       - name: Configure Git
-          run: |
-            git config user.name "github-actions[bot]"
-            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+
       - name: Commit changes
-          run: |
-            git add src/data/blog public/assets/contents/blog
-            git diff --cached --quiet || git commit -m "Atualiza posts do Instagram e blog [skip ci]"
-            git push origin HEAD
+        run: |
+          git add src/data/blog public/assets/contents/blog
+          git diff --cached --quiet || git commit -m "Atualiza posts do Instagram e blog [skip ci]"
+          git push origin HEAD
