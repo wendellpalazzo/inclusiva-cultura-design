@@ -35,7 +35,7 @@ export default defineConfig(({ mode }) => ({
       dynamicRoutes: routes(),
       generateRobotsTxt: true,
       readable: true,
-      outDir: path.resolve(__dirname, "public"),
+      outDir: "./public",
     }),
     vercel(),
     react(),
