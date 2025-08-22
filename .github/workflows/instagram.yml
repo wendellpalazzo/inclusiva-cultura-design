@@ -22,7 +22,10 @@ jobs:
         run: |
           pip install -r ./.github/workflows/requirements.txt
       - name: Check for new instagram posts
+        env:
+          FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
         run: |
+          echo "$FIREBASE_CREDENTIALS" > serviceAccountKey.json
           python .github/workflows/check_new_posts.py
 
       - name: Run main.py
