@@ -64,7 +64,7 @@ for row in filtered_posts:
                    - use uma <div class='space-y-2'></div> para agrupar todos os parágrafos
                    - separe todos os parágrafos em tags <p> distintas
                 Retorne como um objeto JSON apenas, atente-se da importancia em que se houver textos com aspas duplas
-                você deve usar a barra invertida para escapar essas aspas duplas, pois estamos montando um objeto JSON
+               em $titulo, $descricao e $legenda, você deve usar a barra invertida para escapar essas aspas duplas, pois estamos montando um objeto JSON
                 e sempre usando este formato {{$slug, $titulo, $descricao, $legenda}}. Não precisa explicar mais nada.
                 """,
             temperature=1
