@@ -1,7 +1,7 @@
 export default {
         "slug": "ufpa-campus-marajo-breves-recebe-calouros-2025-com-ciencia-e-cultura",
         "title": "UFPA Campus Marajó Breves Recebe Calouros 2025 com Ciência e Cultura",
-        "description": "A UFPA Campus Marajó Breves realizou a recepção dos calouros 2025 com o tema "Ciência e Vozes da Amazônia", incluindo apresentação musical em Libras.",
+        "description": "A UFPA Campus Marajó Breves realizou a recepção dos calouros 2025 com o tema \"Ciência e Vozes da Amazônia\", incluindo apresentação musical em Libras.",
         "image": "/assets/contents/blog/ufpa-campus-marajo-breves-recebe-calouros-2025-com-ciencia-e-cultura/1.png",
         "fullDescription": `<div class='space-y-2'><p>A UFPA – Campus Marajó Breves teve um evento de recepção aos calouros de 2025 chamado "Recepção aos Calouros 2025: Ciência e Vozes da Amazônia" no dia 22 de agosto.</p><p>O evento aconteceu no Auditório Dalcídio Jurandir, com atividades pela manhã e tarde, incluindo palestras, música e sorteio de brindes.</p><p>E as crianças do nosso amado Instituto Mãos de Ouro estiveram presentes apresentando a música: Remexe - CHIQUITITAS - EM LIBRAS.</p><p>O público amou a linda apresentação realizada pelo grupo "Mãozinhas de Ouro".</p><p>Parabéns, Crianças!</p></div>`,
         "url": "https://www.instagram.com/p/3706580206952297629/",
