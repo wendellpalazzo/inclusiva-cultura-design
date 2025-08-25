@@ -1,7 +1,7 @@
 export default {
         "slug": "recepcao-aos-calouros-2025-ciencia-e-vozes-da-amazonia-na-ufpa-breves",
         "title": "Recepção aos Calouros 2025: Ciência e Vozes da Amazônia na UFPA Breves",
-        "description": "A UFPA – Campus Marajó Breves realizou a "Recepção aos Calouros 2025", com palestras, música e apresentação em Libras dos calouros de Pedagogia.",
+        "description": "A UFPA – Campus Marajó Breves realizou a \"Recepção aos Calouros 2025\", com palestras, música e apresentação em Libras dos calouros de Pedagogia.",
         "image": "/assets/contents/blog/recepcao-aos-calouros-2025-ciencia-e-vozes-da-amazonia-na-ufpa-breves/1.png",
         "fullDescription": `<div class='space-y-2'><p>A UFPA – Campus Marajó Breves teve um evento de recepção aos calouros de 2025 chamado "Recepção aos Calouros 2025: Ciência e Vozes da Amazônia" no dia 22 de agosto.</p><p>O evento aconteceu no Auditório Dalcídio Jurandir, com atividades pela manhã e tarde, incluindo palestras, música e sorteio de brindes.</p><p>Os calouros da turma de PEDAGOGIA 2025 - UFPA/CUMB também abrilhantaram o evento 😍. Apresentaram em LIBRAS a música "NÃO QUERO DINHEIRO" de Tim Maia.</p><p>PARABÉNS, A APRESENTAÇÃO FICOU LINDA.</p><p>#libras #marajó #vaiprosite #timmaia</p></div>`,
         "url": "https://www.instagram.com/p/3707233435649337272/",
