@@ -14,7 +14,6 @@ import vercel from "vite-plugin-vercel";
 
 const routes = () => {
   return [
-    "/",
     "/como-ajudar",
     "/como-ajudar/doe",
     "/como-ajudar/voluntarie-se",
@@ -35,7 +34,6 @@ export default defineConfig(({ mode }) => ({
       dynamicRoutes: routes(),
       generateRobotsTxt: true,
       readable: true,
-      outDir: "./public",
     }),
     vercel(),
     react(),

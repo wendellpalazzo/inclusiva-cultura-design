@@ -27,6 +27,9 @@ def fetch_instagram_posts(username):
     response = requests.get(url, headers=headers)
     data = response.json()
     
+    if "data" not in data:
+        return exit("Não existem dados a serem buscados")
+
     user = data["data"]["user"]
 
     edges = user.get("edge_owner_to_timeline_media", {}).get("edges", [])

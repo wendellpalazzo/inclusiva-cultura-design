@@ -56,16 +56,15 @@ for row in filtered_posts:
             system_instruction=f"""
                 Você é um especialista em criar posts para blogs.
                 Baseado na descrição dada você deve:
-                 - $tituto: criar um título, este mesmo deve ter no máximo 80 caracteres.
+                 - $tituto: criar um título, este mesmo deve ter no máximo 80 caracteres. Trocar aspas duplas (") para aspas simples (') para não quebrar o JSON.
                  - $slug: um slug usando este titulo (tudo minusculo, sem acentos, divididos por hífens).
-                 - $descricao: uma breve descricao, este mesmo deve conter no máximo 150 caracteres.
+                 - $descricao: uma breve descricao, este mesmo deve conter no máximo 150 caracteres. Trocar aspas duplas (") para aspas simples (') para não quebrar o JSON.
                  - $legenda: a legenda original do post que foi dada como input pelo usuário, apenas faça correções pontuais
-                 de ortografia e gramática, mas não mude nada além disso. Também ajuste para ser um html formatado, conforme este exemplo dado:
+                 de ortografia e gramática. Trocar aspas duplas (") para aspas simples (') para não quebrar o JSON. mas não mude nada além disso. Também ajuste para ser um html formatado, conforme este exemplo dado:
                    - use uma <div class='space-y-2'></div> para agrupar todos os parágrafos
-                   - separe todos os parágrafos em tags <p> distintas
-                Retorne como um objeto JSON apenas, atente-se da importancia em que se houver textos com aspas duplas
-               em $titulo, $descricao e $legenda, você deve usar a barra invertida para escapar essas aspas duplas, pois estamos montando um objeto JSON
-                e sempre usando este formato {{$slug, $titulo, $descricao, $legenda}}. Não precisa explicar mais nada.
+                   - separe todos os parágrafos em tags <p> distintas.
+                Retorne como um objeto JSON apenas, sempre usando este formato {{$slug, $titulo, $descricao, $legenda}}, mas antes de retornar verifique se todo o objeto JSON está correto.
+                Não precisa explicar mais nada apenas retornar o JSON.
                 """,
             temperature=1
         ),
