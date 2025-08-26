@@ -34,6 +34,7 @@ export default defineConfig(({ mode }) => ({
       dynamicRoutes: routes(),
       generateRobotsTxt: true,
       readable: true,
+      outDir: ".vercel/output/static"
     }),
     vercel(),
     react(),
