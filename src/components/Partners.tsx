@@ -68,16 +68,7 @@ export const Partners = ({ children }: { children?: ReactNode }) => {
               </div>
             </Link>
           </CarouselItem>
-          <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
-            <Link to="https://www.instagram.com/kenistonoficial/" target="_blank">
-              <div className="p-4 bg-black size-56 rounded-xl font-bold flex justify-center items-center flex-col">
-                <img
-                  src="/assets/partners/dep-federal-keniston.jpg"
-                  loading="lazy"
-                />
-              </div>
-            </Link>
-          </CarouselItem>
+          
 
           <CarouselItem className="flex justify-center md:basis-1/3 xl:basis-1/5">
             <Link to="https://www.instagram.com/i9oficiall/" target="_blank">
