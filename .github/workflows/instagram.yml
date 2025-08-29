@@ -18,9 +18,20 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Cache Python dependencies
+        id: cache-pip # Assign an ID to reference outputs
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-python-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-python-
+
       - name: Install dependencies
+        if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
           pip install -r ./.github/workflows/requirements.txt
+
       - name: Check for new instagram posts
         env:
           FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
@@ -29,6 +40,7 @@ jobs:
           python .github/workflows/check_new_posts.py
 
       - name: Run main.py
+        
         env:
           GEMINI_API: ${{ secrets.GEMINI_API}}
           FIREBASE_CREDENTIALS: ${{ secrets.FIREBASE_CREDENTIALS }}
