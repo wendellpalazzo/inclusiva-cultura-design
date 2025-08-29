@@ -23,9 +23,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/pip
-          key: ${{ runner.os }}-python-${{ hashFiles('requirements.txt') }}
+          key: ${{ runner.os }}-python-dependencies-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-python-
+            ${{ runner.os }}-python-dependencies-
 
       - name: Install dependencies
         if: steps.cache-pip.outputs.cache-hit != 'true'
