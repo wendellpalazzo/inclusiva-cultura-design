@@ -2,8 +2,8 @@ name: Instagram Scraper to Firestore
 
 on:
   schedule:
-    - cron: "*/120 * * * *"  # roda a cada 2 horas
-  workflow_dispatch:       # permite rodar manualmente também
+    - cron: "*/120 * * * *"
+  workflow_dispatch:
 
 jobs:
   run-script:
@@ -17,30 +17,11 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.11"
-
-      - name: Install pip
-        run: |
-          python3 -m pip install --upgrade pip
-    
-      - name: Get pip cache dir
-        id: pip-cache
-        shell: bash
-        run: |
-          echo "dir=$(pip cache dir)" >> $GITHUB_OUTPUT
-
-      - name: Cache Python dependencies
-        id: cache-pip # Assign an ID to reference outputs
-        uses: actions/cache@v4
-        with:
-          path: ${{ steps.pip-cache.outputs.dir }}
-          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-          restore-keys: |
-            ${{ runner.os }}-pip-
+          cache: 'pip' # Enable built-in pip caching
+          cache-dependency-path: '.github/workflows/requirements.txt'
 
       - name: Install dependencies
-        if: steps.cache-pip.outputs.cache-hit != 'true'
-        run: |
-          pip install -r ./.github/workflows/requirements.txt
+        run: pip install -r ./.github/workflows/requirements.txt
 
       - name: Check for new instagram posts
         env:
