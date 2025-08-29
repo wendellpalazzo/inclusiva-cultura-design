@@ -31,7 +31,11 @@ jobs:
         if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
           pip install -r ./.github/workflows/requirements.txt
-          pip install pandas
+      
+      - name: Install from cache
+        if: steps.cache-pip.outputs.cache-hit == 'true'
+        run: |
+          pip install
 
       - name: Check for new instagram posts
         env:
