@@ -11,12 +11,13 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: 'pip'
 
       - name: Cache Python dependencies
         id: cache-pip # Assign an ID to reference outputs
@@ -30,12 +31,8 @@ jobs:
       - name: Install dependencies
         if: steps.cache-pip.outputs.cache-hit != 'true'
         run: |
+          python3 -m pip install --upgrade pip
           pip install -r ./.github/workflows/requirements.txt
-      
-      - name: Install from cache
-        if: steps.cache-pip.outputs.cache-hit == 'true'
-        run: |
-          pip install
 
       - name: Check for new instagram posts
         env:
