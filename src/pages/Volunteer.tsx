@@ -6,9 +6,6 @@ import {
   Loader2,
   Users,
 } from "lucide-react";
-import { Link } from "react-router-dom";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -47,6 +44,7 @@ import {
   areas,
   disponibilidades,
   experiencias,
+  onde_quer_ser_voluntario,
   VOLUNTEER_MAX_FILE_SIZE,
   volunteerFormSchema,
   VolunteerFormValues,
@@ -73,6 +71,7 @@ const Volunteer = () => {
       experiencia_libras: "",
       experiencia_libras_opcoes: "",
       porque_ser_voluntario: "",
+      onde_quer_ser_voluntario: "BREVES",
     },
   });
 
@@ -387,6 +386,37 @@ const Volunteer = () => {
                                         value={disponib}
                                       >
                                         {disponib}
+                                      </SelectItem>
+                                    ))}
+                                  </SelectContent>
+                                </Select>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="onde_quer_ser_voluntario"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel>Quer ser voluntário em qual cidade do Marajó? *</FormLabel>
+                                <Select
+                                  onValueChange={field.onChange}
+                                  defaultValue={field.value}
+                                >
+                                  <FormControl>
+                                    <SelectTrigger>
+                                      <SelectValue placeholder="Selecione qual a cidade" />
+                                    </SelectTrigger>
+                                  </FormControl>
+                                  <SelectContent>
+                                    {onde_quer_ser_voluntario.map((cidade) => (
+                                      <SelectItem
+                                        key={cidade}
+                                        value={cidade}
+                                      >
+                                        {cidade}
                                       </SelectItem>
                                     ))}
                                   </SelectContent>

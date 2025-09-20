@@ -27,6 +27,26 @@ export const experiencias = [
   "Conhecimento avançado",
 ] as const;
 
+export const onde_quer_ser_voluntario = [
+  "AFUÁ",
+  "ANAJÁS",
+  "BAGRE",
+  "BREVES",
+  "CACHOEIRA DO ARARÍ",
+  "CHAVES",
+  "CURRALINHO",
+  "GURUPÁ",
+  "MELGAÇO",
+  "MUANÁ",
+  "OEIRAS DO PARÁ",
+  "PONTA DE PEDRAS",
+  "PORTEL",
+  "SALVATERRA",
+  "SANTA CRUZ",
+  "SÃO SEBASTIÃO DA BOA VISTA",
+  "SOURE"
+] as const;
+
 export const volunteerFormSchema = z
   .object({
     nome: z
@@ -47,6 +67,9 @@ export const volunteerFormSchema = z
       .string()
       .min(10, { message: "Conte-nos um pouco mais sobre você" }),
     proposta_acao: z.instanceof(File).optional(),
+    onde_quer_ser_voluntario: z.enum(onde_quer_ser_voluntario, {
+      required_error: "Selecione sua onde quer ser voluntário",
+    }).default("BREVES"),
     antecedentes_criminais: z
       .instanceof(File, {
         message: `Arquivo não suportado`,
@@ -116,6 +139,7 @@ export const volunteerFormSchema = z
     [VolunteerFormFieldGForm.porque_ser_voluntario]: o.porque_ser_voluntario,
     [VolunteerFormFieldGForm.proposta_acao]: o.proposta_acao,
     [VolunteerFormFieldGForm.antecedentes_criminais]: o.antecedentes_criminais,
+    [VolunteerFormFieldGForm.onde_quer_ser_voluntario]: o.onde_quer_ser_voluntario,
   }));
 
 export const VolunteerFormFieldGForm = {
@@ -130,5 +154,6 @@ export const VolunteerFormFieldGForm = {
   experiencia_libras: "entry.909386888",
   experiencia_libras_opcoes: "entry.1089486152",
   porque_ser_voluntario: "entry.418315608",
+  onde_quer_ser_voluntario: "entry.1789434692"
 };
 export type VolunteerFormValues = z.infer<typeof volunteerFormSchema>;

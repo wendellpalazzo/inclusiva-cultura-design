@@ -36,6 +36,26 @@ const experiencias = [
   "Conhecimento avançado",
 ] as const;
 
+const onde_quer_ser_voluntario = [
+  "PONTA DE PEDRAS",
+  "SOURE",
+  "PORTEL",
+  "BREVES",
+  "CACHOEIRA DO ARARÍ",
+  "MUANÁ",
+  "SANTA CRUZ",
+  "CURRALINHO",
+  "OEIRAS DO PARÁ",
+  "ANAJÁS",
+  "GURUPÁ",
+  "BAGRE",
+  "CHAVES",
+  "SÃO SEBASTIÃO DA BOA VISTA",
+  "MELGAÇO",
+  "SALVATERRA",
+  "AFUÁ"
+] as const;
+
 const volunteerFormSchema = z
   .object({
     nome: z
@@ -68,6 +88,9 @@ const volunteerFormSchema = z
         (file) => file && VOLUNTEER_ACCEPTED_FILE_TYPES.includes(file.type),
         "Apenas arquivos PDF.",
       ),
+    onde_quer_ser_voluntario: z.enum(onde_quer_ser_voluntario, {
+      required_error: "Selecione sua onde quer ser voluntário",
+    }),
   })
   .superRefine((data, ctx) => {
     if (data.experiencia_libras === "Sim" && !data.experiencia_libras_opcoes)
@@ -125,6 +148,7 @@ const volunteerFormSchema = z
     [VolunteerFormFieldGForm.porque_ser_voluntario]: o.porque_ser_voluntario,
     [VolunteerFormFieldGForm.proposta_acao]: o.proposta_acao,
     [VolunteerFormFieldGForm.antecedentes_criminais]: o.antecedentes_criminais,
+    [VolunteerFormFieldGForm.onde_quer_ser_voluntario]: o.onde_quer_ser_voluntario,
   }));
 
 type VolunteerFormValues = z.infer<typeof volunteerFormSchema>;
@@ -141,6 +165,7 @@ const VolunteerFormFieldGForm = {
   experiencia_libras: "entry.909386888",
   experiencia_libras_opcoes: "entry.1089486152",
   porque_ser_voluntario: "entry.418315608",
+  onde_quer_ser_voluntario: "entry.1789434692"
 };
 
 export async function POST(request: Request) {
