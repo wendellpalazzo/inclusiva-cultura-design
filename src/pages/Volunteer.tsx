@@ -567,9 +567,16 @@ const Volunteer = () => {
                             name="antecedentes_criminais"
                             render={({ field }) => (
                               <FormItem>
-                                <FormLabel>
+                                <FormLabel className="flex flex-col gap-2">
                                   Envie um arquivo em pdf dos seus antecedentes
                                   criminais (no máximo com 30 dias) *
+                                   <a
+                                    target="_blank"
+                                    href="https://antecedentes.pc.pa.gov.br/"
+                                    className="p-4 bg-secondary/40 rounded-lg hover:bg-primary/20 w-full text-center"
+                                  >
+                                    Como emitir atestado de antecedentes criminais? Clique aqui.
+                                  </a>
                                 </FormLabel>
                                 <FormControl>
                                   <Input
@@ -589,6 +596,7 @@ const Volunteer = () => {
                                 <FormDescription>
                                   Arquivo em PDF de até{" "}
                                   {VOLUNTEER_MAX_FILE_SIZE / 1024 / 1024} MB
+                                 
                                 </FormDescription>
                               </FormItem>
                             )}

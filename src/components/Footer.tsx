@@ -225,6 +225,15 @@ const Footer = () => {
                   Avalie-nos no Google
                 </a>
               </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://antecedentes.pc.pa.gov.br/"
+                  className="text-white/70 hover:text-primary transition-colors"
+                >
+                  Voluntariado - Emitir Atestado de Antecedentes Criminais
+                </a>
+              </li>
             </ul>
           </div>
         </div>
